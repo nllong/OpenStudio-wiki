@@ -25,3 +25,11 @@ Run unit tests and fix things that are broken.
 Run regression tests in openstudio-resources, especially model simulation tests.
 
 In EnergyPlusJob.cpp, update EnergyPlusJob::getToolVersionImpl line ToolVersion tv(foo,bar) where foo and bar are the major and minor versions.
+
+In openstudiocore/ruby/openstudio/sketchup_plugin/lib/CommandManager.rb, update the IDF import failure message instructing the user to upgrade the idf to the latest version.
+
+In openstudiocore/ruby/openstudio/sketchup_plugin/lib/PluginManager.rb, update the energyplus_version function to return the latest version.
+
+In RunManager's BasementJob.cpp and SlabJob.cpp, update ToolVersion tv(foo,bar).
+
+In openstudiocore/src/utilities/sql/SqlFile_Impl.cpp, update the _insert_ query to the use the latest version, and update the _select_ query to look for the latest version in addition to all previous versions.
