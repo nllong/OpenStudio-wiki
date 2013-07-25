@@ -118,7 +118,7 @@ Alternatively, you can do both these steps by typing the new branch name into th
 
 
 ## Switching to an Existing Branch
-To switch to a remote branch that you haven’t already downloaded (branches that were created after you cloned the repository or after your most recent fetch/pull), you should run the following command to get an updated list of remote branches and prune your branches.  Pruning removes all branches that have been deleted from GitHub:
+To switch to a remote branch that you haven't already downloaded (branches that were created after you cloned the repository or after your most recent fetch/pull), you should run the following command to get an updated list of remote branches and prune your branches.  Pruning removes all branches that have been deleted from GitHub:
 
     git fetch -p
 
@@ -191,7 +191,7 @@ However, if your branch does not require a code review, then it can be merged im
 The no-fast-forward `--no-ff` flag is important for merging to maintain branch history, and it stays consistent with GitHub's automatic merge settings:
 
 ## Pushing All of Your Local Commits to GitHub
-When you’re ready to share your changes and commits from any branch with the rest of the team:
+When you're ready to share your changes and commits from any branch with the rest of the team:
 
     git push origin
 
