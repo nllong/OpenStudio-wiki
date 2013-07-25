@@ -32,31 +32,47 @@ Depending on your operating system and personal preferences, there are a variety
 
 ### GitHub for Windows
 [[/images/Using-OpenStudio-with-Git-and-GitHub/client.github.png]]
+
 A very simple, intuitive GUI for Windows users.  This GUI will be sufficient for most third party contributors.  Only works with github.com.
 
 [Windows](http://github-windows.s3.amazonaws.com/GitHubSetup.exe)
+
 ### Command Line
-deal for power users and for running commands directly on the repository.  It also includes a basic Git GUI, as well as gitk, a low-level Git GUI.  This may be a prerequisite for some of the following tools, and also comes packaged with some of the following tools.
+[[/images/Using-OpenStudio-with-Git-and-GitHub/client.bash.png]]
+
+Ideal for power users and for running commands directly on the repository.  It also includes a basic Git GUI, as well as gitk, a low-level Git GUI.  This may be a prerequisite for some of the following tools, and also comes packaged with some of the following tools.
 
 [Windows](http://git-scm.com/download/win) – [OS X](http://git-scm.com/download/mac) – [Linux](http://git-scm.com/download/linux)
+
 ### TortoiseGit
+[[/images/Using-OpenStudio-with-Git-and-GitHub/client.tortoisegit.png]]
+
 A helpful GUI for normal users who are already familiar with TortoiseSVN and its Explorer integration.  In some cases, the interface can be unintuitive.
 
 [Windows](https://code.google.com/p/tortoisegit/wiki/Download)
+
 ### SmartGit/Hg
+[[/images/Using-OpenStudio-with-Git-and-GitHub/client.smartgit.png]]
+
 The best graphical interface for Git – Understand that the non-commercial license can ONLY be used for open-source, non-commercial projects, such as OpenStudio.
 
 [Windows](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-win32-setup-jre-4_6.zip) – [OS X](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-macosx-4_6.dmg) – [Linux](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-generic-4_6.tar.gz)
+
 ### Git Extensions
+[[/images/Using-OpenStudio-with-Git-and-GitHub/client.gitex.png]]
+
 A useful GUI for visualizing tree changes, Git Extensions also includes context-menu integration in Explorer.
 
 [Windows](http://sourceforge.net/projects/gitextensions/files/latest/download?source=navbar) – [OS X](https://git-extensions-documentation.readthedocs.org/en/latest/getting_started.html#installation-mac) – [Linux](https://git-extensions-documentation.readthedocs.org/en/latest/getting_started.html#installation-linux)
+
 ## Creating an SSH Key
 Establishing a secure connection to GitHub.com can be achieved over HTTPS with a username and password, or with SSH keys and an optional passphrase.  SSH keys are highly recommended for security and performance.  GitHub has thoroughly documented the process: Carefully follow the instructions for your platform to create an SSH key and add it to GitHub.com.
 
 [Windows](https://help.github.com/articles/generating-ssh-keys#platform-windows) – [OS X](https://help.github.com/articles/generating-ssh-keys#platform-mac) – [Linux](https://help.github.com/articles/generating-ssh-keys#platform-linux)
 
 On Windows, some GUI tools like TortoiseGit require a Putty SSH key instead of an OpenSSH key.  To convert the key you just generated to Putty format, launch Puttygen from the start menu, load your private key `~/.ssh/id_rsa`, and then save the new private key `~/.ssh/id_rsa.ppk`:
+
+[[/images/Using-OpenStudio-with-Git-and-GitHub/tortoisegit.clone.png]]
 
 ## Configuring Git Settings
 To start, you should configure some of Git's global settings, which are saved in `~/.gitconfig`.  If you leave out the `--global` flag, the settings will be applied only to your current repository, which is also fine.
@@ -77,10 +93,12 @@ There are [many more configuration settings](http://git-scm.com/book/en/Customiz
 If you'd to use a GUI for managing the repository, follow the [GUI instructions for third party collaborators](instructions-for-third-party-collaborators).
 
 Otherwise, in the following clone step, replace _NREL_ in the clone URL with your GitHub username.
-Finally, when your changes are ready to be approved for inclusion in the main OpenStudio repository, click the Compare button in your fork and follow [GitHub's instructions](https://help.github.com/articles/creating-a-pull-request) for submitting a pull request.
+Finally, when your changes are ready to be approved for inclusion in the main OpenStudio repository, click the [[/images/Using-OpenStudio-with-Git-and-GitHub/compare.png]] Compare button in your fork and follow [GitHub's instructions](https://help.github.com/articles/creating-a-pull-request) for submitting a pull request.
 
 ## OpenStudio's Git Workflow
 All work should be completed in feature branches created from the _develop_ branch.  Biweekly iterations will be branched from _develop_ to _iteration_, and releases will be branched from _iteration_ to _master_.  No commits or development work should be made to _iteration_ or _master_ unless you are authorized to modify that iteration or release.
+
+[[/images/Using-OpenStudio-with-Git-and-GitHub/workflow.png]]
 
 ## Cloning the Repository to Your Local Computer
 Now that you have your SSH key configured, you can create a local clone of the repository.  If you want to download the latest stable release, select the _master_ branch.  Otherwise, if you want to work with the latest development code, use the _develop_ branch:
@@ -117,6 +135,7 @@ To make this branch available to everyone, push the branch to GitHub:
 
 Alternatively, you can do both these steps by typing the new branch name into the branch filter on GitHub and click Create branch:
 
+[[/images/Using-OpenStudio-with-Git-and-GitHub/newbranch.png]]
 
 ## Switching to an Existing Branch
 To switch to a remote branch that you haven't already downloaded (branches that were created after you cloned the repository or after your most recent fetch/pull), you should run the following command to get an updated list of remote branches and prune your branches.  Pruning removes all branches that have been deleted from GitHub:
@@ -171,6 +190,8 @@ If you have uncommitted changes and you're not ready to commit them, you will fi
 
 Without stashing and popping, you may see a message like this:
 
+[[/images/Using-OpenStudio-with-Git-and-GitHub/cmd.png]]
+
 A good example of when you might want to do this is if you're not ready yet to commit the changes, but for one reason or another you need a clean working directory.
 
 If the pop command triggered merge conflict resolution, the stashed changes won't be removed from the stash stack.  To explicitly remove the last item from the stash, use the following command:
@@ -182,7 +203,7 @@ To view the current contents of the stash stack:
     git stash list
 
 ## Reintegrating a Branch into Develop
-If a code review is necessary and your changes are complete, click the Compare button in your branch and follow [GitHub's instructions](https://help.github.com/articles/creating-a-pull-request) for submitting a pull request.  After creating the pull request, you can assign it to the bug or ticket owner for review.
+If a code review is necessary and your changes are complete, click the [[/images/Using-OpenStudio-with-Git-and-GitHub/compare.png]] Compare button in your branch and follow [GitHub's instructions](https://help.github.com/articles/creating-a-pull-request) for submitting a pull request.  After creating the pull request, you can assign it to the bug or ticket owner for review.
 
 However, if your branch does not require a code review, then it can be merged immediately:
 
@@ -190,6 +211,8 @@ However, if your branch does not require a code review, then it can be merged im
     git merge --no-ff mybranch
 
 The no-fast-forward `--no-ff` flag is important for merging to maintain branch history, and it stays consistent with GitHub's automatic merge settings:
+
+[[/images/Using-OpenStudio-with-Git-and-GitHub/no-ff.png]]
 
 ## Pushing All of Your Local Commits to GitHub
 When you're ready to share your changes and commits from any branch with the rest of the team:
