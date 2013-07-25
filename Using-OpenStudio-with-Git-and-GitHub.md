@@ -1,4 +1,4 @@
-> [Wiki](Home) ? **Using OpenStudio with Git and GitHub**
+> [Wiki](Home) ▸ **Using OpenStudio with Git and GitHub**
 
 ## Contents
 - [Interacting with Git](Using-OpenStudio-with-Git-and-GitHub#interacting-with-git)
@@ -32,20 +32,32 @@ Depending on your operating system and personal preferences, there are a variety
 ### GitHub for Windows
 A very simple, intuitive GUI for Windows users.  This GUI will be sufficient for most third party contributors.  Only works with github.com.
 
-[Win](http://github-windows.s3.amazonaws.com/GitHubSetup.exe)
+[Windows](http://github-windows.s3.amazonaws.com/GitHubSetup.exe)
 ### Command Line
-Text
+deal for power users and for running commands directly on the repository.  It also includes a basic Git GUI, as well as gitk, a low-level Git GUI.  This may be a prerequisite for some of the following tools, and also comes packaged with some of the following tools.
+
+[Windows](http://git-scm.com/download/win) – [OS X](http://git-scm.com/download/mac) – [Linux](http://git-scm.com/download/linux)
 ### TortoiseGit
-Text
+A helpful GUI for normal users who are already familiar with TortoiseSVN and its Explorer integration.  In some cases, the interface can be unintuitive.
+
+[Windows](https://code.google.com/p/tortoisegit/wiki/Download)
 ### SmartGit/Hg
-Text
+The best graphical interface for Git – Understand that the non-commercial license can ONLY be used for open-source, non-commercial projects, such as OpenStudio.
+
+[Windows](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-win32-setup-jre-4_6.zip) – [OS X](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-macosx-4_6.dmg) – [Linux](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-generic-4_6.tar.gz)
 ### Git Extensions
-Text
+A useful GUI for visualizing tree changes, Git Extensions also includes context-menu integration in Explorer.
 
-
+[Windows](http://sourceforge.net/projects/gitextensions/files/latest/download?source=navbar) – [OS X](https://git-extensions-documentation.readthedocs.org/en/latest/getting_started.html#installation-mac) – [Linux](https://git-extensions-documentation.readthedocs.org/en/latest/getting_started.html#installation-linux)
 ## Creating an SSH Key
+Establishing a secure connection to GitHub.com can be achieved over HTTPS with a username and password, or with SSH keys and an optional passphrase.  SSH keys are highly recommended for security and performance.  GitHub has thoroughly documented the process: Carefully follow the instructions for your platform to create an SSH key and add it to GitHub.com.
+
+[Windows](https://help.github.com/articles/generating-ssh-keys#platform-windows) – [OS X](https://help.github.com/articles/generating-ssh-keys#platform-mac) – [Linux](https://help.github.com/articles/generating-ssh-keys#platform-linux)
+
+On Windows, some GUI tools like TortoiseGit require a Putty SSH key instead of an OpenSSH key.  To convert the key you just generated to Putty format, launch Puttygen from the start menu, load your private key (~/.ssh/id_rsa), and then save the new private key (~/.ssh/id_rsa.ppk):
 
 ## Configuring Git Settings
+To start, you should configure some of Git’s global settings (which are saved in ~/.gitconfig).  If you leave out the --global flag, the settings will be applied only to your current repository, which is also fine.
 
 ## Information for Third Party Collaborators
 
