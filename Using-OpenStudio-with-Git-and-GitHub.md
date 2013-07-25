@@ -11,11 +11,12 @@
 - [Configuring Git Settings](Using-OpenStudio-with-Git-and-GitHub#configuring-git-settings)
 - [Information for Third Party Collaborators](Using-OpenStudio-with-Git-and-GitHub#information-for-third-party-collaborators)
 - [OpenStudio's Git Workflow](Using-OpenStudio-with-Git-and-GitHub#openstudios-git-workflow)
-- [Cloning the Repository to your Local Computer](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer)
+- [Cloning the Repository to Your Local Computer](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer)
 - [Listing Branches](Using-OpenStudio-with-Git-and-GitHub#listing-branches)
 - [Creating a Branch](Using-OpenStudio-with-Git-and-GitHub#creating-a-branch)
 - [Switching to an Existing Branch](Using-OpenStudio-with-Git-and-GitHub#switching-to-an-existing-branch)
 - [Committing Your Changes](Using-OpenStudio-with-Git-and-GitHub#committing-your-changes)
+- [Checking For Modifications](Using-OpenStudio-with-Git-and-GitHub#checking-for-modifications)
 - [Updating Your Local Repository, and Stashing](Using-OpenStudio-with-Git-and-GitHub#updating-your-local-repository-and-stashing)
 - [Reintegrating a Branch into Develop](Using-OpenStudio-with-Git-and-GitHub#reintegrating-a-branch-into-develop)
 - [Pushing All of Your Local Commits to GitHub](Using-OpenStudio-with-Git-and-GitHub#pushing-all-of-your-local-commits-to-github)
@@ -80,7 +81,7 @@ Finally, when your changes are ready to be approved for inclusion in the main Op
 ## OpenStudio's Git Workflow
 All work should be completed in feature branches created from the _develop_ branch.  Biweekly iterations will be branched from _develop_ to _iteration_, and releases will be branched from _iteration_ to _master_.  No commits or development work should be made to _iteration_ or _master_ unless you are authorized to modify that iteration or release.
 
-## Cloning the Repository to your Local Computer
+## Cloning the Repository to Your Local Computer
 Now that you have your SSH key configured, you can create a local clone of the repository.  If you want to download the latest stable release, select the _master_ branch.  Otherwise, if you want to work with the latest development code, use the _develop_ branch:
 
     git clone -b develop git@github.com:NREL/OpenStudio.git .
@@ -128,12 +129,108 @@ Then, you can checkout and switch to any local or remote branch with the followi
     git checkout develop
 
 ## Committing Your Changes
+To track new files, _and_ to stage modified files for commits:
+
+    git add mynewfile
+        or
+    git add mymodifiedfile
+
+After creating your branch and making changes, commit all your staged changes and modified/deleted files.  The first line of your commit message should be a very brief description of the commit, followed by more details:
+
+```bash
+git commit -m "#3 Bug number & brief commit summary go here (~65 chars)
+> More details can go on the additional lines [delivers #12345678]"
+```
+
+Adding a `-a` flag to your commit command will automatically commit all modified files, even if you haven't explicitly used `git add` on them.
+
+## Checking For Modifications
+To check for staged changes, unstaged changes, and untracked files:
+
+    git status
+        or
+    git status -sb
+
+Adding the `-s` flag produces a very concise status, and the `-b` flag tells it to indicate the current branch.
+
 ## Updating Your Local Repository, and Stashing
+To update your local repository and all branches, _and_ update the files in your current branch:
+
+    git pull
+        or, if you understand the consequences of rebasing,
+    git pull --rebase
+
+For more information about rebasing, please review the [online manual](http://git-scm.com/book/en/Git-Branching-Rebasing).
+
+If you have uncommitted changes and you're not ready to commit them, you will first need to stash your changes, then perform the pull, and then pop the changes:
+
+    git stash
+    git pull
+    git stash pop
+
+Without stashing and popping, you may see a message like this:
+
+A good example of when you might want to do this is if you're not ready yet to commit the changes, but for one reason or another you need a clean working directory.
+
+If the pop command triggered merge conflict resolution, the stashed changes won't be removed from the stash stack.  To explicitly remove the last item from the stash, use the following command:
+
+    git stash drop stash@{0}
+ 
+To view the current contents of the stash stack:
+
+    git stash list
+
 ## Reintegrating a Branch into Develop
+If a code review is necessary and your changes are complete, click the Compare button in your branch and follow [GitHub's instructions](https://help.github.com/articles/creating-a-pull-request) for submitting a pull request.  After creating the pull request, you can assign it to the bug or ticket owner for review.
+
+However, if your branch does not require a code review, then it can be merged immediately:
+
+    git checkout develop
+    git merge --no-ff mybranch
+
+The no-fast-forward `--no-ff` flag is important for merging to maintain branch history, and it stays consistent with GitHub's automatic merge settings:
+
 ## Pushing All of Your Local Commits to GitHub
+When you’re ready to share your changes and commits from any branch with the rest of the team:
+
+    git push origin
+
 ## Deleting A Branch
+To delete a local branch:
+
+    git branch -d mybranch
+
+To delete a remote branch directly, use the Delete Branch button on [GitHub](https://github.com/NREL/OpenStudio/branches).  Alternatively, you can use the following command:
+
+    git push origin --delete mybranch
+
+Note that if you delete an unmerged branch, the branch and all commits to it will be permanently deleted.
+
 ## Other Useful Commands
 ### Getting the Latest Commit Hash
+To produce the SHA1 hashes of the latest commit, such as 932bca9f7dfab0d698dcdc04032762b6525237d5 or 932bca9, use the following commands respectively:
+
+    git rev-parse HEAD
+        or
+    git rev-parse --short HEAD
+
 ### Viewing the Log
+To see the full git log or just that last 5 commits with concise output:
+
+    git log
+        or
+    git log --oneline --decorate -5
+
 ### Reverting All Working Directory Changes
+To revert all working directory changes and files to the latest commit:
+
+    git reset --hard
+
 ### File Operations
+To delete a file from your file system and the repository:
+
+    git rm myfile
+
+To rename or move a file:
+
+    git mv myfile mynewfile
