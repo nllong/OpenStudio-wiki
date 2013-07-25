@@ -236,23 +236,46 @@ Note that if you delete an unmerged branch, the branch and all commits to it wil
 
 ## Other Useful Commands
 ### Getting the Latest Commit Hash
-To produce the SHA1 hashes of the latest commit, such as 932bca9f7dfab0d698dcdc04032762b6525237d5 or 932bca9, use the following commands respectively:
+To produce the SHA1 hashes of the latest commit, such as 932bca9f7dfab0d698dcdc04032762b6525237d5 or 932bca9:
 
-    git rev-parse HEAD
-        or
-    git rev-parse --short HEAD
+```bash
+# full 40 byte hash
+git rev-parse HEAD
+
+# 7 byte hash
+git rev-parse --short HEAD
+
+# 10 byte hash
+git rev-parse HEAD | cut -c01-10
+```
 
 ### Viewing the Log
-To see the full git log or just that last 5 commits with concise output:
+To see the full git log or the last several commits with concise output:
 
-    git log
-        or
-    git log --oneline --decorate -5
+```bash
+# full log
+git log
+
+# last 5 commits, one line per commit
+git log --oneline --decorate -5
+
+# show a tree graph of commits and merges succinctly
+git log --graph --online
+```
 
 ### Reverting All Working Directory Changes
-To revert all working directory changes and files to the latest commit:
+To revert all uncommitted changes in your working directory changes:
 
     git reset --hard
+
+To destroy all untracked files and directories from your working directory:
+```bash
+# dry run - make sure you're not deleting something you want
+git clean -f -d -n
+
+# delete all untracked files and directories, not including _git ignored_ directories
+git clean -f -d
+```
 
 ### File Operations
 To delete a file from your file system and the repository:
