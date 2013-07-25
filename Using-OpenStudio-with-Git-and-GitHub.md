@@ -224,7 +224,7 @@ To delete a local branch:
 
     git branch -d mybranch
 
-To delete a remote branch directly, use the [[/images/Using-OpenStudio-with-Git-and-GitHub/client.github.png]] button on [GitHub](https://github.com/NREL/OpenStudio/branches).  Alternatively, you can use the following command:
+To delete a remote branch directly, use the [[/images/Using-OpenStudio-with-Git-and-GitHub/deletebranch.png]] button on [GitHub](https://github.com/NREL/OpenStudio/branches).  Alternatively, you can use the following command:
 
     git push origin --delete mybranch
 
