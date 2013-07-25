@@ -58,7 +58,17 @@ On Windows, some GUI tools like TortoiseGit require a Putty SSH key instead of a
 
 ## Configuring Git Settings
 To start, you should configure some of Git’s global settings (which are saved in ~/.gitconfig).  If you leave out the --global flag, the settings will be applied only to your current repository, which is also fine.
+```sh
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+git config --global push.default simple
+```
+The [user.name setting](https://help.github.com/articles/setting-your-username-in-git) can be anything, although we recommend using your real name.  The user.email setting should match an email that you have associated with your GitHub account.  Finally, the push.default setting is just to set the push behavior to the new default for Git 2.0 and avoid notices on the command line.
 
+There are [many more configuration settings](http://git-scm.com/book/en/Customizing-Git-Git-Configuration) as well.  To see all of your current settings:
+```sh
+git config --list
+```
 ## Information for Third Party Collaborators
 
 ## OpenStudio's Git Workflow
