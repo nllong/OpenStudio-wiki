@@ -31,6 +31,7 @@
 Depending on your operating system and personal preferences, there are a variety of options for interacting with the repository on your computer:
 
 ### GitHub for Windows
+[[/images/Using-OpenStudio-with-Git-and-GitHub/client.github.png]]
 A very simple, intuitive GUI for Windows users.  This GUI will be sufficient for most third party contributors.  Only works with github.com.
 
 [Windows](http://github-windows.s3.amazonaws.com/GitHubSetup.exe)
