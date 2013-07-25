@@ -2,7 +2,7 @@
 _https://github.com/NREL/OpenStudio_
 
 # Contents
-[Interacting with Git][]
+[Interacting with Git](Using-OpenStudio-with-Git-and-GitHub#interacting-with-git)
 
 &nbsp;&nbsp;&nbsp;&nbsp;[GitHub for Windows](#github-for-windows)
 
