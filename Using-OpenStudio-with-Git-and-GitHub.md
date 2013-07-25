@@ -99,6 +99,7 @@ Finally, when your changes are ready to be approved for inclusion in the main Op
 All work should be completed in feature branches created from the _develop_ branch.  Biweekly iterations will be branched from _develop_ to _iteration_, and releases will be branched from _iteration_ to _master_.  No commits or development work should be made to _iteration_ or _master_ unless you are authorized to modify that iteration or release.
 
 [[/images/Using-OpenStudio-with-Git-and-GitHub/workflow.png]]
+_Modified from http://nvie.com/posts/a-successful-git-branching-model/_
 
 ## Cloning the Repository to Your Local Computer
 Now that you have your SSH key configured, you can create a local clone of the repository.  If you want to download the latest stable release, select the _master_ branch.  Otherwise, if you want to work with the latest development code, use the _develop_ branch:
@@ -213,6 +214,7 @@ However, if your branch does not require a code review, then it can be merged im
 The no-fast-forward `--no-ff` flag is important for merging to maintain branch history, and it stays consistent with GitHub's automatic merge settings:
 
 [[/images/Using-OpenStudio-with-Git-and-GitHub/no-ff.png]]
+_Credit: http://nvie.com/posts/a-successful-git-branching-model/_
 
 ## Pushing All of Your Local Commits to GitHub
 When you're ready to share your changes and commits from any branch with the rest of the team:
