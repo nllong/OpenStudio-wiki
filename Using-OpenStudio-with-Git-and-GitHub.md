@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ **Using OpenStudio with Git and GitHub**
+> [Wiki](Home) ? **Using OpenStudio with Git and GitHub**
 
 ## Contents
 - [Interacting with Git](Using-OpenStudio-with-Git-and-GitHub#interacting-with-git)
@@ -27,8 +27,12 @@
     * [File Operations](Using-OpenStudio-with-Git-and-GitHub#file-operations)
 
 ## Interacting with Git
+Depending on your operating system and personal preferences, there are a variety of options for interacting with the repository on your computer:
+
 ### GitHub for Windows
-Text
+A very simple, intuitive GUI for Windows users.  This GUI will be sufficient for most third party contributors.  Only works with github.com.
+
+[Win](http://github-windows.s3.amazonaws.com/GitHubSetup.exe)
 ### Command Line
 Text
 ### TortoiseGit
@@ -46,3 +50,23 @@ Text
 ## Information for Third Party Collaborators
 
 ## OpenStudio's Git Workflow
+
+
+
+
+
+
+## Cloning the Repository to your Local Computer
+## Listing Branches
+## Creating a Branch
+## Switching to an Existing Branch
+## Committing Your Changes
+## Updating Your Local Repository, and Stashing
+## Reintegrating a Branch into Develop
+## Pushing All of Your Local Commits to GitHub
+## Deleting A Branch
+## Other Useful Commands
+### Getting the Latest Commit Hash
+### Viewing the Log
+### Reverting All Working Directory Changes
+### File Operations
