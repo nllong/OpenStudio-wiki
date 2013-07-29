@@ -260,7 +260,7 @@ git log
 git log --oneline --decorate -5
 
 # show a tree graph of commits and merges succinctly
-git log --graph --online
+git log --graph --oneline
 ```
 
 ### Reverting All Working Directory Changes
@@ -273,7 +273,7 @@ To destroy all untracked files and directories from your working directory:
 # dry run - make sure you're not deleting something you want
 git clean -f -d -n
 
-# delete all untracked files and directories, not including _git ignored_ directories
+# delete all untracked files and directories, not including directories that are ignored by git
 git clean -f -d
 ```
 
