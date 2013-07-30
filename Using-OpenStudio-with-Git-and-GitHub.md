@@ -3,7 +3,7 @@
 ## Contents
 - [Interacting with Git](Using-OpenStudio-with-Git-and-GitHub#interacting-with-git)
     * [GitHub for Windows](Using-OpenStudio-with-Git-and-GitHub#github-for-windows)
-    * [Command Line](Using-OpenStudio-with-Git-and-GitHub#command-line)
+    * [Command Line Interface](Using-OpenStudio-with-Git-and-GitHub#command-line-interface)
     * [TortoiseGit](Using-OpenStudio-with-Git-and-GitHub#tortoisegit)
     * [SmartGit/Hg](Using-OpenStudio-with-Git-and-GitHub#smartgithg)
     * [Git Extensions](Using-OpenStudio-with-Git-and-GitHub#git-extensions)
@@ -21,11 +21,13 @@
 - [Reintegrating a Branch into Develop](Using-OpenStudio-with-Git-and-GitHub#reintegrating-a-branch-into-develop)
 - [Pushing All of Your Local Commits to GitHub](Using-OpenStudio-with-Git-and-GitHub#pushing-all-of-your-local-commits-to-github)
 - [Deleting A Branch](Using-OpenStudio-with-Git-and-GitHub#deleting-a-branch)
+- [Synchronizing Your Fork with NREL/OpenStudio](Using-OpenStudio-with-Git-and-GitHub#synchronizing-your-fork-with-nrelopenstudio)
 - [Other Useful Commands](Using-OpenStudio-with-Git-and-GitHub#other-useful-commands)
     * [Getting the Latest Commit Hash](Using-OpenStudio-with-Git-and-GitHub#getting-the-latest-commit-hash)
     * [Viewing the Log](Using-OpenStudio-with-Git-and-GitHub#viewing-the-log)
-    * [Reverting All Working Directory Changes](Using-OpenStudio-with-Git-and-GitHub#reverting-all-working-directory-changes)
+    * [Reverting Working Directory Changes](Using-OpenStudio-with-Git-and-GitHub#reverting-working-directory-changes)
     * [File Operations](Using-OpenStudio-with-Git-and-GitHub#file-operations)
+    * [Creating Your Own Git Commands](Using-OpenStudio-with-Git-and-GitHub#creating-your-own-git-commands)
 
 ## Interacting with Git
 Depending on your operating system and personal preferences, there are a variety of options for interacting with the repository on your computer:
@@ -37,7 +39,7 @@ A very simple, intuitive GUI for Windows users.  This GUI will be sufficient for
 
 [Windows](http://github-windows.s3.amazonaws.com/GitHubSetup.exe)
 
-### Command Line
+### Command Line Interface
 [[/images/Using-OpenStudio-with-Git-and-GitHub/client.bash.png]]
 
 Ideal for power users and for running commands directly on the repository.  It also includes a basic Git GUI, as well as gitk, a low-level Git GUI.  This may be a prerequisite for some of the following tools, and also comes packaged with some of the following tools.
@@ -234,6 +236,21 @@ To delete a remote branch directly, use the [[/images/Using-OpenStudio-with-Git-
 
 Note that if you delete an unmerged branch, the branch and all commits to it will be permanently deleted.
 
+## Synchronizing Your Fork with NREL/OpenStudio
+If you want to update your fork with the latest changes from OpenStudio's main repository, you will first have to add an upstream remote, and then merge the latest changes to your fork:
+
+```bash
+# add the remote
+git remote add upstream git@github.com:NREL/OpenStudio.git
+
+# grab the upstream remote's branches
+git fetch upstream
+
+# merge NREL/OpenStudio's develop branch into your fork's develop branch
+git checkout develop
+git merge upstream/develop
+```
+
 ## Other Useful Commands
 ### Getting the Latest Commit Hash
 To produce the SHA1 hashes of the latest commit, such as 932bca9f7dfab0d698dcdc04032762b6525237d5 or 932bca9:
@@ -250,8 +267,6 @@ git rev-parse HEAD | cut -c01-10
 ```
 
 ### Viewing the Log
-To see the full git log or the last several commits with concise output:
-
 ```bash
 # full log
 git log
@@ -261,10 +276,13 @@ git log --oneline --decorate -5
 
 # show a tree graph of commits and merges succinctly
 git log --graph --oneline
+
+# view committed changes that haven't yet been pushed
+git log origin/develop..develop
 ```
 
-### Reverting All Working Directory Changes
-To revert all uncommitted changes in your working directory changes:
+### Reverting Working Directory Changes
+To revert all uncommitted changes in your working directory:
 
     git reset --hard
 
@@ -277,6 +295,18 @@ git clean -f -d -n
 git clean -f -d
 ```
 
+To change the commit message of your last commit:
+
+    git commit --amend -m "New commit message"
+
+To undo the last commit (while still keeping the file changes):
+
+    git reset --soft HEAD^
+
+To revert a single file:
+
+    git checkout path/to/file/to/revert
+
 ### File Operations
 To delete a file from your file system and the repository:
 
@@ -285,3 +315,18 @@ To delete a file from your file system and the repository:
 To rename or move a file:
 
     git mv myfile mynewfile
+
+### Creating Your Own Git Commands
+To create a shorthand command for a long command that you use frequently, you can create an alias.
+
+To create the command `git rev` that returns a 10 byte revision hash:
+
+    git config --global alias.rev '!git rev-parse HEAD | cut -c01-10'
+
+To make a much prettier log command with `git lg` (Credit: [jukie.net](http://www.jukie.net/bart/blog/pimping-out-git-log)):
+
+    git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+
+To delete an alias:
+
+    git config --global --unset alias.myAlias
