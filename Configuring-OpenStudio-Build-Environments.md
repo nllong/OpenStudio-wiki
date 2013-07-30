@@ -6,7 +6,7 @@
     * [Windows 7/XP, Visual Studio 2008](Configuring-OpenStudio-Build-Environments#windows-7xp-visual-studio-2008)
         - [Professional](Configuring-OpenStudio-Build-Environments#professional)
         - [Express](Configuring-OpenStudio-Build-Environments#express)
-    * [Windows 7, Visual Studio 2010](Configuring-OpenStudio-Build-Environments#windows-7-visual-studio-2010)
+    * [Windows 7, Visual Studio 2010 Professional](Configuring-OpenStudio-Build-Environments#windows-7-visual-studio-2010-professional)
         - [Professional](Configuring-OpenStudio-Build-Environments#professional-1)
 - [Linux Configuration](Configuring-OpenStudio-Build-Environments#linux-configuration)
     * [Ubuntu 12.04 (x86 and x64)](Configuring-OpenStudio-Build-Environments#ubuntu-1204-x86-and-x64)
