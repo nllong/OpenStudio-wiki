@@ -80,7 +80,7 @@ Add `C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin` to the System `Path` vari
 Windows SDK 6.0A that comes with Visual Studio 2008 Professional is sufficient, but it is recommended that the Windows SDK 6.1, .NET Framework 4, Windows SDK 7.1, and all relevant Windows Updates be installed, with 7.1 set as the current SDK and added to the System Path.
 
 #### Express
-_Order of installation is important_
+_Order of installation is important:_
 
 Install [Visual C++ 2008 Express SP1](http://go.microsoft.com/?linkid=7729279) (the Silverlight Runtime and SQL Server 2008 Express options are unnecessary and may be unchecked)
 
@@ -101,10 +101,12 @@ Install [Visual C# 2008 Express SP1](http://go.microsoft.com/?linkid=7729278) (t
 It is recommended that all important Windows Updates be installed.
 
 ### Windows 7, Visual Studio 2010 Professional
+Install Visual Studio 2010 Professional SP1
+
 Install [Boost](http://boostpro.com/download/boost_1_47_setup.exe) for the Visual C++ 10.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
 > _v1.47.0 MSVC installer tested and working_
 
-Install [Qt Libraries](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-win-opensource-4.8.5-vs2010.exe)
+Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-win-opensource-4.8.5-vs2010.exe)
 > _Latest v4.8.5 tested and working_
 
 Add `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin` to the System `Path` variable
@@ -117,14 +119,14 @@ Build Dependencies:
 sudo apt-get install dpkg-dev subversion cmake-curses-gui libqt4-dev libboost-all-dev ruby-dev ruby swig libxt-dev doxygen graphviz
 ```
 
-EnergyPlus 8.0
+Install EnergyPlus 8.0
 ```bash
 # Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
 sudo sh SetEPlusV800008-lin-64.sh
 rm SetEPlusV800008-lin-64.sh
 ```
 
-CMake
+Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.11.2.tar.gz)
 ```bash
 sudo apt-get install libncurses-dev
 wget http://www.cmake.org/files/v2.8/cmake-2.8.11.2.tar.gz
@@ -156,7 +158,7 @@ export F77=gfortran
 make
 sudo make install
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/dakota-5.3.1/lib' >> ~/.bashrc
-cd ../..
+cd ../../
 rm -rf dakota-5.3.1.src
 ```
 
@@ -179,7 +181,7 @@ Dakota
 _Dakota 5.3.1 is untested with Ubuntu 13_
 
 ### Fedora 19 (x86 and x64)
-Build Dependencies:
+Prerequisites:
 ```bash
 sudo yum groupinstall development-libs development-tools
 sudo yum install gcc-c++ cmake swig patch qt-devel qtwebkit-devel ruby ruby-devel graphviz
@@ -308,13 +310,13 @@ ccmake ..
 export F77=gfortran
 make
 sudo make install
-cd ../..
+cd ../../
 rm -rf dakota-5.3.1.src
 ```
 
 EnergyPlus 8.0
 
-RHEL will require a special EnergyPlus build for 8.0 due to glibc incompatibility
+_RHEL will require a special EnergyPlus build for 8.0 due to glibc incompatibility_
 
 ```bash
 curl -O http://apps1.eere.energy.gov/buildings/energyplus/download/SetEPlusV800008-lin-64-RHEL5.sh
@@ -333,7 +335,7 @@ Install Xcode from the App Store:
 > Install the command line tools from `Xcode->Preferences->Downloads->Components->Command Line Tools`
 > Install the latest Auxiliary Tools for Xcode from `Xcode->Open Developer Tool->More Developer Tools...` then drag PackageMaker.app to `/Applications/`
 
-Boost
+Install Boost
 ```bash
 curl -O http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
 tar -xzf boost_1_47_0.tar.gz
@@ -348,7 +350,7 @@ cd ../../
 rm -rf boost_1_47_0
 ```
 
-SWIG
+Install SWIG
 ```bash
 curl -O ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.33.tar.gz
 tar -xzf pcre-8.33.tar.gz
@@ -371,7 +373,7 @@ rm -rf swig-2.0.10
 ```
 
 ### OS X 10.7
-Qt
+Install Qt
 ```bash
 curl -O http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
 tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
@@ -384,16 +386,15 @@ cd ..
 rm -rf qt-everywhere-opensource-src-4.8.5
 
 #sudo nano /etc/paths
-##Add "/usr/local/Trolltech/Qt-4.8.5/bin"
+# Add `/usr/local/Trolltech/Qt-4.8.5/bin`
 ```
 
-For Building Documentation
-
+#### For Building Documentation
 > Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.4.dmg) and drag it to Applications
 > Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/lion/graphviz-2.30.1.pkg)
 
 ### OS X 10.8
-Qt
+Install Qt
 ```bash
 curl -O http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
 tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
@@ -402,7 +403,7 @@ cd qt-everywhere-opensource-src-4.8.5
 cd src/3rdparty/webkit/WebKitLibraries
 mv libWebKitSystemInterfaceMountainLion.a libWebKitSystemInterfaceMountainLion.a.bak
 cp libWebKitSystemInterfaceLion.a libWebKitSystemInterfaceMountainLion.a
-cd ../../../..
+cd ../../../../
 ./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
 make
 sudo make install
@@ -410,10 +411,9 @@ cd ..
 rm -rf qt-everywhere-opensource-src-4.8.5
 
 #sudo nano /etc/paths
-##Add "/usr/local/Trolltech/Qt-4.8.5/bin"
+# Add `/usr/local/Trolltech/Qt-4.8.5/bin`
 ```
 
-For Building Documentation
-
+#### For Building Documentation
 > Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.4.dmg) and drag it to Applications
 > Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/mountainlion/graphviz-2.30.1.pkg)
