@@ -240,7 +240,7 @@ Note that if you delete an unmerged branch, the branch and all commits to it wil
 If you want to update your fork with the latest changes from OpenStudio's main repository, you will first have to add an upstream remote, and then merge the latest changes to your fork:
 
 ```bash
-# add the remote
+# set the upstream remote once
 git remote add upstream git@github.com:NREL/OpenStudio.git
 
 # grab the upstream remote's branches
