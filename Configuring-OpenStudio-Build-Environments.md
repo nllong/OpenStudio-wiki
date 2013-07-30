@@ -111,12 +111,17 @@ Add `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin` to the System `Pat
 ## Linux Configuration
 
 ### Ubuntu 12.04 (x86 and x64)
-All Dependencies (except EnergyPlus):
+Build Dependencies:
 ```bash
 sudo apt-get install dpkg-dev subversion cmake-curses-gui libqt4-dev libboost-all-dev ruby-dev ruby swig libxt-dev doxygen graphviz
 ```
 
-Install [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus) with the correct architecture
+EnergyPlus 8.0
+```bash
+# Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
+sudo sh SetEPlusV800008-lin-64.sh
+rm SetEPlusV800008-lin-64.sh
+```
 
 CMake
 ```bash
@@ -132,9 +137,70 @@ cd ..
 rm -rf cmake-2.8.11.2
 ```
 
+Dakota
+```bash
+sudo apt-get install gfortran libatlas-base-dev liblapack-dev
+
+# Download DAKOTA 5.3.1 first
+tar -xzf dakota-5.3.1-public-src.tar.gz
+rm dakota-5.3.1-public-src.tar.gz
+cd dakota-5.3.1.src
+mkdir build
+cd build
+ccmake ..
+#Set CMAKE_BUILD_TYPE to ‘Release’
+#Set CMAKE_INSTALL_PREFIX to `/usr/local/dakota-5.3.1`
+#Ensure HAVE_X_GRAPHICS is set to OFF
+export F77=gfortran
+make
+sudo make install
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/dakota-5.3.1/lib' >> ~/.bashrc
+cd ../..
+rm -rf dakota-5.3.1.src
+```
+
 ### Ubuntu 13.04 (x86 and x64)
+Build Dependencies:
+```bash
+sudo apt-get install dpkg-dev subversion cmake-curses-gui libqt4-dev libboost1.49-all-dev ruby1.8-dev ruby1.8 swig libssl-dev libxt-dev doxygen graphviz
+sudo ln -fs /usr/bin/ruby1.8 /usr/bin/ruby
+```
+
+EnergyPlus 8.0
+```bash
+# Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
+sudo sh SetEPlusV800008-lin-64.sh
+rm SetEPlusV800008-lin-64.sh
+```
+
+Dakota
+_Dakota 5.3.1 is untested with Ubuntu 13_
 
 ### Fedora 19 (x86 and x64)
+Build Dependencies:
+```bash
+sudo yum groupinstall development-libs development-tools
+sudo yum install gcc-c++ cmake swig patch qt-devel qtwebkit-devel ruby ruby-devel graphviz
+sudo yum remove boost-devel
+curl -O http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
+tar -xzf boost_1_47_0.tar.gz
+rm boost_1_47_0.tar.gz
+cd boost_1_47_0
+# Apply patch https://svn.boost.org/trac/boost/ticket/6165
+# Replace all instances of “TIME_UTC” with “TIME_UTC_” in boost/thread/xtime.hpp and libs/thread/src/pthread/timeconv.inl
+sh ./bootstrap.sh
+./b2
+sudo ./b2 install --prefix=/usr/local
+cd ..
+rm -rf boost_1_47_0
+```
+
+EnergyPlus 8.0
+```bash
+# Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
+sudo sh SetEPlusV800008-lin-64.sh
+rm SetEPlusV800008-lin-64.sh
+```
 
 ### RHEL 5 (x86 and x64)
 
