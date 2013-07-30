@@ -6,4 +6,5 @@
 
 * [[Information for Third Party Collaborators]]
 * [[Using OpenStudio with Git and GitHub]]
+* [[Configuring OpenStudio Build Environments]]
 * [[EnergyPlus Version Change]]
