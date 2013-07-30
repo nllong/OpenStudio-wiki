@@ -297,7 +297,9 @@ git clean -f -d
 
 To change the commit message of your last commit:
 
-    git commit --amend -m "New commit message"
+```bash
+git commit --amend -m "New commit message"
+```
 
 To undo the last commit (while still keeping the file changes):
 
@@ -321,11 +323,15 @@ To create a shorthand command for a long command that you use frequently, you ca
 
 To create the command `git rev` that returns a 10 byte revision hash:
 
-    git config --global alias.rev '!git rev-parse HEAD | cut -c01-10'
+```bash
+git config --global alias.rev '!git rev-parse HEAD | cut -c01-10'
+```
 
 To make a much prettier log command with `git lg` (Credit: [jukie.net](http://www.jukie.net/bart/blog/pimping-out-git-log)):
 
-    git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+```bash
+git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+```
 
 To delete an alias:
 
