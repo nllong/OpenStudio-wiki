@@ -390,8 +390,9 @@ rm -rf qt-everywhere-opensource-src-4.8.5
 ```
 
 #### For Building Documentation
-> Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.4.dmg) and drag it to Applications
-> Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/lion/graphviz-2.30.1.pkg)
+Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.4.dmg) and drag it to Applications
+
+Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/lion/graphviz-2.30.1.pkg)
 
 ### OS X 10.8
 Install Qt
@@ -415,5 +416,6 @@ rm -rf qt-everywhere-opensource-src-4.8.5
 ```
 
 #### For Building Documentation
-> Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.4.dmg) and drag it to Applications
-> Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/mountainlion/graphviz-2.30.1.pkg)
+Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.4.dmg) and drag it to Applications
+
+Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/mountainlion/graphviz-2.30.1.pkg)
