@@ -256,8 +256,8 @@ tar -xzf boost_1_47_0.tar.gz
 rm boost_1_47_0.tar.gz
 cd boost_1_47_0
 ./bootstrap.sh
-./bjam
-sudo ./bjam install
+./b2
+sudo ./b2 install --prefix=/usr/local
 cd ..
 rm -rf boost_1_47_0
 			
