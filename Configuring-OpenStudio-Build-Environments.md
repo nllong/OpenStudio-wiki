@@ -6,7 +6,7 @@
 - [Linux](Configuring-OpenStudio-Build-Environments#linux)
 - [Mac](Configuring-OpenStudio-Build-Environments#mac)
 
-**Advanced**: Manual Build Instructions:
+**Advanced**: [Manual Build Instructions](Configuring-OpenStudio-Build-Environments#manual-build-instructions)
 - [Windows Configuration](Configuring-OpenStudio-Build-Environments#windows-configuration)
     * [Prerequisites](Configuring-OpenStudio-Build-Environments#prerequisites)
     * [Windows 7/XP, Visual Studio 2008](Configuring-OpenStudio-Build-Environments#windows-7xp-visual-studio-2008)
@@ -23,7 +23,7 @@
     * [OS X 10.7](Configuring-OpenStudio-Build-Environments#os-x-107)
     * [OS X 10.8](Configuring-OpenStudio-Build-Environments#os-x-108)
 
-## Using the Superbuild
+# Using the Superbuild
 This is the fastest, most reliable method of getting a working OpenStudio build.
 
 ### Windows
@@ -47,6 +47,8 @@ Clone the repository, create a build directory, and launch CMake:
 [[/images/Configuring-OpenStudio-Build-Environments/cmake.mac.png]]
 
 ---
+
+# Manual Build Instructions
 
 ## Windows Configuration
 
