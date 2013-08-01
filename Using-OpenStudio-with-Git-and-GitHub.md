@@ -113,7 +113,9 @@ The final dot is required if you want to clone into your current directory.  Wit
 
 If you choose to use the HTTPS protocol instead of SSH, you may encounter a SSL certificate issue.  This can be caused by enterprise network equipment.  If you determine that the warning is a false positive, you can instruct Git to ignore the warning:
 
-    git config http.sslVerify "false"
+```bash
+git config http.sslVerify "false"
+```
 
 ## Listing Branches
 When viewing branches, the current branch is marked with an asterisk.  To view local branches:
