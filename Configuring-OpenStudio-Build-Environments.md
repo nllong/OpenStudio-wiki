@@ -24,7 +24,7 @@
     * [OS X 10.8](Configuring-OpenStudio-Build-Environments#os-x-108)
 
 # Using the Superbuild
-This is the fastest, most reliable method of getting a working OpenStudio build.
+This is the fastest, most reliable method of getting a working OpenStudio build.  These instructions assume that you have successfully [cloned the OpenStudio repository](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer) already.
 
 ### Windows
 Install Visual Studio 2008 or 2010, CMake, OpenSSL, and EnergyPlus 8.0
