@@ -34,10 +34,19 @@ Clone the repository, create a build directory, and launch CMake:
 [[/images/Configuring-OpenStudio-Build-Environments/cmake.windows.png]]
 
 ### Linux
+Install the command line tools and EnergyPlus 8.0.
+
+Clone the repository, create a build directory, and launch CMake:
 
 
 ### Mac
+Install Xcode, Xcode's command line tools, CMake, and EnergyPlus 8.0.
 
+Clone the repository, create a build directory, and launch CMake:
+
+[[/images/Configuring-OpenStudio-Build-Environments/cmake.mac.png]]
+
+---
 
 ## Windows Configuration
 
@@ -137,7 +146,7 @@ Add `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin` to the System `Pat
 ### Ubuntu 12.04 (x86 and x64)
 Build Dependencies:
 ```bash
-sudo apt-get install dpkg-dev subversion cmake-curses-gui libqt4-dev libboost-all-dev ruby-dev ruby swig libxt-dev doxygen graphviz
+sudo apt-get install dpkg-dev cmake-curses-gui libqt4-dev libboost-all-dev ruby-dev ruby swig libxt-dev doxygen graphviz
 ```
 
 Install EnergyPlus 8.0
