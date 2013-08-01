@@ -1,6 +1,12 @@
 > [Wiki](Home) ▸ **Configuring OpenStudio Build Environments**
 
 ## Contents
+**Recommended**: [Using the Superbuild](Configuring-OpenStudio-Build-Environments#using-the-superbuild)
+- [Windows](Configuring-OpenStudio-Build-Environments#windows)
+- [Linux](Configuring-OpenStudio-Build-Environments#linux)
+- [Mac](Configuring-OpenStudio-Build-Environments#mac)
+
+**Advanced**: Manual Build Instructions:
 - [Windows Configuration](Configuring-OpenStudio-Build-Environments#windows-configuration)
     * [Prerequisites](Configuring-OpenStudio-Build-Environments#prerequisites)
     * [Windows 7/XP, Visual Studio 2008](Configuring-OpenStudio-Build-Environments#windows-7xp-visual-studio-2008)
@@ -16,6 +22,22 @@
     * [Prerequisites](Configuring-OpenStudio-Build-Environments#prerequisites-1)
     * [OS X 10.7](Configuring-OpenStudio-Build-Environments#os-x-107)
     * [OS X 10.8](Configuring-OpenStudio-Build-Environments#os-x-108)
+
+## Using the Superbuild
+This is the fastest, most reliable method of getting a working OpenStudio build.
+
+### Windows
+Install Visual Studio 2008 or 2010, CMake, OpenSSL, and EnergyPlus 8.0
+
+Clone the repository, create a build directory, and launch CMake:
+
+[[/images/Configuring-OpenStudio-Build-Environments/cmake.windows.png]]
+
+### Linux
+
+
+### Mac
+
 
 ## Windows Configuration
 
