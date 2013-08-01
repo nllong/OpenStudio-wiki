@@ -34,7 +34,7 @@ Clone the repository, create a build directory, and launch CMake:
 [[/images/Configuring-OpenStudio-Build-Environments/cmake.windows.png]]
 
 ### Linux
-Install the command line tools and EnergyPlus 8.0.
+Install the command line tools and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
     sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost-all-dev libxt-dev
 
@@ -43,7 +43,7 @@ Clone the repository, create a build directory, and launch CMake:
 [[/images/Configuring-OpenStudio-Build-Environments/cmake.linux.png]]
 
 ### Mac
-Install Xcode, Xcode's command line tools, CMake, and EnergyPlus 8.0.
+Install Xcode, Xcode's command line tools, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.11.2-Darwin64-universal.dmg), and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
 Clone the repository, create a build directory, and launch CMake:
 
@@ -370,7 +370,7 @@ Install Xcode from the App Store:
 > Install the command line tools from `Xcode->Preferences->Downloads->Components->Command Line Tools`
 > Install the latest Auxiliary Tools for Xcode from `Xcode->Open Developer Tool->More Developer Tools...` then drag PackageMaker.app to `/Applications/`
 
-Install Boost
+Install [Boost](http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz)
 ```bash
 curl -O http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
 tar -xzf boost_1_47_0.tar.gz
@@ -385,7 +385,7 @@ cd ../../
 rm -rf boost_1_47_0
 ```
 
-Install SWIG
+Install [SWIG](http://prdownloads.sourceforge.net/swig/swig-2.0.10.tar.gz)
 ```bash
 curl -O ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.33.tar.gz
 tar -xzf pcre-8.33.tar.gz
@@ -408,7 +408,7 @@ rm -rf swig-2.0.10
 ```
 
 ### OS X 10.7
-Install Qt
+Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz)
 ```bash
 curl -O http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
 tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
@@ -430,7 +430,7 @@ Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.4.dmg) and 
 Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/lion/graphviz-2.30.1.pkg)
 
 ### OS X 10.8
-Install Qt
+Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz)
 ```bash
 curl -O http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
 tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
