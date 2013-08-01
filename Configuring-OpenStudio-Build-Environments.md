@@ -27,7 +27,7 @@
 This is the fastest, most reliable method of getting a working OpenStudio build.  These instructions assume that you have successfully [cloned the OpenStudio repository](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer) already.
 
 ### Windows
-Install Visual Studio 2008 or 2010, CMake, OpenSSL, and EnergyPlus 8.0
+Install Visual Studio 2008 or 2010, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.11.2-win32-x86.exe), [OpenSSL](http://slproweb.com/download/Win32OpenSSL-1_0_1e.exe), and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
 Clone the repository, create a build directory, and launch CMake:
 
@@ -36,8 +36,11 @@ Clone the repository, create a build directory, and launch CMake:
 ### Linux
 Install the command line tools and EnergyPlus 8.0.
 
+    sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost-all-dev libxt-dev
+
 Clone the repository, create a build directory, and launch CMake:
 
+[[/images/Configuring-OpenStudio-Build-Environments/cmake.linux.png]]
 
 ### Mac
 Install Xcode, Xcode's command line tools, CMake, and EnergyPlus 8.0.
