@@ -148,7 +148,7 @@ Add `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin` to the System `Pat
 ### Ubuntu 12.04 (x86 and x64)
 Build Dependencies:
 ```bash
-sudo apt-get install dpkg-dev cmake-curses-gui libqt4-dev libboost-all-dev ruby-dev ruby swig libxt-dev doxygen graphviz
+sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost-all-dev ruby-dev ruby swig libxt-dev doxygen graphviz
 ```
 
 Install EnergyPlus 8.0
