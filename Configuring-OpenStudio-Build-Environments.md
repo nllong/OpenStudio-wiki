@@ -408,6 +408,13 @@ cd ..
 rm -rf swig-2.0.10
 ```
 
+Modify `~/.bash_profile` to help give CMake defaults for the build options
+
+```bash
+export CMAKE_OSX_ARCHITECTURES='i386;x86_64'
+export MACOSX_DEPLOYMENT_TARGET=10.7
+```
+
 ### OS X 10.7
 Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz)
 ```bash
