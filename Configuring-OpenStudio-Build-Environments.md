@@ -368,6 +368,7 @@ Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.11.2-Darwin64-universa
 
 Install Xcode from the App Store:
 > Install the command line tools from `Xcode->Preferences->Downloads->Components->Command Line Tools`
+>
 > Install the latest Auxiliary Tools for Xcode from `Xcode->Open Developer Tool->More Developer Tools...` then drag PackageMaker.app to `/Applications/`
 
 Install [Boost](http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz)
