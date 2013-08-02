@@ -92,7 +92,7 @@ There are [many more configuration settings](http://git-scm.com/book/en/Customiz
     git config --list
 
 ## Information for Third Party Collaborators
-If you'd to use a GUI for managing the repository, follow the [GUI instructions for third party collaborators](instructions-for-third-party-collaborators).
+If you'd to use a GUI for managing the repository, follow the [GUI instructions for third party collaborators](Information-for-Third-Party-Collaborators).
 
 Otherwise, in the following clone step, replace _NREL_ in the clone URL with your GitHub username.
 Finally, when your changes are ready to be approved for inclusion in the main OpenStudio repository, click the [[/images/Using-OpenStudio-with-Git-and-GitHub/compare.png]] Compare button in your fork and follow [GitHub's instructions](https://help.github.com/articles/creating-a-pull-request) for submitting a pull request.
