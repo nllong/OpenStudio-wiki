@@ -208,6 +208,10 @@ To view the current contents of the stash stack:
 
     git stash list
 
+To view the contents of an individual stash:
+
+    git stash show
+
 ## Reintegrating a Branch into Develop
 If a code review is necessary and your changes are complete, click the [[/images/Using-OpenStudio-with-Git-and-GitHub/compare.png]] Compare button in your branch and follow [GitHub's instructions](https://help.github.com/articles/creating-a-pull-request) for submitting a pull request.  After creating the pull request, you can assign it to the bug or ticket owner for review.
 
