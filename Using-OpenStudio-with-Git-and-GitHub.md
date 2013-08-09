@@ -327,10 +327,10 @@ To rename or move a file:
 ### Creating Your Own Git Commands
 To create a shorthand command for a long command that you use frequently, you can create an alias.
 
-To create the command `git rev` that returns a 10 byte revision hash:
+To create the command `git rev` that returns a 10 byte revision hash *and* copies it to your clipboard:
 
 ```bash
-git config --global alias.rev '!git rev-parse HEAD | cut -c01-10'
+git config --global alias.rev '!git rev-parse HEAD | cut -c01-10 | clip; git rev-parse HEAD | cut -c01-10'
 ```
 
 To make a much prettier log command with `git lg` (Credit: [jukie.net](http://www.jukie.net/bart/blog/pimping-out-git-log)):
