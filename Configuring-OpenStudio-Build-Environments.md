@@ -427,9 +427,7 @@ make
 sudo make install
 cd ..
 rm -rf qt-everywhere-opensource-src-4.8.5
-
-#sudo nano /etc/paths
-# Add `/usr/local/Trolltech/Qt-4.8.5/bin`
+echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.5/bin' >> ~/.bash_profile
 ```
 
 #### For Building Documentation
@@ -464,9 +462,7 @@ make
 sudo make install
 cd ..
 rm -rf qt-everywhere-opensource-src-4.8.5
-
-#sudo nano /etc/paths
-# Add `/usr/local/Trolltech/Qt-4.8.5/bin`
+echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.5/bin' >> ~/.bash_profile
 ```
 
 #### For Building Documentation
