@@ -221,7 +221,7 @@ Prerequisites:
 sudo yum groupinstall development-libs development-tools
 sudo yum install gcc-c++ cmake swig patch qt-devel qtwebkit-devel ruby ruby-devel graphviz
 sudo yum remove boost-devel
-curl -O http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
+curl -LO http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
 tar -xzf boost_1_47_0.tar.gz
 rm boost_1_47_0.tar.gz
 cd boost_1_47_0
@@ -354,7 +354,7 @@ EnergyPlus 8.0
 _RHEL will require a special EnergyPlus build for 8.0 due to glibc incompatibility_
 
 ```bash
-curl -O http://apps1.eere.energy.gov/buildings/energyplus/download/SetEPlusV800008-lin-64-RHEL5.sh
+curl -LO http://apps1.eere.energy.gov/buildings/energyplus/download/SetEPlusV800008-lin-64-RHEL5.sh
 sudo sh ./SetEPlusV800008-lin-64-RHEL5.sh
 rm SetEPlusV800008-lin-64-RHEL5.sh
 ```
@@ -371,24 +371,9 @@ Install Xcode from the App Store:
 >
 > Install the latest Auxiliary Tools for Xcode from `Xcode->Open Developer Tool->More Developer Tools...` then drag PackageMaker.app to `/Applications/`
 
-Install [Boost](http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz)
-```bash
-curl -O http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
-tar -xzf boost_1_47_0.tar.gz
-rm boost_1_47_0.tar.gz
-cd boost_1_47_0
-# Apply patch: https://svn.boost.org/trac/boost/attachment/ticket/6686/xcode_43.diff
-sh ./bootstrap.sh
-./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version=10.7 --without-python --without-math install --prefix=build -j2
-cd build
-sudo cp -r * /usr/local/
-cd ../../
-rm -rf boost_1_47_0
-```
-
 Install [SWIG](http://prdownloads.sourceforge.net/swig/swig-2.0.10.tar.gz)
 ```bash
-curl -O ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.33.tar.gz
+curl -LO ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.33.tar.gz
 tar -xzf pcre-8.33.tar.gz
 rm pcre-8.33.tar.gz
 cd pcre-8.33
@@ -397,7 +382,7 @@ make
 sudo make install
 cd ..
 rm -rf pcre-8.33
-curl -O http://prdownloads.sourceforge.net/swig/swig-2.0.10.tar.gz
+curl -LO http://prdownloads.sourceforge.net/swig/swig-2.0.10.tar.gz
 tar -xzf swig-2.0.10.tar.gz
 rm swig-2.0.10.tar.gz
 cd swig-2.0.10
@@ -416,9 +401,24 @@ export MACOSX_DEPLOYMENT_TARGET=10.7
 ```
 
 ### OS X 10.7
+Install [Boost](http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz)
+```bash
+curl -LO http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
+tar -xzf boost_1_47_0.tar.gz
+rm boost_1_47_0.tar.gz
+cd boost_1_47_0
+# Apply patch: https://svn.boost.org/trac/boost/attachment/ticket/6686/xcode_43.diff
+sh ./bootstrap.sh
+./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version-min=10.6 macosx-version=10.7 --without-python --without-math install --prefix=build -j2
+cd build
+sudo cp -r * /usr/local/
+cd ../../
+rm -rf boost_1_47_0
+```
+
 Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz)
 ```bash
-curl -O http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
+curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
 tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
 rm qt-everywhere-opensource-src-4.8.5.tar.gz
 cd qt-everywhere-opensource-src-4.8.5
@@ -438,17 +438,28 @@ Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.4.dmg) and 
 Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/lion/graphviz-2.30.1.pkg)
 
 ### OS X 10.8
+Install [Boost](http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz)
+```bash
+curl -LO http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
+tar -xzf boost_1_47_0.tar.gz
+rm boost_1_47_0.tar.gz
+cd boost_1_47_0
+# Apply patch: https://svn.boost.org/trac/boost/attachment/ticket/6686/xcode_43.diff
+sh ./bootstrap.sh
+./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version-min=10.7 macosx-version=10.8 --without-python --without-math install --prefix=build -j2
+cd build
+sudo cp -r * /usr/local/
+cd ../../
+rm -rf boost_1_47_0
+```
+
 Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz)
 ```bash
-curl -O http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
+curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
 tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
 rm qt-everywhere-opensource-src-4.8.5.tar.gz
 cd qt-everywhere-opensource-src-4.8.5
-cd src/3rdparty/webkit/WebKitLibraries
-mv libWebKitSystemInterfaceMountainLion.a libWebKitSystemInterfaceMountainLion.a.bak
-cp libWebKitSystemInterfaceLion.a libWebKitSystemInterfaceMountainLion.a
-cd ../../../../
-./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
+./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
 make
 sudo make install
 cd ..
