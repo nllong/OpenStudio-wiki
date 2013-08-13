@@ -409,7 +409,7 @@ rm boost_1_47_0.tar.gz
 cd boost_1_47_0
 # Apply patch: https://svn.boost.org/trac/boost/attachment/ticket/6686/xcode_43.diff
 sh ./bootstrap.sh
-./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version-min=10.6 macosx-version=10.7 --without-python --without-math install --prefix=build -j2
+./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version=10.6 --without-python --without-math install --prefix=build -j2
 cd build
 sudo cp -r * /usr/local/
 cd ../../
@@ -422,7 +422,7 @@ curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everyw
 tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
 rm qt-everywhere-opensource-src-4.8.5.tar.gz
 cd qt-everywhere-opensource-src-4.8.5
-./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
+./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
 make
 sudo make install
 cd ..
@@ -444,7 +444,7 @@ rm boost_1_47_0.tar.gz
 cd boost_1_47_0
 # Apply patch: https://svn.boost.org/trac/boost/attachment/ticket/6686/xcode_43.diff
 sh ./bootstrap.sh
-./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version-min=10.7 macosx-version=10.8 --without-python --without-math install --prefix=build -j2
+./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version=10.7 --without-python --without-math install --prefix=build -j2
 cd build
 sudo cp -r * /usr/local/
 cd ../../
@@ -457,8 +457,8 @@ curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everyw
 tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
 rm qt-everywhere-opensource-src-4.8.5.tar.gz
 cd qt-everywhere-opensource-src-4.8.5
-./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
-make
+./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
+make -j2
 sudo make install
 cd ..
 rm -rf qt-everywhere-opensource-src-4.8.5
