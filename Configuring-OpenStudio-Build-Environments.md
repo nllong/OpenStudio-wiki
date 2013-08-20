@@ -94,7 +94,7 @@ Install [NSIS](http://prdownloads.sourceforge.net/nsis/nsis-2.46-setup.exe?downl
 > _v2.46 tested and working_
 
 ### Windows 7/XP, Visual Studio 2008
-Install [Boost](http://boostpro.com/download/boost_1_47_setup.exe) for the Visual C++ 9.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
+Install [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47_setup.exe) for the Visual C++ 9.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
 > _v1.47.0 MSVC installer tested and working_
 
 Install [Qt Libraries](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-win-opensource-4.8.5-vs2008.exe)
@@ -138,7 +138,7 @@ It is recommended that all important Windows Updates be installed.
 ### Windows 7, Visual Studio 2010 Professional
 Install Visual Studio 2010 Professional SP1
 
-Install [Boost](http://boostpro.com/download/boost_1_47_setup.exe) for the Visual C++ 10.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
+Install [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47_setup.exe) for the Visual C++ 10.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
 > _v1.47.0 MSVC installer tested and working_
 
 Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-win-opensource-4.8.5-vs2010.exe)
