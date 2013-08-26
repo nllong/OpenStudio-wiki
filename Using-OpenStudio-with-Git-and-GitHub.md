@@ -337,8 +337,8 @@ git config --global alias.rev '!git rev-parse HEAD | cut -c1-10 | tr -d "\n" | c
 git config --global alias.rev '!git rev-parse HEAD | cut -c1-10 | tr -d "\n" | pbcopy; git rev-parse HEAD | cut -c1-10'
 
 # Linux
-sudo apt-get install xclip
-git config --global alias.rev '!git rev-parse HEAD | cut -c1-10 | tr -d "\n" | xclip; git rev-parse HEAD | cut -c1-10'
+sudo apt-get install xsel
+git config --global alias.rev '!git rev-parse HEAD | cut -c1-10 | tr -d "\n" | xsel -b; git rev-parse HEAD | cut -c1-10'
 ```
 
 To make a much prettier log command with `git lg` (Credit: [jukie.net](http://www.jukie.net/bart/blog/pimping-out-git-log)):
