@@ -409,10 +409,8 @@ rm boost_1_47_0.tar.gz
 cd boost_1_47_0
 # Apply patch: https://svn.boost.org/trac/boost/attachment/ticket/6686/xcode_43.diff
 sh ./bootstrap.sh
-./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version=10.6 --without-python --without-math install --prefix=build -j2
-cd build
-sudo cp -r * /usr/local/
-cd ../../
+sudo ./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version=10.6 --without-python --without-math install --prefix=/usr/local -j2
+cd ..
 rm -rf boost_1_47_0
 ```
 
@@ -444,10 +442,8 @@ rm boost_1_47_0.tar.gz
 cd boost_1_47_0
 # Apply patch: https://svn.boost.org/trac/boost/attachment/ticket/6686/xcode_43.diff
 sh ./bootstrap.sh
-./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version=10.7 --without-python --without-math install --prefix=build -j2
-cd build
-sudo cp -r * /usr/local/
-cd ../../
+sudo ./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version=10.7 --without-python --without-math install --prefix=/usr/local -j2
+cd ..
 rm -rf boost_1_47_0
 ```
 
