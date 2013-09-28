@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ **Configuring OpenStudio Build Environments**
+> [Wiki](Home) ? **Configuring OpenStudio Build Environments**
 
 ## Contents
 **Recommended**: [Using the Superbuild](Configuring-OpenStudio-Build-Environments#using-the-superbuild)
@@ -59,8 +59,8 @@ Clone the repository, create a build directory, and launch CMake:
 Extract [Ruby](http://developer.nrel.gov/downloads/buildings/openstudio/src/ruby-1.8.6-msvc.zip) to `C:\Ruby`
 > _v1.8.6 MSVC tested and working_
 
-Extract [SWIG](http://sourceforge.net/projects/swig/files/swigwin/swigwin-2.0.10/swigwin-2.0.10.zip/download) to `C:\swig\swigwin-2.0.10`
-> _Latest v2.0.10 tested and working_
+Extract [SWIG](http://sourceforge.net/projects/swig/files/swigwin/swigwin-2.0.11/swigwin-2.0.11.zip/download) to `C:\swig\swigwin-2.0.11`
+> _Latest v2.0.11 tested and working_
 
 Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.11.2-win32-x86.exe) with the option of adding CMake to the system PATH for all users
 > _Latest v2.8.11.2 tested and working_
@@ -73,14 +73,14 @@ Extract [DAKOTA](http://dakota.sandia.gov/download.html) to C:\dakota-5.3.1-publ
 
 Install [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus)
 
-Append `C:\Ruby\bin;C:\Qt\4.8.5\bin;C:\swig\swigwin-2.0.10;C:\Program Files (x86)\boost\boost_1_47` to the System `Path` variable
+Append `C:\Ruby\bin;C:\Qt\4.8.5\bin;C:\swig\swigwin-2.0.11;C:\Program Files (x86)\boost\boost_1_47` to the System `Path` variable
 
 #### For Building Documentation
-Install [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.4-setup.exe)
-> _Latest v1.8.4 tested and working_
+Install [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.5-setup.exe)
+> _Latest v1.8.5 tested and working_
 
-Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.30.1.msi)
-> _Latest v2.30.1 tested and working_
+Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.34.0.msi)
+> _Latest v2.34.0 tested and working_
 
 #### For Building C# Bindings
 Install [Sandcastle](http://sandcastle.codeplex.com/releases/view/47665?DownloadId=128770)
@@ -271,18 +271,18 @@ rm -rf rubygems-2.0.4
 gem install rake
 
 ###############
-# SWIG 2.0.10 #
+# SWIG 2.0.11 #
 ###############
-wget http://prdownloads.sourceforge.net/swig/swig-2.0.10.tar.gz
-tar -xzf swig-2.0.10.tar.gz
-rm swig-2.0.10.tar.gz
-cd swig-2.0.10
+wget http://prdownloads.sourceforge.net/swig/swig-2.0.11.tar.gz
+tar -xzf swig-2.0.11.tar.gz
+rm swig-2.0.11.tar.gz
+cd swig-2.0.11
 sudo yum install pcre-devel
 ./configure 
 make
 sudo make install
 cd ..
-rm -rf swig-2.0.10
+rm -rf swig-2.0.11
 
 ################
 # Boost 1.47.0 #
@@ -371,7 +371,7 @@ Install Xcode from the App Store:
 >
 > Install the latest Auxiliary Tools for Xcode from `Xcode->Open Developer Tool->More Developer Tools...` then drag PackageMaker.app to `/Applications/`
 
-Install [SWIG](http://prdownloads.sourceforge.net/swig/swig-2.0.10.tar.gz)
+Install [SWIG](http://prdownloads.sourceforge.net/swig/swig-2.0.11.tar.gz)
 ```bash
 curl -LO ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.33.tar.gz
 tar -xzf pcre-8.33.tar.gz
@@ -382,15 +382,15 @@ make
 sudo make install
 cd ..
 rm -rf pcre-8.33
-curl -LO http://prdownloads.sourceforge.net/swig/swig-2.0.10.tar.gz
-tar -xzf swig-2.0.10.tar.gz
-rm swig-2.0.10.tar.gz
-cd swig-2.0.10
+curl -LO http://prdownloads.sourceforge.net/swig/swig-2.0.11.tar.gz
+tar -xzf swig-2.0.11.tar.gz
+rm swig-2.0.11.tar.gz
+cd swig-2.0.11
 ./configure
 make
 sudo make install
 cd ..
-rm -rf swig-2.0.10
+rm -rf swig-2.0.11
 ```
 
 Modify `~/.bash_profile` to help give CMake defaults for the build options
@@ -429,9 +429,9 @@ echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.5/bin' >> ~/.bash_profile
 ```
 
 #### For Building Documentation
-Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.4.dmg) and drag it to Applications
+Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.5.dmg) and drag it to Applications
 
-Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/lion/graphviz-2.30.1.pkg)
+Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/lion/graphviz-2.34.0.pkg)
 
 ### OS X 10.8
 Install [Boost](http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz)
@@ -462,6 +462,6 @@ echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.5/bin' >> ~/.bash_profile
 ```
 
 #### For Building Documentation
-Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.4.dmg) and drag it to Applications
+Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.5.dmg) and drag it to Applications
 
-Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/mountainlion/graphviz-2.30.1.pkg)
+Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/mountainlion/graphviz-2.34.0.pkg)
