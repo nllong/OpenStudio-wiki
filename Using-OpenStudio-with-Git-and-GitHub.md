@@ -331,14 +331,14 @@ To create the command `git rev` that returns a 10 byte revision hash *and* copie
 
 ```bash
 # Windows with Git Bash
-git config --global alias.rev '!git rev-parse HEAD | cut -c1-10 | tr -d "\n" | clip; git rev-parse HEAD | cut -c1-10'
+git config --global alias.rev '!git rev-parse --short=10 HEAD | tr -d "\n" | clip; git rev-parse --short=10 HEAD'
 
 # OS X
-git config --global alias.rev '!git rev-parse HEAD | cut -c1-10 | tr -d "\n" | pbcopy; git rev-parse HEAD | cut -c1-10'
+git config --global alias.rev '!git rev-parse --short=10 HEAD | tr -d "\n" | pbcopy; git rev-parse --short=10 HEAD'
 
 # Linux
 sudo apt-get install xsel
-git config --global alias.rev '!git rev-parse HEAD | cut -c1-10 | tr -d "\n" | xsel -b; git rev-parse HEAD | cut -c1-10'
+git config --global alias.rev '!git rev-parse --short=10 HEAD | tr -d "\n" | xsel -b; git rev-parse --short=10 HEAD'
 ```
 
 To make a much prettier log command with `git lg` (Credit: [jukie.net](http://www.jukie.net/bart/blog/pimping-out-git-log)):
