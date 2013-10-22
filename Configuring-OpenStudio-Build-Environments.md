@@ -1,4 +1,4 @@
-> [Wiki](Home) ? **Configuring OpenStudio Build Environments**
+> [Wiki](Home) ▸ **Configuring OpenStudio Build Environments**
 
 ## Contents
 **Recommended**: [Using the Superbuild](Configuring-OpenStudio-Build-Environments#using-the-superbuild)
