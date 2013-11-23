@@ -257,6 +257,14 @@ git checkout develop
 git merge upstream/develop
 ```
 
+If you have made commits to your fork but want to reset it:
+```bash
+git fetch upstream
+git checkout develop
+git reset --hard upstream/develop
+git push origin develop --force 
+```
+
 ## Other Useful Commands
 ### Getting the Latest Commit Hash
 To produce the SHA1 hashes of the latest commit, such as 932bca9f7dfab0d698dcdc04032762b6525237d5 or 932bca9:
