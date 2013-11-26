@@ -494,3 +494,25 @@ cd ..
 rm -rf qt-everywhere-opensource-src-4.8.5
 echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.5/bin' >> ~/.bash_profile
 ```
+
+For convenience, consider making Ruby 1.8 the system default:
+```bash
+cd /usr/bin
+sudo mv erb erb2.0
+sudo mv gem gem2.0
+sudo mv irb irb2.0
+sudo mv rake rake2.0
+sudo mv rdoc rdoc2.0
+sudo mv ri ri2.0
+sudo mv ruby ruby2.0
+sudo mv testrb testrb.2.0
+
+sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/erb erb
+sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/gem gem
+sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/irb irb
+sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/rake rake
+sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/rdoc rdoc
+sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ri ri
+sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby ruby
+sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/testrb testrb
+```
