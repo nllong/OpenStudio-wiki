@@ -22,6 +22,7 @@
     * [Prerequisites](Configuring-OpenStudio-Build-Environments#prerequisites-1)
     * [OS X 10.7](Configuring-OpenStudio-Build-Environments#os-x-107)
     * [OS X 10.8](Configuring-OpenStudio-Build-Environments#os-x-108)
+    * [OS X 10.9](Configuring-OpenStudio-Build-Environments#os-x-109)
 
 # Using the Superbuild
 This is the fastest, most reliable method of getting a working OpenStudio build.  These instructions assume that you have successfully [cloned the OpenStudio repository](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer) already.
@@ -465,3 +466,31 @@ echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.5/bin' >> ~/.bash_profile
 Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.5.dmg) and drag it to Applications
 
 Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/mountainlion/graphviz-2.34.0.pkg)
+
+### OS X 10.9
+Install [Boost](http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz)
+```bash
+curl -LO http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
+tar -xzf boost_1_47_0.tar.gz
+rm boost_1_47_0.tar.gz
+cd boost_1_47_0
+# Apply patch: https://svn.boost.org/trac/boost/attachment/ticket/6686/xcode_43.diff
+sh ./bootstrap.sh
+sudo ./b2 cxxflags="-stdlib=libstdc++" linkflags="-stdlib=libstdc++" variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version-min=10.8 macosx-version=10.8 --without-python --without-math install --prefix=/usr/local -j2
+cd ..
+rm -rf boost_1_47_0
+```
+
+Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz)
+```bash
+curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
+tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
+rm qt-everywhere-opensource-src-4.8.5.tar.gz
+cd qt-everywhere-opensource-src-4.8.5
+./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -debug-and-release -opensource -openssl -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-phonon -no-phonon-backend -no-qt3support -confirm-license
+make -j2
+sudo make install
+cd ..
+rm -rf qt-everywhere-opensource-src-4.8.5
+echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.5/bin' >> ~/.bash_profile
+```
