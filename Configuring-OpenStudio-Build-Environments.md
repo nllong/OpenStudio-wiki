@@ -12,7 +12,9 @@
     * [Windows 7/XP, Visual Studio 2008](Configuring-OpenStudio-Build-Environments#windows-7xp-visual-studio-2008)
         - [Professional](Configuring-OpenStudio-Build-Environments#professional)
         - [Express](Configuring-OpenStudio-Build-Environments#express)
-    * [Windows 7, Visual Studio 2010 Professional](Configuring-OpenStudio-Build-Environments#windows-7-visual-studio-2010-professional)
+    * [Windows 7, Visual Studio 2010](Configuring-OpenStudio-Build-Environments#windows-7-visual-studio-2010)
+        - [Professional](Configuring-OpenStudio-Build-Environments#professional-1)
+        - [Express](Configuring-OpenStudio-Build-Environments#express-1)
 - [Linux Configuration](Configuring-OpenStudio-Build-Environments#linux-configuration)
     * [Ubuntu 12.04 (x86 and x64)](Configuring-OpenStudio-Build-Environments#ubuntu-1204-x86-and-x64)
     * [Ubuntu 13.04 (x86 and x64)](Configuring-OpenStudio-Build-Environments#ubuntu-1304-x86-and-x64)
@@ -135,16 +137,26 @@ Install [Visual C# 2008 Express SP1](http://go.microsoft.com/?linkid=7729278) (t
 ##### Special Notes
 It is recommended that all important Windows Updates be installed.
 
-### Windows 7, Visual Studio 2010 Professional
-Install Visual Studio 2010 Professional SP1
-
+### Windows 7, Visual Studio 2010
 Install [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47_setup.exe) for the Visual C++ 10.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
 > _v1.47.0 MSVC installer tested and working_
 
 Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-win-opensource-4.8.5-vs2010.exe)
 > _Latest v4.8.5 tested and working_
 
+#### Professional
+Install Visual Studio 2010 Professional SP1
+
 Add `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin` to the System `Path` variable
+
+#### Express
+Install [Visual C++ 2010 Express](http://go.microsoft.com/?linkid=9709939) (the Silverlight Runtime and SQL 
+Server 2008 Express options are unnecessary and may be unchecked)
+
+Install [Visual Studio 2010 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=23691)
+
+##### For Building C# Bindings
+Install [Visual C++ 2010 Express](http://go.microsoft.com/?linkid=9709949) (the Silverlight Runtime and SQL Server 2008 Express options are unnecessary and may be unchecked)
 
 ## Linux Configuration
 
