@@ -13,8 +13,10 @@
         - [Professional](Configuring-OpenStudio-Build-Environments#professional)
         - [Express](Configuring-OpenStudio-Build-Environments#express)
     * [Windows 7, Visual Studio 2010](Configuring-OpenStudio-Build-Environments#windows-7-visual-studio-2010)
-        - [Professional](Configuring-OpenStudio-Build-Environments#professional-1)
+        - [Professional](Configuring-OpenStudio-Build-Environments#professional-x64)
+        - [Professional x64](Configuring-OpenStudio-Build-Environments#professional-1)
         - [Express](Configuring-OpenStudio-Build-Environments#express-1)
+        - [Express x64](Configuring-OpenStudio-Build-Environments#express-x64)
 - [Linux Configuration](Configuring-OpenStudio-Build-Environments#linux-configuration)
     * [Ubuntu 12.04 (x86 and x64)](Configuring-OpenStudio-Build-Environments#ubuntu-1204-x86-and-x64)
     * [Ubuntu 13.04 (x86 and x64)](Configuring-OpenStudio-Build-Environments#ubuntu-1304-x86-and-x64)
@@ -149,14 +151,32 @@ Install Visual Studio 2010 Professional SP1
 
 Add `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin` to the System `Path` variable
 
+#### Professional x64
+Follow the previous instructions to configure the environment for VS2010 Professional.  Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64bit builds.
+
+The BUILD_QT, BUILD_BOOST, and BUILD_SWIG CMake options are required for 64bit builds, so they should be enabled.  Other options can be chosen like usual.
+
 #### Express
 Install [Visual C++ 2010 Express](http://go.microsoft.com/?linkid=9709939) (the Silverlight Runtime and SQL 
 Server 2008 Express options are unnecessary and may be unchecked)
 
 Install [Visual Studio 2010 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=23691)
 
+The MSVC_IS_EXPRESS CMake option is required and should be enabled.
+
 ##### For Building C# Bindings
-Install [Visual C++ 2010 Express](http://go.microsoft.com/?linkid=9709949) (the Silverlight Runtime and SQL Server 2008 Express options are unnecessary and may be unchecked)
+Install [Visual C# 2010 Express](http://go.microsoft.com/?linkid=9709949) (the Silverlight Runtime and SQL Server 2008 Express options are unnecessary and may be unchecked)
+
+#### Express x64
+Follow the previous instructions to configure the environment for VS2010 Express with optional C# support.  
+
+Install [Windows SDK 7.1](http://www.microsoft.com/download/en/confirmation.aspx?id=8279), and then add `C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin` to the System `Path` variable.
+
+Also add `C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64` to the System `Path` variable.
+
+Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64bit builds.
+
+The BUILD_QT, BUILD_BOOST, BUILD_SWIG, and MSVC_IS_EXPRESS CMake options are required for 64bit builds, so they should be enabled.  Other options can be chosen like usual.
 
 ## Linux Configuration
 
