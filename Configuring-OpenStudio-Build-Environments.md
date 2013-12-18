@@ -12,7 +12,7 @@
     * [Windows 7/XP, Visual Studio 2008](Configuring-OpenStudio-Build-Environments#windows-7xp-visual-studio-2008)
         - [Professional](Configuring-OpenStudio-Build-Environments#professional)
         - [Express](Configuring-OpenStudio-Build-Environments#express)
-    * [Windows 7, Visual Studio 2010](Configuring-OpenStudio-Build-Environments#windows-7-visual-studio-2010)
+    * [Windows 7/8.1, Visual Studio 2010](Configuring-OpenStudio-Build-Environments#windows-781-visual-studio-2010)
         - [Professional](Configuring-OpenStudio-Build-Environments#professional-1)
         - [Professional x64](Configuring-OpenStudio-Build-Environments#professional-x64)
         - [Express](Configuring-OpenStudio-Build-Environments#express-1)
@@ -139,7 +139,7 @@ Install [Visual C# 2008 Express SP1](http://go.microsoft.com/?linkid=7729278) (t
 ##### Special Notes
 It is recommended that all important Windows Updates be installed.
 
-### Windows 7, Visual Studio 2010
+### Windows 7/8.1, Visual Studio 2010
 Install [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47_setup.exe) for the Visual C++ 10.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
 > _v1.47.0 MSVC installer tested and working_
 
