@@ -277,7 +277,7 @@ git rev-parse HEAD
 git rev-parse --short HEAD
 
 # 10 byte hash
-git rev-parse HEAD | cut -c01-10
+git rev-parse --short=10 HEAD
 ```
 
 ### Viewing the Log
