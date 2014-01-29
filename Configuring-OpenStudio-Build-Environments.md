@@ -31,7 +31,7 @@
 This is the fastest, most reliable method of getting a working OpenStudio build.  These instructions assume that you have successfully [cloned the OpenStudio repository](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer) already.
 
 ### Windows
-Install Visual Studio 2008 or 2010, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12-win32-x86.exe), [OpenSSL](http://slproweb.com/download/Win32OpenSSL-1_0_1e.exe), and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
+Install Visual Studio 2008 or 2010, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe), [OpenSSL](http://slproweb.com/download/Win32OpenSSL-1_0_1e.exe), and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
 Clone the repository, create a build directory, and launch CMake:
 
@@ -47,7 +47,7 @@ Clone the repository, create a build directory, and launch CMake:
 [[/images/Configuring-OpenStudio-Build-Environments/cmake.linux.png]]
 
 ### Mac
-Install Xcode, Xcode's command line tools, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12-Darwin64-universal.dmg), and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
+Install Xcode, Xcode's command line tools, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Darwin64-universal.dmg), and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
 Clone the repository, create a build directory, and launch CMake:
 
@@ -66,8 +66,8 @@ Extract [Ruby](http://developer.nrel.gov/downloads/buildings/openstudio/src/ruby
 Extract [SWIG](http://sourceforge.net/projects/swig/files/swigwin/swigwin-2.0.11/swigwin-2.0.11.zip/download) to `C:\swig\swigwin-2.0.11`
 > _Latest v2.0.11 tested and working_
 
-Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12-win32-x86.exe) with the option of adding CMake to the system PATH for all users
-> _Latest v2.8.12 tested and working_
+Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe) with the option of adding CMake to the system PATH for all users
+> _Latest v2.8.12.2 tested and working_
 
 Install [OpenSSL](http://slproweb.com/download/Win32OpenSSL-1_0_1e.exe), ignoring the warning regarding Visual C++ 2008 Redistributables, with the option of copying OpenSSL DLLs to the OpenSSL binaries `/bin` directory
 > _Latest Win32 1.0.1e tested and working_
@@ -193,18 +193,18 @@ sudo sh SetEPlusV800008-lin-64.sh
 rm SetEPlusV800008-lin-64.sh
 ```
 
-Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.tar.gz)
+Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz)
 ```bash
 sudo apt-get install libncurses-dev
-wget http://www.cmake.org/files/v2.8/cmake-2.8.12.tar.gz
-tar -xzf cmake-2.8.12.tar.gz
-rm cmake-2.8.12.tar.gz
-cd cmake-2.8.12
+wget http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz
+tar -xzf cmake-2.8.12.2.tar.gz
+rm cmake-2.8.12.2.tar.gz
+cd cmake-2.8.12.2
 ./configure
 make
 sudo make install
 cd ..
-rm -rf cmake-2.8.12
+rm -rf cmake-2.8.12.2
 ```
 
 Dakota
@@ -347,17 +347,17 @@ cd ..
 rm -rf qt-everywhere-opensource-src-4.8.5
 
 ##################
-# CMake 2.8.12 #
+# CMake 2.8.12.2 #
 ##################
-wget http://www.cmake.org/files/v2.8/cmake-2.8.12.tar.gz
-tar -xzf cmake-2.8.12.tar.gz
-rm cmake-2.8.12.tar.gz
-cd cmake-2.8.12
+wget http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz
+tar -xzf cmake-2.8.12.2.tar.gz
+rm cmake-2.8.12.2.tar.gz
+cd cmake-2.8.12.2
 ./configure
 gmake
 sudo gmake install
 cd ..
-rm -rf cmake-2.8.12
+rm -rf cmake-2.8.12.2
 
 ################
 # Dakota 5.3.1 #
@@ -396,7 +396,7 @@ rm SetEPlusV800008-lin-64-RHEL5.sh
 ### Prerequisites
 Install [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus)
 
-Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12-Darwin64-universal.dmg) with the option of creating symbolic links in /usr/bin
+Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Darwin64-universal.dmg) with the option of creating symbolic links in /usr/bin
 
 Install Xcode from the App Store:
 > Install the command line tools from `Xcode->Preferences->Downloads->Components->Command Line Tools`
