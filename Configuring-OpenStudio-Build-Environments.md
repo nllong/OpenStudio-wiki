@@ -60,7 +60,7 @@ Clone the repository, create a build directory, and launch CMake:
 ## Windows Configuration
 
 ### Prerequisites
-Extract [Ruby](http://developer.nrel.gov/downloads/buildings/openstudio/src/ruby-1.8.6-msvc.zip) to `C:\Ruby`
+Extract [Ruby](http://developer.nrel.gov/downloads/buildings/openstudio/src/ruby-1.8.6-msvc-ssl.zip) to `C:\Ruby`
 > _v1.8.6 MSVC tested and working_
 
 Extract [SWIG](http://sourceforge.net/projects/swig/files/swigwin/swigwin-2.0.11/swigwin-2.0.11.zip/download) to `C:\swig\swigwin-2.0.11`
