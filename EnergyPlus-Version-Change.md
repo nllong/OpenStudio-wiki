@@ -37,3 +37,5 @@ In RunManager's BasementJob.cpp and SlabJob.cpp, update ToolVersion tv(foo,bar).
 In openstudiocore/src/utilities/sql/SqlFile_Impl.cpp, update the _insert_ query to the use the latest version, and update the _select_ query to look for the latest version in addition to all previous versions.
 
 In openstudiocore/src/openstudio_lib/RunTabView.cpp, update the locateEnergyPlus method to search for the latest version.
+
+In top level CMakeLists.txt update ENERGYPLUS_VERSION.
