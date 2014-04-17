@@ -61,3 +61,5 @@ Update ParallelEnergyPlus_Test.rb version strings.
 Update RunManagerWatcher_Test.rb version strings.
 
 Version translate openstudiocore/resources/runmanager/5ZoneWarmest.idf
+
+Update #define ENERGYPLUS_VERSION "8.1" in ForwardTranslator.cpp
