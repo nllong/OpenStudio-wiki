@@ -20,6 +20,7 @@
 - [Linux Configuration](Configuring-OpenStudio-Build-Environments#wiki-linux-configuration)
     * [Ubuntu 12.04 (x86 and x64)](Configuring-OpenStudio-Build-Environments#wiki-ubuntu-1204-x86-and-x64)
     * [Ubuntu 13.04 (x86 and x64)](Configuring-OpenStudio-Build-Environments#wiki-ubuntu-1304-x86-and-x64)
+    * [Ubuntu 14.04 (x86 and x64)](Configuring-OpenStudio-Build-Environments#wiki-ubuntu-1404-x86-and-x64)
     * [Fedora 19 (x86 and x64)](Configuring-OpenStudio-Build-Environments#wiki-fedora-19-x86-and-x64)
     * [RHEL 5 (x86 and x64)](Configuring-OpenStudio-Build-Environments#wiki-rhel-5-x86-and-x64)
 - [Mac Configuration](Configuring-OpenStudio-Build-Environments#wiki-mac-configuration)
@@ -71,9 +72,6 @@ Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe) wi
 
 Install [OpenSSL](http://slproweb.com/download/Win32OpenSSL-1_0_1e.exe), ignoring the warning regarding Visual C++ 2008 Redistributables, with the option of copying OpenSSL DLLs to the OpenSSL binaries `/bin` directory
 > _Latest Win32 1.0.1e tested and working_
-
-Extract [DAKOTA](http://dakota.sandia.gov/download.html) to C:\dakota-5.3.1-public-CYGWIN.i686
-> _Latest v5.3.1 tested and working_
 
 Install [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus)
 
@@ -207,32 +205,10 @@ cd ..
 rm -rf cmake-2.8.12.2
 ```
 
-Dakota
-```bash
-sudo apt-get install gfortran libatlas-base-dev liblapack-dev
-
-# Download DAKOTA 5.3.1 first
-tar -xzf dakota-5.3.1-public-src.tar.gz
-rm dakota-5.3.1-public-src.tar.gz
-cd dakota-5.3.1.src
-mkdir build
-cd build
-ccmake ..
-#Set CMAKE_BUILD_TYPE to ‘Release’
-#Set CMAKE_INSTALL_PREFIX to `/usr/local/dakota-5.3.1`
-#Ensure HAVE_X_GRAPHICS is set to OFF
-export F77=gfortran
-make
-sudo make install
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/dakota-5.3.1/lib' >> ~/.bashrc
-cd ../../
-rm -rf dakota-5.3.1.src
-```
-
 ### Ubuntu 13.04 (x86 and x64)
 Build Dependencies:
 ```bash
-sudo apt-get install dpkg-dev subversion cmake-curses-gui libqt4-dev libboost1.49-all-dev ruby1.8-dev ruby1.8 swig libssl-dev libxt-dev doxygen graphviz
+sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost1.49-all-dev ruby1.8-dev ruby1.8 swig libssl-dev libxt-dev doxygen graphviz
 sudo ln -fs /usr/bin/ruby1.8 /usr/bin/ruby
 ```
 
@@ -243,9 +219,21 @@ sudo sh SetEPlusV800008-lin-64.sh
 rm SetEPlusV800008-lin-64.sh
 ```
 
-Dakota
+### Ubuntu 14.04 (x86 and x64)
+Ubuntu 14 is not yet fully supported - the dependencies will be updated soon.
 
-_Dakota 5.3.1 is untested with Ubuntu 13_
+Build Dependencies:
+```bash
+sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost1.49-all-dev ruby1.8-dev ruby1.8 swig libssl-dev libxt-dev doxygen graphviz
+sudo ln -fs /usr/bin/ruby1.8 /usr/bin/ruby
+```
+
+EnergyPlus 8.0
+```bash
+# Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
+sudo sh SetEPlusV800008-lin-64.sh
+rm SetEPlusV800008-lin-64.sh
+```
 
 ### Fedora 19 (x86 and x64)
 Prerequisites:
@@ -358,28 +346,6 @@ gmake
 sudo gmake install
 cd ..
 rm -rf cmake-2.8.12.2
-
-################
-# Dakota 5.3.1 #
-################
-sudo yum -y install gcc-gfortran blas-devel lapack-devel
-
-# Download DAKOTA 5.3.1 first
-tar -xzf dakota-5.3.1-public-src.tar.gz
-rm dakota-5.3.1-public-src.tar.gz
-cd dakota-5.3.1.src
-mkdir build
-cd build
-ccmake ..
-#Set CMAKE_BUILD_TYPE to ‘Release’
-#Set CMAKE_INSTALL_PREFIX to `/usr/local/dakota-5.3.1`
-#Ensure HAVE_X_GRAPHICS is set to OFF
-export F77=gfortran
-make
-sudo make install
-cd ../../
-rm -rf dakota-5.3.1.src
-```
 
 EnergyPlus 8.0
 
