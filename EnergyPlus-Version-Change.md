@@ -39,3 +39,5 @@ In openstudiocore/src/utilities/sql/SqlFile_Impl.cpp, update the _insert_ query 
 In openstudiocore/src/openstudio_lib/RunTabView.cpp, update the locateEnergyPlus method to search for the latest version.
 
 In top level CMakeLists.txt update ENERGYPLUS_VERSION.
+
+Update IddFile_GTest.cpp version strings.
