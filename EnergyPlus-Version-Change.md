@@ -41,3 +41,5 @@ In openstudiocore/src/openstudio_lib/RunTabView.cpp, update the locateEnergyPlus
 In top level CMakeLists.txt update ENERGYPLUS_VERSION.
 
 Update IddFile_GTest.cpp version strings.
+
+Update RunManagerHelpers.rb version strings.
