@@ -9,9 +9,6 @@
 **Advanced**: [Manual Build Instructions](Configuring-OpenStudio-Build-Environments#wiki-manual-build-instructions)
 - [Windows Configuration](Configuring-OpenStudio-Build-Environments#wiki-windows-configuration)
     * [Prerequisites](Configuring-OpenStudio-Build-Environments#wiki-prerequisites)
-    * [Windows 7/XP, Visual Studio 2008](Configuring-OpenStudio-Build-Environments#wiki-windows-7xp-visual-studio-2008)
-        - [Professional](Configuring-OpenStudio-Build-Environments#wiki-professional)
-        - [Express](Configuring-OpenStudio-Build-Environments#wiki-express)
     * [Windows 7/8.1, Visual Studio 2010](Configuring-OpenStudio-Build-Environments#wiki-windows-781-visual-studio-2010)
         - [Professional](Configuring-OpenStudio-Build-Environments#wiki-professional-1)
         - [Professional x64](Configuring-OpenStudio-Build-Environments#wiki-professional-x64)
@@ -32,7 +29,7 @@
 This is the fastest, most reliable method of getting a working OpenStudio build.  These instructions assume that you have successfully [cloned the OpenStudio repository](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer) already.
 
 ### Windows
-Install Visual Studio 2008 or 2010, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe), [OpenSSL](http://slproweb.com/download/Win32OpenSSL-1_0_1e.exe), and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
+Install Visual Studio 2010, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe), and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
 Clone the repository, create a build directory, and launch CMake:
 
@@ -61,98 +58,53 @@ Clone the repository, create a build directory, and launch CMake:
 ## Windows Configuration
 
 ### Prerequisites
-Extract [Ruby](http://developer.nrel.gov/downloads/buildings/openstudio/src/ruby-1.8.6-msvc-ssl.zip) to `C:\Ruby`
-> _v1.8.6 MSVC tested and working_
-
-Extract [SWIG](http://sourceforge.net/projects/swig/files/swigwin/swigwin-2.0.12/swigwin-2.0.12.zip/download) to `C:\swig\swigwin-2.0.12`
-> _v2.0.12 tested and working_
+Extract [SWIG](http://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.0/swigwin-3.0.0.zip/download) to `C:\swig\swigwin-3.0.0`
+Append `C:\swig\swigwin-2.0.12;` to the System `Path` variable
+> _Latest v3.0.0 tested and working_
 
 Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe) with the option of adding CMake to the system PATH for all users
 > _Latest v2.8.12.2 tested and working_
 
-Install [OpenSSL](http://slproweb.com/download/Win32OpenSSL-1_0_1e.exe), ignoring the warning regarding Visual C++ 2008 Redistributables, with the option of copying OpenSSL DLLs to the OpenSSL binaries `/bin` directory
-> _Latest Win32 1.0.1e tested and working_
-
 Install [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus)
 
-Append `C:\Ruby\bin;C:\Qt\4.8.5\bin;C:\swig\swigwin-2.0.12;C:\Program Files (x86)\boost\boost_1_47` to the System `Path` variable
+Optionally extract [Ruby](http://developer.nrel.gov/downloads/buildings/openstudio/src/ruby-1.8.6-msvc-ssl.zip) to `C:\Ruby` if you want a convenient location to access the OpenStudio Ruby bindings
+> _v1.8.6 MSVC tested and working_
 
 #### For Building Documentation
 Install [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.6-setup.exe)
 > _Latest v1.8.6 tested and working_
 
-Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.36.0.msi)
-> _Latest v2.36.0 tested and working_
+Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.38.msi)
+> _Latest v2.38 tested and working_
 
 #### For Building C# Bindings
 Install [Sandcastle](http://sandcastle.codeplex.com/releases/view/47665?DownloadId=128770)
-> _Latest v2.6.1062.1 tested and working - XP Users: Requires .NET Framework 2.0 or higher, so if you get a warning, come back to this step after installing .NET Framework 4.0 as part of the Visual Studio installation steps_
+> _Latest v2.6.1062.1 tested and working
 
 #### For Using Radiance
 Install [Radiance](https://openstudio.nrel.gov/accept/file/1043) using the installer
+> _Latest v4.2a tested and working
 
 #### For Building Installer Packages
 Install [NSIS](http://prdownloads.sourceforge.net/nsis/nsis-2.46-setup.exe?download)
 > _v2.46 tested and working_
-
-### Windows 7/XP, Visual Studio 2008
-Install [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47_setup.exe) for the Visual C++ 9.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
-> _v1.47.0 MSVC installer tested and working_
-
-Install [Qt Libraries](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-win-opensource-4.8.5-vs2008.exe)
-> _Latest v4.8.5 tested and working_
-
-#### Professional
-Install Visual Studio 2008 Professional with the Complete option is recommended, or at least with Visual C++ and Visual C#
-
-Install [Windows SDK 6.1](http://www.microsoft.com/download/en/confirmation.aspx?id=11310)
-
-Install [.NET Framework 4](http://www.microsoft.com/download/en/confirmation.aspx?id=17851)
-
-Install [Windows SDK 7.1](http://www.microsoft.com/download/en/confirmation.aspx?id=8279), and launch the Windows SDK Configuration Tool to make 7.1 the current SDK `Start Menu->Microsoft Windows SDK v7.1->Visual Studio Registration->Windows SDK Configuration Tool`
-
-Add `C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin` to the System `Path` variable
-
-##### Special Notes
-Windows SDK 6.0A that comes with Visual Studio 2008 Professional is sufficient, but it is recommended that the Windows SDK 6.1, .NET Framework 4, Windows SDK 7.1, and all relevant Windows Updates be installed, with 7.1 set as the current SDK and added to the System Path.
-
-#### Express
-_Order of installation is important:_
-
-Install [Visual C++ 2008 Express SP1](http://go.microsoft.com/?linkid=7729279) (the Silverlight Runtime and SQL Server 2008 Express options are unnecessary and may be unchecked)
-
-Install [Windows SDK 6.1](http://www.microsoft.com/download/en/confirmation.aspx?id=11310)
-
-Install [.NET Framework 4](http://www.microsoft.com/download/en/confirmation.aspx?id=17851)
-
-Install [Windows SDK 7.1](http://www.microsoft.com/download/en/confirmation.aspx?id=8279), and launch the Windows SDK Configuration Tool to make 7.1 the current SDK `Start Menu->Microsoft Windows SDK v7.1->Visual Studio Registration->Windows SDK Configuration Tool`
-
-> VERY IMPORTANT: If your SDK 7.1 installation fails, uninstall all 2010 Redistributables from `Control Panel->Programs and Features`
-
-Add `C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin` to the System `Path` variable
-
-##### To Build C# Bindings
-Install [Visual C# 2008 Express SP1](http://go.microsoft.com/?linkid=7729278) (the Silverlight Runtime and SQL Server 2008 Express options are unnecessary and may be unchecked)
-
-##### Special Notes
-It is recommended that all important Windows Updates be installed.
 
 ### Windows 7/8.1, Visual Studio 2010
 Install [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47_setup.exe) for the Visual C++ 10.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
 > _v1.47.0 MSVC installer tested and working_
 
 Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-win-opensource-4.8.5-vs2010.exe)
-> _Latest v4.8.5 tested and working_
+> _v4.8.5 VS2010 tested and working_
 
 #### Professional
-Install Visual Studio 2010 Professional SP1
+Install [Visual Studio 2010 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=23691)
 
 Add `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin` to the System `Path` variable
 
 #### Professional x64
-Follow the previous instructions to configure the environment for VS2010 Professional.  Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64bit builds.
+Follow the previous instructions above to configure the environment for VS2010 Professional.  Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64-bit builds.
 
-The BUILD_QT, BUILD_BOOST, and BUILD_SWIG CMake options are required for 64bit builds, so they should be enabled.  Other options can be chosen like usual.
+The BUILD_QT, BUILD_BOOST, and BUILD_SWIG CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
 
 #### Express
 Install [Visual C++ 2010 Express](http://go.microsoft.com/?linkid=9709939) (the Silverlight Runtime and SQL 
@@ -168,13 +120,13 @@ Install [Visual C# 2010 Express](http://go.microsoft.com/?linkid=9709949) (the S
 #### Express x64
 Follow the previous instructions to configure the environment for VS2010 Express with optional C# support.  
 
-Install [Windows SDK 7.1](http://www.microsoft.com/download/en/confirmation.aspx?id=8279), and then add `C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin` to the System `Path` variable.
+Install [Windows SDK 7.1](http://www.microsoft.com/download/en/confirmation.aspx?id=8279), and then add `C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64` to the System `Path` variable.
 
-Also add `C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64` to the System `Path` variable.
+Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64-bit builds.
 
-Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64bit builds.
+The BUILD_QT, BUILD_BOOST, and BUILD_SWIG CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
 
-The BUILD_QT, BUILD_BOOST, BUILD_SWIG, and MSVC_IS_EXPRESS CMake options are required for 64bit builds, so they should be enabled.  Other options can be chosen like usual.
+The MSVC_IS_EXPRESS CMake option is required and should be enabled.
 
 ## Linux Configuration
 
@@ -203,20 +155,6 @@ make
 sudo make install
 cd ..
 rm -rf cmake-2.8.12.2
-```
-
-### Ubuntu 13.04 (x86 and x64)
-Build Dependencies:
-```bash
-sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost1.49-all-dev ruby1.8-dev ruby1.8 swig libssl-dev libxt-dev doxygen graphviz
-sudo ln -fs /usr/bin/ruby1.8 /usr/bin/ruby
-```
-
-EnergyPlus 8.0
-```bash
-# Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
-sudo sh SetEPlusV800008-lin-64.sh
-rm SetEPlusV800008-lin-64.sh
 ```
 
 ### Ubuntu 14.04 (x86 and x64)
@@ -365,30 +303,28 @@ Install [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/regis
 Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Darwin64-universal.dmg) with the option of creating symbolic links in /usr/bin
 
 Install Xcode from the App Store:
-> Install the command line tools from `Xcode->Preferences->Downloads->Components->Command Line Tools`
->
-> Install the latest Auxiliary Tools for Xcode from `Xcode->Open Developer Tool->More Developer Tools...` then drag PackageMaker.app to `/Applications/`
+> Download the Auxiliary Tools for Xcode - Late July 2012 from https://developer.apple.com/downloads/ then drag PackageMaker.app to `/Applications/`
 
-Install [SWIG](http://prdownloads.sourceforge.net/swig/swig-2.0.12.tar.gz)
+Install [SWIG](http://prdownloads.sourceforge.net/swig/swig-3.0.0.tar.gz)
 ```bash
-curl -LO ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.34.tar.gz
-tar -xzf pcre-8.34.tar.gz
-rm pcre-8.34.tar.gz
-cd pcre-8.34
+curl -LO ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.35.tar.gz
+tar -xzf pcre-8.35.tar.gz
+rm pcre-8.35.tar.gz
+cd pcre-8.35
 ./configure
 make
 sudo make install
 cd ..
-rm -rf pcre-8.34
-curl -LO http://prdownloads.sourceforge.net/swig/swig-2.0.12.tar.gz
-tar -xzf swig-2.0.12.tar.gz
-rm swig-2.0.12.tar.gz
-cd swig-2.0.12
+rm -rf pcre-8.35
+curl -LO http://prdownloads.sourceforge.net/swig/swig-3.0.0.tar.gz
+tar -xzf swig-3.0.0.tar.gz
+rm swig-3.0.0.tar.gz
+cd swig-3.0.0
 ./configure
 make
 sudo make install
 cd ..
-rm -rf swig-2.0.12
+rm -rf swig-3.0.0
 ```
 
 Modify `~/.bash_profile` to help give CMake defaults for the build options
@@ -408,7 +344,7 @@ cd boost_1_47_0
 curl -LO https://svn.boost.org/trac/boost/raw-attachment/ticket/6686/xcode_43.diff
 patch tools/build/v2/tools/darwin.jam xcode_43.diff
 sh ./bootstrap.sh
-sudo ./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version=10.7 --without-python --without-math install --prefix=/usr/local -j2
+sudo ./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version=10.8 --without-python --without-math install --prefix=/usr/local -j2
 cd ..
 rm -rf boost_1_47_0
 ```
@@ -419,7 +355,7 @@ curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everyw
 tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
 rm qt-everywhere-opensource-src-4.8.5.tar.gz
 cd qt-everywhere-opensource-src-4.8.5
-./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
+./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
 make -j2
 sudo make install
 cd ..
