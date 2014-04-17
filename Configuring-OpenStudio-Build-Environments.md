@@ -220,11 +220,11 @@ rm SetEPlusV800008-lin-64.sh
 ```
 
 ### Ubuntu 14.04 (x86 and x64)
-Ubuntu 14 is not yet fully supported - the dependencies will be updated soon.
+Ubuntu 14 is not yet fully supported - the dependencies (particularly Qt) will be updated soon.
 
 Build Dependencies:
 ```bash
-sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost1.49-all-dev ruby1.8-dev ruby1.8 swig libssl-dev libxt-dev doxygen graphviz
+sudo apt-get install dpkg-dev git cmake-curses-gui libboost1.55-all-dev ruby2.0-dev ruby2.0 swig libssl-dev libxt-dev doxygen graphviz
 sudo ln -fs /usr/bin/ruby1.8 /usr/bin/ruby
 ```
 
