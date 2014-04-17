@@ -471,7 +471,7 @@ sudo mv rake rake2.0
 sudo mv rdoc rdoc2.0
 sudo mv ri ri2.0
 sudo mv ruby ruby2.0
-sudo mv testrb testrb.2.0
+sudo mv testrb testrb2.0
 
 sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/erb erb
 sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/gem gem
