@@ -225,7 +225,7 @@ Ubuntu 14 is not yet fully supported - the dependencies (particularly Qt) will b
 Build Dependencies:
 ```bash
 sudo apt-get install dpkg-dev git cmake-curses-gui libboost1.55-all-dev ruby2.0-dev ruby2.0 swig libssl-dev libxt-dev doxygen graphviz
-sudo ln -fs /usr/bin/ruby1.8 /usr/bin/ruby
+sudo ln -fs /usr/bin/ruby2.0 /usr/bin/ruby
 ```
 
 EnergyPlus 8.0
