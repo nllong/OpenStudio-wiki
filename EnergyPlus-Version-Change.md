@@ -43,3 +43,20 @@ In top level CMakeLists.txt update ENERGYPLUS_VERSION.
 Update IddFile_GTest.cpp version strings.
 
 Update RunManagerHelpers.rb version strings.
+
+Update TimeDependentValuation_Test.rb version strings.
+
+Update ModelToRad.rb version strings.
+
+Update DaylightSim_Test.rb version strings.
+
+Update ModelToRad_Test.rb version strings.
+
+Update AdvancedRubyWorkflow1_Test.rb version strings.
+
+Update AdvancedRubyWorkflow3_Test.rb version strings.
+
+Update ParallelEnergyPlus_Test.rb version strings.
+
+Update RunManagerWatcher_Test.rb version strings.
+
