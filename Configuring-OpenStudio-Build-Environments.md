@@ -78,11 +78,11 @@ Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-
 
 #### For Building C# Bindings
 Install [Sandcastle](http://sandcastle.codeplex.com/releases/view/47665?DownloadId=128770)
-> _Latest v2.6.1062.1 tested and working
+> _Latest v2.6.1062.1 tested and working_
 
 #### For Using Radiance
 Install [Radiance](https://openstudio.nrel.gov/accept/file/1043) using the installer
-> _Latest v4.2a tested and working
+> _Latest v4.2a tested and working_
 
 #### For Building Installer Packages
 Install [NSIS](http://prdownloads.sourceforge.net/nsis/nsis-2.46-setup.exe?download)
