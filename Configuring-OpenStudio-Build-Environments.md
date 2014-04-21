@@ -57,8 +57,8 @@ Clone the repository, create a build directory, and launch CMake:
 ## Windows Configuration
 
 ### Prerequisites
-Extract [SWIG](http://sourceforge.net/projects/swig/files/swigwin/swigwin-3.0.0/swigwin-3.0.0.zip/download) to `C:\swig\swigwin-3.0.0`
-Append `C:\swig\swigwin-2.0.12;` to the System `Path` variable
+Extract [SWIG](http://developer.nrel.gov/downloads/buildings/openstudio/src/swigwin-3.0.0.zip) to `C:\swig\swigwin-3.0.0`
+Append `C:\swig\swigwin-3.0.0;` to the System `Path` variable
 > _Latest v3.0.0 tested and working_
 
 Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe) with the option of adding CMake to the system PATH for all users
@@ -228,18 +228,18 @@ rm -rf rubygems-2.0.4
 gem install rake
 
 ###############
-# SWIG 2.0.12 #
+# SWIG 3.0.0 #
 ###############
-wget http://prdownloads.sourceforge.net/swig/swig-2.0.12.tar.gz
-tar -xzf swig-2.0.12.tar.gz
-rm swig-2.0.12.tar.gz
-cd swig-2.0.12
+wget http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.0.tar.gz
+tar -xzf swig-3.0.0.tar.gz
+rm swig-3.0.0.tar.gz
+cd swig-3.0.0
 sudo yum install pcre-devel
 ./configure 
 make
 sudo make install
 cd ..
-rm -rf swig-2.0.12
+rm -rf swig-3.0.0
 
 ################
 # Boost 1.47.0 #
@@ -304,7 +304,7 @@ Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Darwin64-universa
 Install Xcode from the App Store:
 > Download the Auxiliary Tools for Xcode - Late July 2012 from https://developer.apple.com/downloads/ then drag PackageMaker.app to `/Applications/`
 
-Install [SWIG](http://prdownloads.sourceforge.net/swig/swig-3.0.0.tar.gz)
+Install [SWIG](http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.0.tar.gz)
 ```bash
 curl -LO ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.35.tar.gz
 tar -xzf pcre-8.35.tar.gz
@@ -315,7 +315,7 @@ make
 sudo make install
 cd ..
 rm -rf pcre-8.35
-curl -LO http://prdownloads.sourceforge.net/swig/swig-3.0.0.tar.gz
+curl -LO http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.0.tar.gz
 tar -xzf swig-3.0.0.tar.gz
 rm swig-3.0.0.tar.gz
 cd swig-3.0.0
