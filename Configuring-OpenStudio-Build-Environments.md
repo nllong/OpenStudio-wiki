@@ -28,14 +28,14 @@
 This is the fastest, most reliable method of getting a working OpenStudio build.  These instructions assume that you have successfully [cloned the OpenStudio repository](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer) already.
 
 ### Windows
-Install Visual Studio 2010, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe), and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
+Install Visual Studio 2010, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe), and [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
 Clone the repository, create a build directory, and launch CMake:
 
 [[/images/Configuring-OpenStudio-Build-Environments/cmake.windows.png]]
 
 ### Linux
-Install the command line tools and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
+Install the command line tools and [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
     sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost-all-dev libxt-dev
 
@@ -44,7 +44,7 @@ Clone the repository, create a build directory, and launch CMake:
 [[/images/Configuring-OpenStudio-Build-Environments/cmake.linux.png]]
 
 ### Mac
-Install Xcode, Xcode's command line tools, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Darwin64-universal.dmg), and [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
+Install Xcode, Xcode's command line tools, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Darwin64-universal.dmg), and [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
 Clone the repository, create a build directory, and launch CMake:
 
@@ -64,7 +64,7 @@ Append `C:\swig\swigwin-3.0.0;` to the System `Path` variable
 Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe) with the option of adding CMake to the system PATH for all users
 > _Latest v2.8.12.2 tested and working_
 
-Install [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus)
+Install [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus)
 
 Optionally extract [Ruby](http://developer.nrel.gov/downloads/buildings/openstudio/src/ruby-1.8.6-msvc-ssl.zip) to `C:\Ruby` if you want a convenient location to access the OpenStudio Ruby bindings
 > _v1.8.6 MSVC tested and working_
@@ -135,7 +135,7 @@ Build Dependencies:
 sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost-all-dev ruby-dev ruby swig libxt-dev doxygen graphviz
 ```
 
-Install EnergyPlus 8.0
+Install EnergyPlus 8.1
 ```bash
 # Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
 sudo sh SetEPlusV800008-lin-64.sh
@@ -165,7 +165,7 @@ sudo apt-get install dpkg-dev git cmake-curses-gui libboost1.55-all-dev ruby2.0-
 sudo ln -fs /usr/bin/ruby2.0 /usr/bin/ruby
 ```
 
-EnergyPlus 8.0
+EnergyPlus 8.1
 ```bash
 # Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
 sudo sh SetEPlusV800008-lin-64.sh
@@ -191,7 +191,7 @@ cd ..
 rm -rf boost_1_47_0
 ```
 
-EnergyPlus 8.0
+EnergyPlus 8.1
 ```bash
 # Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
 sudo sh SetEPlusV800008-lin-64.sh
@@ -284,20 +284,20 @@ sudo gmake install
 cd ..
 rm -rf cmake-2.8.12.2
 
-EnergyPlus 8.0
+EnergyPlus 8.1
 
-_RHEL will require a special EnergyPlus build for 8.0 due to glibc incompatibility_
+_RHEL will require a special EnergyPlus build for 8.1 due to glibc incompatibility_
 
 ```bash
-curl -LO http://apps1.eere.energy.gov/buildings/energyplus/download/SetEPlusV800008-lin-64-RHEL5.sh
-sudo sh ./SetEPlusV800008-lin-64-RHEL5.sh
-rm SetEPlusV800008-lin-64-RHEL5.sh
+curl -LO http://apps1.eere.energy.gov/buildings/energyplus/download/SetEPlusV810009-lin-64-RHEL5.sh
+sudo sh ./SetEPlusV810009-lin-64-RHEL5.sh
+rm SetEPlusV810009-lin-64-RHEL5.sh
 ```
 
 ## Mac Configuration
 
 ### Prerequisites
-Install [EnergyPlus 8.0](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus)
+Install [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus)
 
 Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Darwin64-universal.dmg) with the option of creating symbolic links in /usr/bin
 
