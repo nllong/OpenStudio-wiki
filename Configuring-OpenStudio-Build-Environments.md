@@ -89,8 +89,8 @@ Install [NSIS](http://prdownloads.sourceforge.net/nsis/nsis-2.46-setup.exe?downl
 > _v2.46 tested and working_
 
 ### Windows 7/8.1, Visual Studio 2010
-Extract [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47.zip) to `C:\Program Files (x86)\` and append `C:\Program Files (x86)\boost\boost_1_47;` to the System `Path` variable, or use the CMake option `BUILD_BOOST`
-> _v1.47.0 MSVC installer tested and working_
+Extract [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47.zip) to `C:\Program Files (x86)` and append `C:\Program Files (x86)\boost\boost_1_47;` to the System `Path` variable, or use the CMake option `BUILD_BOOST`
+> _v1.47.0 MSVC tested and working_
 
 Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-opensource-windows-x86-vs2010-4.8.6.exe)
 > _v4.8.6 VS2010 tested and working_
