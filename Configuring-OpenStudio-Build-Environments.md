@@ -92,8 +92,8 @@ Install [NSIS](http://prdownloads.sourceforge.net/nsis/nsis-2.46-setup.exe?downl
 Install [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47_setup.exe) for the Visual C++ 10.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
 > _v1.47.0 MSVC installer tested and working_
 
-Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-win-opensource-4.8.5-vs2010.exe)
-> _v4.8.5 VS2010 tested and working_
+Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-opensource-windows-x86-vs2010-4.8.6.exe)
+> _v4.8.6 VS2010 tested and working_
 
 #### Professional
 Install [Visual Studio 2010 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=23691)
@@ -255,12 +255,12 @@ cd ..
 rm -rf boost_1_47_0
 			
 ############
-# Qt 4.8.5 #
+# Qt 4.8.6 #
 ############
-wget http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
-tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
-rm qt-everywhere-opensource-src-4.8.5.tar.gz
-cd qt-everywhere-opensource-src-4.8.5
+wget http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
+tar -xzf qt-everywhere-opensource-src-4.8.6.tar.gz
+rm qt-everywhere-opensource-src-4.8.6.tar.gz
+cd qt-everywhere-opensource-src-4.8.6
 ./configure -debug-and-release -opensource -qt-sql-sqlite -plugin-sql-sqlite -no-qt3support -nomake examples -nomake demos -nomake docs -confirm-license
 gmake
 #Go through the Makefiles in the 3rd party directory and remove the -Werror compiler flags if build failed (This step may need to be repeated)
@@ -269,7 +269,7 @@ gmake
 #gmake
 sudo gmake install
 cd ..
-rm -rf qt-everywhere-opensource-src-4.8.5
+rm -rf qt-everywhere-opensource-src-4.8.6
 
 ##################
 # CMake 2.8.12.2 #
@@ -348,18 +348,18 @@ cd ..
 rm -rf boost_1_47_0
 ```
 
-Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz)
+Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz)
 ```bash
-curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
-tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
-rm qt-everywhere-opensource-src-4.8.5.tar.gz
-cd qt-everywhere-opensource-src-4.8.5
+curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
+tar -xzf qt-everywhere-opensource-src-4.8.6.tar.gz
+rm qt-everywhere-opensource-src-4.8.6.tar.gz
+cd qt-everywhere-opensource-src-4.8.6
 ./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
 make -j2
 sudo make install
 cd ..
-rm -rf qt-everywhere-opensource-src-4.8.5
-echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.5/bin' >> ~/.bash_profile
+rm -rf qt-everywhere-opensource-src-4.8.6
+echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.6/bin' >> ~/.bash_profile
 ```
 
 #### For Building Documentation
@@ -382,18 +382,18 @@ cd ..
 rm -rf boost_1_47_0
 ```
 
-Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz)
+Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz)
 ```bash
-curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz
-tar -xzf qt-everywhere-opensource-src-4.8.5.tar.gz
-rm qt-everywhere-opensource-src-4.8.5.tar.gz
-cd qt-everywhere-opensource-src-4.8.5
+curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
+tar -xzf qt-everywhere-opensource-src-4.8.6.tar.gz
+rm qt-everywhere-opensource-src-4.8.6.tar.gz
+cd qt-everywhere-opensource-src-4.8.6
 ./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -debug-and-release -opensource -openssl -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-phonon -no-phonon-backend -no-qt3support -confirm-license
 make -j2
 sudo make install
 cd ..
-rm -rf qt-everywhere-opensource-src-4.8.5
-echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.5/bin' >> ~/.bash_profile
+rm -rf qt-everywhere-opensource-src-4.8.6
+echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.6/bin' >> ~/.bash_profile
 ```
 
 For convenience, consider making Ruby 1.8 the system default:
