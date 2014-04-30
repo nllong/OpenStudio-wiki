@@ -89,7 +89,7 @@ Install [NSIS](http://prdownloads.sourceforge.net/nsis/nsis-2.46-setup.exe?downl
 > _v2.46 tested and working_
 
 ### Windows 7/8.1, Visual Studio 2010
-Install [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47_setup.exe) for the Visual C++ 10.0 compiler with the _Multithreaded_ and _Multithreaded Debug_ variants
+Extract [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47.zip) to `C:\Program Files (x86)\` and append `C:\Program Files (x86)\boost\boost_1_47;` to the System `Path` variable, or use the CMake option `BUILD_BOOST`
 > _v1.47.0 MSVC installer tested and working_
 
 Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-opensource-windows-x86-vs2010-4.8.6.exe)
@@ -103,7 +103,7 @@ Add `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin` to the System `Pat
 #### Professional x64
 Follow the previous instructions above to configure the environment for VS2010 Professional.  Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64-bit builds.
 
-The BUILD_QT, BUILD_BOOST, and BUILD_SWIG CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
+The `BUILD_QT`, `BUILD_BOOST`, and `BUILD_SWIG` CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
 
 #### Express
 Install [Visual C++ 2010 Express](http://go.microsoft.com/?linkid=9709939) (the Silverlight Runtime and SQL 
@@ -123,9 +123,9 @@ Install [Windows SDK 7.1](http://www.microsoft.com/download/en/confirmation.aspx
 
 Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64-bit builds.
 
-The BUILD_QT, BUILD_BOOST, and BUILD_SWIG CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
+The `BUILD_QT`, `BUILD_BOOST`, and `BUILD_SWIG` CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
 
-The MSVC_IS_EXPRESS CMake option is required and should be enabled.
+The `MSVC_IS_EXPRESS` CMake option is required and should be enabled.
 
 ## Linux Configuration
 
