@@ -106,7 +106,7 @@ Follow the previous instructions above to configure the environment for VS2010 P
 The `BUILD_QT`, `BUILD_BOOST`, and `BUILD_SWIG` CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
 
 #### Express
-Install [Visual C++ 2010 Express](http://go.microsoft.com/?linkid=9709939) (the Silverlight Runtime and SQL 
+Install [Visual C++ 2010 Express](http://go.microsoft.com/?linkid=9709949) (the Silverlight Runtime and SQL 
 Server 2008 Express options are unnecessary and may be unchecked)
 
 Install [Visual Studio 2010 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=23691)
