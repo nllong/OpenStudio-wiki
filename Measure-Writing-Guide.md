@@ -20,4 +20,4 @@ an attribute named 'rotation' will automatically be added to the measure's outpu
 | Modifier | Example | Meaning |
 |---|---|---|
 |*_initial| rotation_initial|  The value of 'rotation' in the initial model before the measure was run|
-|*_final| rotation_final|  The value of 'rotation' in the final model after the measure was run|
+|*_final| rotation_final|  The value of 'rotation' in the final model after the measure was run. *Nick, if the measure returns either false or NA without altering the model does it still need to register a "(_final" attribute for every "*_initial" attribute?  This might be a pain if multiple paths return from the measure but I can see the desire to have this.|
