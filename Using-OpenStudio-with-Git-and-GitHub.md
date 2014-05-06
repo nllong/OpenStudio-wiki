@@ -58,7 +58,14 @@ A helpful GUI for normal users who are already familiar with TortoiseSVN and its
 
 The best graphical interface for Git – Understand that the non-commercial license can ONLY be used for open-source, non-commercial projects, such as OpenStudio.
 
-[Windows](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-win32-setup-jre-4_6.zip) – [OS X](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-macosx-4_6.dmg) – [Linux](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-generic-4_6.tar.gz)
+[Windows](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-win32-setup-jre-5_0_9.zip) – [OS X](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-macosx-5_0_9.dmg) – [Linux](http://www.syntevo.com/smartgithg/download?file=smartgithg/smartgithg-generic-5_0_9.tar.gz)
+
+### SourceTree
+[[/images/Using-OpenStudio-with-Git-and-GitHub/client.sourcetree.png]]
+
+A powerful, intuitive GUI rivaling SmartGit that can be used freely for commercial projects.
+
+[Windows](http://downloads.atlassian.com/software/sourcetree/windows/SourceTreeSetup_1.5.2.exe) – [OS X](http://downloads.atlassian.com/software/sourcetree/SourceTree_1.9.1.dmg)
 
 ### Git Extensions
 [[/images/Using-OpenStudio-with-Git-and-GitHub/client.gitex.png]]
