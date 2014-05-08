@@ -161,8 +161,19 @@ rm -rf cmake-2.8.12.2
 ### Ubuntu 14.04 (x86 and x64)
 Build Dependencies:
 ```bash
-sudo apt-get install dpkg-dev git cmake-curses-gui qt5-default libqt5webkit5-dev libboost1.55-all-dev ruby2.0-dev ruby2.0 swig libssl-dev libxt-dev doxygen graphviz
-sudo ln -fs /usr/bin/ruby2.0 /usr/bin/ruby
+sudo apt-get install dpkg-dev git cmake-curses-gui qt5-default libqt5webkit5-dev libboost1.55-all-dev swig libssl-dev libxt-dev doxygen graphviz
+
+wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz
+tar -xzf ruby-2.0.0-p353.tar.gz
+rm ruby-2.0.0-p353.tar.gz
+cd ruby-2.0.0-p353
+./configure --enable-shared --prefix=/usr/local
+make -j2
+sudo make install
+cd ..
+rm -rf ruby-2.0.0-p353
+
+sudo ln -fs /usr/local/bin/ruby /usr/bin/ruby
 ```
 
 EnergyPlus 8.1
