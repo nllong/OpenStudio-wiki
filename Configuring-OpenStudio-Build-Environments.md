@@ -140,8 +140,8 @@ sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost-all-dev r
 Install EnergyPlus 8.1
 ```bash
 # Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
-sudo sh SetEPlusV800008-lin-64.sh
-rm SetEPlusV800008-lin-64.sh
+sudo sh SetEPlusV810009-lin-64.sh
+rm SetEPlusV810009-lin-64.sh
 ```
 
 Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz)
@@ -179,8 +179,8 @@ sudo ln -fs /usr/local/bin/ruby /usr/bin/ruby
 EnergyPlus 8.1
 ```bash
 # Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
-sudo sh SetEPlusV800008-lin-64.sh
-rm SetEPlusV800008-lin-64.sh
+sudo sh SetEPlusV810009-lin-64.sh
+rm SetEPlusV810009-lin-64.sh
 ```
 
 ### Fedora 19 (x86 and x64)
@@ -205,8 +205,8 @@ rm -rf boost_1_47_0
 EnergyPlus 8.1
 ```bash
 # Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
-sudo sh SetEPlusV800008-lin-64.sh
-rm SetEPlusV800008-lin-64.sh
+sudo sh SetEPlusV810009-lin-64.sh
+rm SetEPlusV810009-lin-64.sh
 ```
 
 ### RHEL 5 (x86 and x64)
