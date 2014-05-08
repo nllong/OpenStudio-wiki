@@ -159,11 +159,9 @@ rm -rf cmake-2.8.12.2
 ```
 
 ### Ubuntu 14.04 (x86 and x64)
-Ubuntu 14 is not yet fully supported - the dependencies (particularly Qt) will be updated soon.
-
 Build Dependencies:
 ```bash
-sudo apt-get install dpkg-dev git cmake-curses-gui libboost1.55-all-dev ruby2.0-dev ruby2.0 swig libssl-dev libxt-dev doxygen graphviz
+sudo apt-get install dpkg-dev git cmake-curses-gui qt5-default libboost1.55-all-dev ruby2.0-dev ruby2.0 swig libssl-dev libxt-dev doxygen graphviz
 sudo ln -fs /usr/bin/ruby2.0 /usr/bin/ruby
 ```
 
