@@ -43,7 +43,7 @@
         7. [Serialization](Coding-Standards#wiki-287-serialization)
         8. [SWIG Support](Coding-Standards#wiki-288-swig-support)
     9. [Code Portability](Coding-Standards#wiki-29-code-portability)
-        1. [Compiler Warnings](Coding-Standards#wiki-291-comipler-warnings)
+        1. [Compiler Warnings](Coding-Standards#wiki-291-compiler-warnings)
         2. [Exceptions](Coding-Standards#wiki-292-exceptions)
         3. [Logging](Coding-Standards#wiki-293-logging)
         4. [Unit Tests](Coding-Standards#wiki-294-unit-tests)
