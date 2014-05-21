@@ -1,6 +1,6 @@
 # Output Attributes
 
-We have seen how to output human readble messages from measures.  These messages are useful when running and debugging measures manually using PAT.  However, there is also a need to output machine readable attributes that can be used to create reports about design alternatives in parametric studies.  Each attribute will be associated with the measure that generated it in the workflow. The registerValue method is used to register key value pairs:
+We have seen how to output human readable messages from measures.  These messages are useful when running and debugging measures manually using PAT.  However, there is also a need to output machine readable attributes that can be used to create reports about design alternatives in parametric studies.  Each attribute will be associated with the measure that generated it in the workflow. The registerValue method is used to register key value pairs:
 
 ```ruby
 # runner.registerValue(key,value,units)
@@ -25,7 +25,7 @@ an attribute named 'rotation' will automatically be added to the measure's outpu
 
 
 ### Contents
-1. [What Is a Measure?]
+1. [What Is a Measure?](#1-what-is-a-measure)
 2. [Understanding This Guide]
 3. [The Programmatic Instructions - measure.rb]
     1. [Starting and Ending the Measure]
@@ -192,14 +192,12 @@ v6 = OpenStudio::Ruleset::makeChoiceArgumentOfWorkspaceObjects
 #### 3.3.2. Defaults and Required Arguments
 When deciding how to ask the user for each input, you should consider whether the input is required and whether there is a reasonable default value.  Required arguments are inputs that the measure needs to run, such as the lighting level for each space.  Non-required arguments are optional, but you must make clear to the user what will happen if no value is provided.  Default values may be based on current best practices (e.g., current lighting power reductions to 0.8 W/ft2 are possible), or they may be chosen specifically for the model (e.g., choose the most common space type for adjusting the lighting power).  Where the argument is not required but there is a good default, it is good practice to set the argument to be required anyway, as there is no burden on the user to provide any input.
 
-<p align="center">
 | Required? | Has a Default? | Best Practice?     |
 |-----------|----------------|--------------------|
 | Yes       | Yes            | Yes                |
 | Yes       | No             | Yes                |
 | No        | Yes            | No                 |
 | No        | No             | Must be documented |
-</p>
 
 ### 3.4. Run
 The run method is where all the magic happens.  This is where you write the programmatic instructions that take the user inputs and change the energy model in specific ways.  This method has more pieces than the name or arguments method.  We explain each piece separately, and then show all the pieces together.
