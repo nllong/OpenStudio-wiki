@@ -1,69 +1,44 @@
-# Output Attributes
-
-We have seen how to output human readable messages from measures.  These messages are useful when running and debugging measures manually using PAT.  However, there is also a need to output machine readable attributes that can be used to create reports about design alternatives in parametric studies.  Each attribute will be associated with the measure that generated it in the workflow. The registerValue method is used to register key value pairs:
-
-```ruby
-# runner.registerValue(key,value,units)
-runner.registerValue("total_life_cycle_cost", total_life_cycle_cost, "$")
-```
-
-The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object.  *Nick, we probably need a way to do nil too right? -- yes, I added nil object."
-
-By default, all measure arguments are automatically output in machine readable format.  For example, if a measure takes an argument named 'rotation':
-
-```ruby
-relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("rotation", true)
-```
-
-an attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user.  Measure writers can output any attributes that they want to.  If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved.  Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming DenCity Metadata API) to allow applications to understand attribute names.  Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes.  These special attribute modifiers are documented below, using the 'rotation' attribute. *Nick, do we need to indicate that rotation is coming from the model as opposed to user input?  Something like model_rotation_initial vs rotation? -- (NL) If anything it should be the other way around. Argument inputs should be flagged as such and leave the 'registerValue' echo out whatever the user says.*
-
-| Modifier | Example | Meaning |
-|---|---|---|
-|*_initial| rotation_initial|  The value of 'rotation' in the initial model before the measure was run|
-|*_final| rotation_final|  The value of 'rotation' in the final model after the measure was run. *Nick, if the measure returns either false or NA without altering the model does it still need to register a "(_final" attribute for every "*_initial" attribute?  This might be a pain if multiple paths return from the measure but I can see the desire to have this. (NL) yeah i think it should always output a result. In the rotation example the final rotation is always a desired value, even if a path in the measure results in the rotation no to change.|
-
-
-
-### Contents
+> [Wiki](Home) ▸ **Using OpenStudio with Git and GitHub**## Contents
 1. [What Is a Measure?](#1-what-is-a-measure)
-2. [Understanding This Guide]
-3. [The Programmatic Instructions - measure.rb]
-    1. [Starting and Ending the Measure]
-    2. [Name]
-    3. [Arguments]
-        1. [Possible Types of Arguments]
-        2. [Defaults and Required Arguments]
-    4. [Run]
-        1. [Input Validation]
-        2. [Info, Warning, and Error Messages]
-        3. [Input Validation (Continued)]
-        4. [Making Changes to the Model]
-        5. [Optionals and .get]
-        6. [Info, Warning, and Error Messages (Continued)]
-        7. [What Methods Are Available?]
-    5. [Putting It All Together]
-4. [The Name and Description - measure.xml]
-    1. [Starting and Ending measure.xml]
-    2. [Naming the Measure]
-    3. [Unique Identifier and Version Identifier]
-    4. [Description]
-    5. [Modeler Description]
-    6. [Provenance]
-    7. [Tags]
-        1. [BCL Measures Taxonomy]
-    8. [Attributes]
-        1. [Measure Type]
-        2. [Measure Function]
-        3. [Requires EnergyPlus Results]
-        4. [Uses SketchUp API]
-    9. [Files]
-    10. [Putting It All Together]
-5. [Advanced EnergyPlusMeasures - Edit .idf Files Directly]
-    1. [Finding and Inspecting EnergyiPlus Objects]
-    2. [Adding EnergyPlus Workspace Objects]
-    3. [Editing EnergyPlus Workspace Objects]
-    4. [Finding Documentation on EnergyPlus Objects]
-    5. [Putting It All Together - A Complete WorkspaceUserScript]
+2. [Understanding This Guide](#2-understanding-this-guide)
+3. [The Programmatic Instructions - measure.rb](#3-the-programmatic-instructionsmeasurerb)
+    1. [Starting and Ending the Measure](#31-starting-and-ending-the-measure)
+    2. [Name](#32-name)
+    3. [Arguments](#33-arguments)
+        1. [Possible Types of Arguments](#331-possible-types-of-arguments)
+        2. [Defaults and Required Arguments](#332-defaults-and-required-arguments)
+    4. [Run](#34-run)
+        1. [Input Validation](#341-input-validation)
+        2. [Info, Warning, and Error Messages](#342-info-warning-and-error-messages)
+        3. [Input Validation (Continued)](#343-input-validation-continued)
+        4. [Making Changes to the Model](#344-making-changes-to-the-model)
+        5. [Optionals and .get](#345-optionals-and-get)
+        6. [Info, Warning, and Error Messages (Continued)](#346-info-warning-and-error-messages-continued)
+        7. [What Methods Are Available?](#347-what-methods-are-available)
+    5. [Putting It All Together](#35-putting-it-all-together)
+4. [The Name and Description - measure.xml](#4-the-name-and-descriptionmeasurexml)
+    1. [Starting and Ending measure.xml](#41-starting-and-ending-measurexml)
+    2. [Naming the Measure](#42-naming-the-measure)
+    3. [Unique Identifier and Version Identifier](#43-unique-identifier-and-version-identifier)
+    4. [Description](#44-description)
+    5. [Modeler Description](#45-modeler-description)
+    6. [Provenance](#46-provenance)
+    7. [Tags](#47-tags)
+        1. [BCL Measures Taxonomy](#471-bcl-measures-taxonomy)
+    8. [Attributes](#48-attributes)
+        1. [Measure Type](#481-measure-type)
+        2. [Measure Function](#482-measure-function)
+        3. [Requires EnergyPlus Results](#483-requires-energyplus-results)
+        4. [Uses SketchUp API](#484-uses-sketchup-api)
+    9. [Files](#49-files)
+    10. [Putting It All Together](#410-putting-it-all-together)
+5. [Advanced EnergyPlusMeasures - Edit .idf Files Directly](#5-energyplusmeasures--edit-idf-files-directly)
+    1. [Finding and Inspecting EnergyiPlus Objects](#51-finding-and-inspecting-energyplus-objects)
+    2. [Adding EnergyPlus Workspace Objects](#52-adding-energyplus-workspace-objects)
+    3. [Editing EnergyPlus Workspace Objects](#53-editing-energyplus-workspace-objects)
+    4. [Finding Documentation on EnergyPlus Objects](#54-finding-documentation-on-energyplus-objects)
+    5. [Putting It All Together - A Complete WorkspaceUserScript](#55-putting-it-all-together--a-complete-workspaceuserscript)
+6. [Output Attributes](#6-output-attributes)
 
 ## 1. What is a Measure?
 In building design and retrofits, the terms *energy efficiency measure* (EEM) and *energy conservation measure* (ECM) refer to a specific change that can be made to a building to reduce its energy use.  As an example, imagine that you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add insulation to the roof."
@@ -1151,3 +1126,26 @@ end #end the measure
 #this allows the measure to be use by the application
 ConstructionTakeOff.new.registerWithApplication
 ```
+
+## 6. Output Attributes
+We have seen how to output human readable messages from measures.  These messages are useful when running and debugging measures manually using PAT.  However, there is also a need to output machine readable attributes that can be used to create reports about design alternatives in parametric studies.  Each attribute will be associated with the measure that generated it in the workflow. The registerValue method is used to register key value pairs:
+
+```ruby
+# runner.registerValue(key,value,units)
+runner.registerValue("total_life_cycle_cost", total_life_cycle_cost, "$")
+```
+
+The key and units parameters must be strings, the value passed to registerValue can be a double, bool, integer, string, or nil object.  *Nick, we probably need a way to do nil too right? -- yes, I added nil object."
+
+By default, all measure arguments are automatically output in machine readable format.  For example, if a measure takes an argument named 'rotation':
+
+```ruby
+relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("rotation", true)
+```
+
+An attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user.  Measure writers can output any attributes that they want to.  If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved.  Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming DenCity Metadata API) to allow applications to understand attribute names.  Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes.  These special attribute modifiers are documented below, using the 'rotation' attribute. *Nick, do we need to indicate that rotation is coming from the model as opposed to user input?  Something like model_rotation_initial vs rotation? -- (NL) If anything it should be the other way around. Argument inputs should be flagged as such and leave the 'registerValue' echo out whatever the user says.*
+
+| Modifier | Example | Meaning |
+|---|---|---|
+|*_initial| rotation_initial|  The value of 'rotation' in the initial model before the measure was run|
+|*_final| rotation_final|  The value of 'rotation' in the final model after the measure was run. *Nick, if the measure returns either false or NA without altering the model does it still need to register a "(_final" attribute for every "*_initial" attribute?  This might be a pain if multiple paths return from the measure but I can see the desire to have this. (NL) yeah i think it should always output a result. In the rotation example the final rotation is always a desired value, even if a path in the measure results in the rotation no to change.|
