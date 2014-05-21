@@ -15,7 +15,7 @@ By default, all measure arguments are automatically output in machine readable f
 relative_building_rotation = OpenStudio::Ruleset::OSArgument.makeDoubleArgument("rotation", true)
 ```
 
-an attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user.  Measure writers can output any attributes that they want to.  If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved.  Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming DenCity Metadata API) to allow applications to understand attribute names.  Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes.  These special attribute modifiers are documented below, using the 'rotation' attribute. *Nick, do we need to indicate that rotation is coming from the model as opposed to user input?  Something like model_rotation_intial vs rotation? -- (NL) If anything it should be the other way around. Argument inputs should be flagged as such and leave the 'registerValue' echo out whatever the user says.*
+an attribute named 'rotation' will automatically be added to the measure's output with the value passed in by the user.  Measure writers can output any attributes that they want to.  If a measure outputs multiple attributes with the same name, the last attribute reported by that name will be preserved.  Measure writers are encouraged to use terms that are present in the BCL taxonomy (and the upcoming DenCity Metadata API) to allow applications to understand attribute names.  Additionally, special modifiers can be added to attribute names which will imply additional relationships between attributes.  These special attribute modifiers are documented below, using the 'rotation' attribute. *Nick, do we need to indicate that rotation is coming from the model as opposed to user input?  Something like model_rotation_initial vs rotation? -- (NL) If anything it should be the other way around. Argument inputs should be flagged as such and leave the 'registerValue' echo out whatever the user says.*
 
 | Modifier | Example | Meaning |
 |---|---|---|
@@ -78,7 +78,7 @@ Each OpenStudio measure is contained in its own folder (usually named after the 
 
 The measure may also contain tests to ensure that it works correctly and resources which are other files that the measure uses during its operation.  This file structure allows OpenStudio to easily share and use measures.
 
-[image]
+[[/images/Measure-Writing-Guide/1.png]]
 
 This guide is directed primarily toward measure authors; some instructions also apply to users.
 
@@ -419,7 +419,11 @@ Write a measure that will remove all lights currently in the "Enclosed Office" s
 ##### Figuring Out the Modeling Approach
 The first thing to do is understand how the measure would be modeled in OpenStudio, and make a list of the objects involved.  The easiest way to do this is to open the OpenStudio Application and look through the GUI.  In this case, we'll start on the "Space Types" tab.
 
+[[/images/Measure-Writing-Guide/2.png]]
+
 On this tab, first click on the first object (in the left column) is "Space Type."  Inside the Space Type, next to the lights icon, the term "Definition" appears.  The name of this particular definition is "ASHRAE_90.1-2004_Office_LPD."  To learn more about this definition, go to the "Loads" tab.
+
+[[/images/Measure-Writing-Guide/3.png]]
 
 On the left side under the "Loads" tab is a category called "Lights Definitions."  Under this category is the definition "ASHRAE_90.1-2004_Office_LPD" that was referenced on the "Space Types" tab.  One field is titled "Energy Per Space Floor Area" with units of "W/ft2."  Although the GUIs may show IP units, the methods of the OpenStudio model are all written in SI units.
 
@@ -431,14 +435,21 @@ Find the SpaceType called "Enclosed Office".  Replace any LightsDefinitions refe
 ##### Finding the OpenStudio Methods: Using the Documentation
 All the OpenStudio code documentation lives online at http://openstudio.nrel.gov/latest-c-sdk-documentation.  Open this website.
 
+[[/images/Measure-Writing-Guide/4.png]]
+
 Click "__C++ SDK Documentation__" then on "__Model__".  You will see a Web page similar to the image shown below.
 
+[[/images/Measure-Writing-Guide/5.png]]
+
 The left column is the navigator; the right pane shows the details of whatever is selected in the left column.
+
+[[/images/Measure-Writing-Guide/6.png]]
 
 In the left column, expand "__Classes->Class List->openstudio->model__."  This list of objects under "__model__" includes most of the information necessary to write measures.
 
 Click "__SpaceType__" under "__model__."
 
+[[/images/Measure-Writing-Guide/5.png]]
 The right pane contains the documentation for the SpaceType class.  The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.
 
 ###### Understanding the Methods
