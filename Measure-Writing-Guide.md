@@ -1,4 +1,6 @@
-> [Wiki](Home) ▸ **Using OpenStudio with Git and GitHub**## Contents
+> [Wiki](Home) ▸ **Using OpenStudio with Git and GitHub**
+
+## Contents
 1. [What Is a Measure?](#1-what-is-a-measure)
 2. [Understanding This Guide](#2-understanding-this-guide)
 3. [The Programmatic Instructions - measure.rb](#3-the-programmatic-instructionsmeasurerb)
