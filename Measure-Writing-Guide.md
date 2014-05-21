@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ **Using OpenStudio with Git and GitHub**
+> [Wiki](Home) ▸ **Measure Writing Guide**
 
 ## Contents
 1. [What Is a Measure?](#1-what-is-a-measure)
