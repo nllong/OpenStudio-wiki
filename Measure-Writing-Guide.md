@@ -490,6 +490,8 @@ The written description of the method:
 
 The inputs needed by the method:
 
+[[/images/Measure-Writing-Guide/11.png]]
+
 Methods that do not need inputs have empty parentheses ().  Ruby allows you to skip adding the empty parentheses when you call methods with no arguments.  You can ignore the const and & C++ keywords in the declarations for now.
 
 ##### Using the Documentation for the Example Measure
@@ -508,6 +510,8 @@ end
 
 Once you have found a SpaceType matching the name you are looking for, you need to get all the Lights in Spaces of this SpaceType.  The documentation for SpaceType includes a method to get a vector of all Lights in Spaces of this SpaceType:
 
+[[/images/Measure-Writing-Guide/12.png]]
+
 You can extend the code to then loop over all these Lights:
 
 ```ruby
@@ -523,6 +527,8 @@ end
 
 Now you need to make a new LightsDefinition to replace the ones these Lights currently use.  The documentation for LightsDefinition shows a constructor that expects a Model as the input.
 
+[[/images/Measure-Writing-Guide/13.png]]
+
 Constructors translated from C++ to Ruby take the following form.  The only difference may be which arguments the constructor requires; usually it is simply a Model.
 
 ```ruby
@@ -530,6 +536,8 @@ new_thing = OpenStudio::Model::NewThingClassName.new(model)
 ```
 
 Now, figure out how to set the LPD of the LightsDefinition to 10 W/m2.  The LightsDefinition documentation presents a method.
+
+[[/images/Measure-Writing-Guide/14.png]]
 
 You will also want to name the new LightsDefinition object for better user comprehension.  Most OpenStudio objects have a ".setName(new_name)" method.  You can put this together to make the LightsDefinition object.
 
@@ -540,6 +548,8 @@ new_lights_def.setName("10 W/m^2 Lights Definition")
 ```
 
 Now that you have a new LightsDefinition object, you need to figure out how to replace the existing LightsDefinition with the new one.  The Lights documentation contains a method to set the lights definition.
+
+[[/images/Measure-Writing-Guide/15.png]]
 
 Putting this all together, we get:
 
@@ -679,6 +689,8 @@ ReplaceLightsInSpaceTypeWithLPD.new.registerWithApplication
 
 ## 4. The Name and Description—measure.xml
 The measure.xml file contains metadata that allow the measure to be filed into an organizational structure, provide an explanation about what the measure does and how it works, and tell the GUI where in the workflow the measure can go.  The GUI creates a new measure.xml file when you click on the "Create a New Measure" button.  The wizard that appears guides you through filling in the measure.xml file.  After this wizard, you will need to make any changes to the measure.xml file manually.  The following sections describe the purpose and available options for each section of measure.xml.
+
+[[/images/Measure-Writing-Guide/16.png]]
 
 ### 4.1. Starting and Ending measure.xml
 The following boilerplate text is used to open and close the measure.xml file.
@@ -1029,6 +1041,8 @@ The following example shows how to access and edit EnergyPlus objects in the Wor
 
 ### 5.4. Finding Documentation on EnergyPlus Objects
 The "[InputOutputReference.pdf][11]" document that ships with EnergyPlus describes every EnergyPlus object.  Below is a screenshot of part of the documentation for the "ComponentCost:LineItem" object.  It describes which fields are required versus optional, and what kinds of data are expected for each field.  EnergyPlus also ships with example models that show each object being used in a model.  In the "Examples" folder is a spreadsheet that documents the examples.
+
+[[/images/Measure-Writing-Guide/17.png]]
 
 ### 5.5. Putting It All Together – A Complete WorkspaceUserScript
 The script creates a ComponentCost:LineItem object for each construction used in the model.
