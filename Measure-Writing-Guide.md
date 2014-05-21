@@ -449,13 +449,16 @@ In the left column, expand "__Classes->Class List->openstudio->model__."  This l
 
 Click "__SpaceType__" under "__model__."
 
-[[/images/Measure-Writing-Guide/5.png]]
+[[/images/Measure-Writing-Guide/7.png]]
+
 The right pane contains the documentation for the SpaceType class.  The methods are generally split into four categories: Constructors and Destructors, Getters, Setters, and Other. SpaceType is a base class of ResourceObject. You can look into the ResourceObject for additional methods beyond what is in the SpaceType documentation.
 
 ###### Understanding the Methods
 At first glance, the methods look cryptic, not at all like those shown in the examples, because this is the C++ documentation and the methods used are the Ruby translation of these same methods.  These methods can be decoded as follows:
 
 The name of the method:
+
+[[/images/Measure-Writing-Guide/8.png]]
 
 The method names are generally descriptive enough that it is possible to understand what they do without any other information.  Here is how the method would be used in Ruby:
 
@@ -464,6 +467,8 @@ design_spec_oa = space_type.designSpecificationOutdoorAir
 ```
 
 The type of object returned by the method:
+
+[[/images/Measure-Writing-Guide/9.png]]
 
 Methods Return Types:
 
@@ -480,6 +485,8 @@ std::vector<InternalMass> = A vector of the type of objects inside the <>; in th
 boost::optional<DesignSpecificationOutdoorAir> = an optional that may either be empty or point to an actual object of the type inside the <>; in this case the Ruby class returned will be an Optional DesignSpecificationOutdoorAir.  See the section Optionals and .get [AXEL] for more information about optional types.
 
 The written description of the method:
+
+[[/images/Measure-Writing-Guide/10.png]]
 
 The inputs needed by the method:
 
