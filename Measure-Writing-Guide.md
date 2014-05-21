@@ -40,7 +40,7 @@
     3. [Editing EnergyPlus Workspace Objects](#53-editing-energyplus-workspace-objects)
     4. [Finding Documentation on EnergyPlus Objects](#54-finding-documentation-on-energyplus-objects)
     5. [Putting It All Together - A Complete WorkspaceUserScript](#55-putting-it-all-together--a-complete-workspaceuserscript)
-6. [`NEW` Output Attributes](#6-output-attributes)
+6. `NEW` [Output Attributes](#6-output-attributes)
 
 ## 1. What is a Measure?
 In building design and retrofits, the terms *energy efficiency measure* (EEM) and *energy conservation measure* (ECM) refer to a specific change that can be made to a building to reduce its energy use.  As an example, imagine that you are retrofitting an existing building and one of the ECMs suggested by the design team is "Add insulation to the roof."
