@@ -11,6 +11,9 @@ Enable `TOOLS -> Options -> Text Editor -> All Languages -> Line numbers`
 ### Configure Spacing
 In `TOOLS -> Options -> Text Editor -> All Languages -> C/C++ -> Tabs`, set `Tab size` and `Indent size` to 2 with the `Insert spaces` option selected.
 
+### Add Syntax Highlighting to .i Files
+In `TOOLS -> Options -> Text Editor -> File Extension`, add the `i` extension with the `Microsoft Visual C++` editor.
+
 ### Extensions
 
 ##### [CMake Tools for Visual Studio](http://visualstudiogallery.msdn.microsoft.com/6d1586a9-1c98-4ac7-b54f-7615d5f9fbc7)
