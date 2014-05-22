@@ -1,28 +1,28 @@
 > [Wiki](Home) ▸ **Configuring OpenStudio Build Environments**
 
 ## Contents
-**Recommended**: [Using the Superbuild](Configuring-OpenStudio-Build-Environments#wiki-using-the-superbuild)
-- [Windows](Configuring-OpenStudio-Build-Environments#wiki-windows)
-- [Linux](Configuring-OpenStudio-Build-Environments#wiki-linux)
-- [Mac](Configuring-OpenStudio-Build-Environments#wiki-mac)
+**Recommended**: [Using the Superbuild](#wiki-using-the-superbuild)
+- [Windows](#wiki-windows)
+- [Linux](#wiki-linux)
+- [Mac](#wiki-mac)
 
-**Advanced**: [Manual Build Instructions](Configuring-OpenStudio-Build-Environments#wiki-manual-build-instructions)
-- [Windows Configuration](Configuring-OpenStudio-Build-Environments#wiki-windows-configuration)
-    * [Prerequisites](Configuring-OpenStudio-Build-Environments#wiki-prerequisites)
-    * [Windows 7/8.1, Visual Studio 2010](Configuring-OpenStudio-Build-Environments#wiki-windows-781-visual-studio-2010)
-        - [Professional](Configuring-OpenStudio-Build-Environments#wiki-professional)
-        - [Professional x64](Configuring-OpenStudio-Build-Environments#wiki-professional-x64)
-        - [Express](Configuring-OpenStudio-Build-Environments#wiki-express)
-        - [Express x64](Configuring-OpenStudio-Build-Environments#wiki-express-x64)
-- [Linux Configuration](Configuring-OpenStudio-Build-Environments#wiki-linux-configuration)
-    * [Ubuntu 12.04 (x86 and x64)](Configuring-OpenStudio-Build-Environments#wiki-ubuntu-1204-x86-and-x64)
-    * [Ubuntu 14.04 (x86 and x64)](Configuring-OpenStudio-Build-Environments#wiki-ubuntu-1404-x86-and-x64)
-    * [Fedora 19 (x86 and x64)](Configuring-OpenStudio-Build-Environments#wiki-fedora-19-x86-and-x64)
-    * [RHEL 5 (x86 and x64)](Configuring-OpenStudio-Build-Environments#wiki-rhel-5-x86-and-x64)
-- [Mac Configuration](Configuring-OpenStudio-Build-Environments#wiki-mac-configuration)
-    * [Prerequisites](Configuring-OpenStudio-Build-Environments#wiki-prerequisites-1)
-    * [OS X 10.8](Configuring-OpenStudio-Build-Environments#wiki-os-x-108)
-    * [OS X 10.9](Configuring-OpenStudio-Build-Environments#wiki-os-x-109)
+**Advanced**: [Manual Build Instructions](#wiki-manual-build-instructions)
+- [Windows Configuration](#wiki-windows-configuration)
+    * [Prerequisites](#wiki-prerequisites)
+    * [Windows 7/8.1, Visual Studio 2010](#wiki-windows-781-visual-studio-2010)
+        - [Professional](#wiki-professional)
+        - [Professional x64](#wiki-professional-x64)
+        - [Express](#wiki-express)
+        - [Express x64](#wiki-express-x64)
+- [Linux Configuration](#wiki-linux-configuration)
+    * [Ubuntu 12.04 (x86 and x64)](#wiki-ubuntu-1204-x86-and-x64)
+    * [Ubuntu 14.04 (x86 and x64)](#wiki-ubuntu-1404-x86-and-x64)
+    * [Fedora 19 (x86 and x64)](#wiki-fedora-19-x86-and-x64)
+    * [RHEL 5 (x86 and x64)](#wiki-rhel-5-x86-and-x64)
+- [Mac Configuration](#wiki-mac-configuration)
+    * [Prerequisites](#wiki-prerequisites-1)
+    * [OS X 10.8](#wiki-os-x-108)
+    * [OS X 10.9](#wiki-os-x-109)
 
 # Using the Superbuild
 This is the fastest, most reliable method of getting a working OpenStudio build.  These instructions assume that you have successfully [cloned the OpenStudio repository](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer) already.
@@ -72,8 +72,8 @@ Optionally extract [Ruby](http://developer.nrel.gov/downloads/buildings/openstud
 > _v1.8.6 MSVC tested and working_
 
 #### For Building Documentation
-Install [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.6-setup.exe)
-> _Latest v1.8.6 tested and working_
+Install [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.7-setup.exe)
+> _Latest v1.8.7 tested and working_
 
 Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.38.msi)
 > _Latest v2.38 tested and working_
@@ -128,6 +128,16 @@ Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project. 
 The `BUILD_QT`, `BUILD_BOOST`, and `BUILD_SWIG` CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
 
 The `MSVC_IS_EXPRESS` CMake option is required and should be enabled.
+
+### Windows 7/8.1, Visual Studio 2013
+Install [Boost](http://sourceforge.net/projects/boost/files/boost-binaries/1.55.0-build2/boost_1_55_0-msvc-12.0-32.exe/download) to the default directory of `C:\local`
+> _v1.55.0 tested and working_
+
+Install [Qt](http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-opensource-windows-x86-msvc2013_opengl-5.3.0.exe)
+> _v5.3.0 VS2013 OpenGL tested and working_
+
+#### Professional
+Install [Visual Studio 2013 Update 2](http://www.microsoft.com/en-us/download/details.aspx?id=42666)
 
 ## Linux Configuration
 
