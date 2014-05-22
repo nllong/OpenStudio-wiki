@@ -14,6 +14,8 @@
         - [Professional x64](#wiki-professional-x64)
         - [Express](#wiki-express)
         - [Express x64](#wiki-express-x64)
+    * [Windows 7/8.1, Visual Studio 2013](#windows-781-visual-studio-2013)
+        - [Professional](#professional-1)
 - [Linux Configuration](#wiki-linux-configuration)
     * [Ubuntu 12.04 (x86 and x64)](#wiki-ubuntu-1204-x86-and-x64)
     * [Ubuntu 14.04 (x86 and x64)](#wiki-ubuntu-1404-x86-and-x64)
