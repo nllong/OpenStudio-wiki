@@ -459,7 +459,7 @@ void = does not return anything
 
 std::vector<InternalMass> = A vector of the type of objects inside the <>; in this case the Ruby class returned will be a InternalMassVector.
 
-boost::optional<DesignSpecificationOutdoorAir> = an optional that may either be empty or point to an actual object of the type inside the <>; in this case the Ruby class returned will be an Optional DesignSpecificationOutdoorAir.  See the section Optionals and .get [AXEL] for more information about optional types.
+boost::optional<DesignSpecificationOutdoorAir> = an optional that may either be empty or point to an actual object of the type inside the <>; in this case the Ruby class returned will be an Optional DesignSpecificationOutdoorAir.  See the section [Optionals and .get](#345-optionals-and-get) for more information about optional types.
 
 The written description of the method:
 
