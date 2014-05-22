@@ -25,9 +25,6 @@ This allows you to view, run, and track test results from all OpenStudio tests d
 ##### [Highlight all occurrences of selected word](http://visualstudiogallery.msdn.microsoft.com/24f8c2a3-7175-42ed-8b37-fd618279c312)
 This extension allows you to select a variable or string and highlight all instances of that string.
 
-##### [Indent Guides](http://visualstudiogallery.msdn.microsoft.com/e792686d-542b-474a-8c55-630980e72c30)
-This adds vertical lines at each indent level for convenience.
-
 ##### [Productivity Power Tools 2013](http://visualstudiogallery.msdn.microsoft.com/dbcb8670-889e-4a54-a226-a48a15e4cace)
 This extension adds a large number of useful features, including highlighting project errors in the solution explorer, filtering the solution explorer, scrollbar markers to help find related code, middle-click scrolling, fixing mixed tabs and spaces, aligning assignments, and much more.
 
