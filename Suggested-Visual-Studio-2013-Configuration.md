@@ -14,6 +14,9 @@ In `TOOLS -> Options -> Text Editor -> All Languages -> C/C++ -> Tabs`, set `Tab
 ### Add Syntax Highlighting to .i Files
 In `TOOLS -> Options -> Text Editor -> File Extension`, add the `i` extension with the `Microsoft Visual C++` editor.
 
+### Close File Shortcut
+In `TOOLS -> Options -> Environment -> Keyboard`, search for the `File.Close` command and add the `Ctrl+W` global shortcut.
+
 ### Extensions
 
 ##### [CMake Tools for Visual Studio](http://visualstudiogallery.msdn.microsoft.com/6d1586a9-1c98-4ac7-b54f-7615d5f9fbc7)
