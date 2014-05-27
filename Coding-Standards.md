@@ -1,63 +1,63 @@
 > [Wiki](Home) ▸ **Coding Standards**
 
 ### Contents
-1. [Introduction](Coding-Standards#wiki-1-introduction)
-2. [Coding Standards](Coding-Standards#wiki-2-coding-standards)
-    1. [General Guidelines](Coding-Standards#wiki-21-general-guidelines)
-    2. [External References](Coding-Standards#wiki-22-external-references)
-        1. [References](Coding-Standards#wiki-221-references)
-        2. [Links](Coding-Standards#wiki-222-links)
-    3. [Project Layout](Coding-Standards#wiki-23-project-layout)
-        1. [Project Files](Coding-Standards#wiki-231-project-files)
-        2. [Source Files](Coding-Standards#wiki-232-source-files)
-        3. [External Dependencies](Coding-Standards#wiki-233-external-dependencies)
-    4. [Naming](Coding-Standards#wiki-24-naming)
-        1. [Namespaces](Coding-Standards#wiki-241-namespaces)
-        2. [Other Naming Conventions](Coding-Standards#wiki-242-other-naming-conventions)
-        3. [Naming Descriptiveness](Coding-Standards#wiki-243-naming-descriptiveness)
-    5. [Files](Coding-Standards#wiki-25-files)
-        1. [Include Statements](Coding-Standards#wiki-251-include-statements)
-        2. [Using Statements and Namespace Aliases](Coding-Standards#wiki-252-using-statements-and-namespace-aliases)
-    6. [Classes](Coding-Standards#wiki-26-classes)
-        1. [Object Oriented Design](Coding-Standards#wiki-261-object-oriented-design)
-        2. [Class Header Files](Coding-Standards#wiki-262-class-header-files)
-        3. [Class Source Files](Coding-Standards#wiki-263-class-source-files)
-        4. [Class Definitions](Coding-Standards#wiki-264-class-definitions)
-        5. [Code Definitions in Header Files](Coding-Standards#wiki-265-code-definitions-in-header-files)
-        6. [Inheritance and Virtual Functions](Coding-Standards#wiki-266-inheritance-and-virtual-functions)
-        7. [Friends](Coding-Standards#wiki-267-friends)
-        8. [Nested Classes](Coding-Standards#wiki-268-nested-classes)
-    7. [Functions](Coding-Standards#wiki-27-functions)
-        1. [Inline](Coding-Standards#wiki-271-inline)
-        2. [Function Overloading](Coding-Standards#wiki-272-function-overloading)
-        3. [Passing Arguments](Coding-Standards#wiki-273-passing-arguments)
-        4. [Return Values](Coding-Standards#wiki-274-return-values)
-        5. [Const-Correctness](Coding-Standards#wiki-275-const-correctness)
-    8. [General](Coding-Standards#wiki-28-general)
-        1. [Strings](Coding-Standards#wiki-281-strings)
-        2. [Paths](Coding-Standards#wiki-282-paths)
-        3. [Typedefs](Coding-Standards#wiki-283-typedefs)
-        4. [Memory Management](Coding-Standards#wiki-284-memory-management)
-        5. [Avoid Code Duplication](Coding-Standards#wiki-285-avoid-code-duplication)
-        6. [Flow Control](Coding-Standards#wiki-286-flow-control)
-        7. [Serialization](Coding-Standards#wiki-287-serialization)
-        8. [SWIG Support](Coding-Standards#wiki-288-swig-support)
-    9. [Code Portability](Coding-Standards#wiki-29-code-portability)
-        1. [Compiler Warnings](Coding-Standards#wiki-291-compiler-warnings)
-        2. [Exceptions](Coding-Standards#wiki-292-exceptions)
-        3. [Logging](Coding-Standards#wiki-293-logging)
-        4. [Unit Tests](Coding-Standards#wiki-294-unit-tests)
-    10. [Formatting](Coding-Standards#wiki-210-formatting)
-        1. [Indentation and Wrapping](Coding-Standards#wiki-2101-indentation-and-wrapping)
-        2. [Comments](Coding-Standards#wiki-2102-comments)
-        3. [Old Code and Commented-out Code](Coding-Standards#wiki-2103-old-code-and-commented-out-code)
-        4. [Temporary Code](Coding-Standards#wiki-2104-temporary-code)
-3. [Ruby Coding Standards](Coding-Standards#wiki-3-ruby-coding-standards)
-    1. [Project Layout](Coding-Standards#wiki-31-project-layout)
-    2. [Naming](Coding-Standards#wiki-32-naming)
-    3. [Unit Tests](Coding-Standards#wiki-33-unit-tests)
-    4. [Indentation and Wrapping](Coding-Standards#wiki-34-ndentation-and-wrapping)
-    5. [Comments](Coding-Standards#wiki-35-comments)
+1. [Introduction](#1-introduction)
+2. [Coding Standards](#2-coding-standards)
+    1. [General Guidelines](#21-general-guidelines)
+    2. [External References](#22-external-references)
+        1. [References](#221-references)
+        2. [Links](#222-links)
+    3. [Project Layout](#23-project-layout)
+        1. [Project Files](#231-project-files)
+        2. [Source Files](#232-source-files)
+        3. [External Dependencies](#233-external-dependencies)
+    4. [Naming](#24-naming)
+        1. [Namespaces](#241-namespaces)
+        2. [Other Naming Conventions](#242-other-naming-conventions)
+        3. [Naming Descriptiveness](#243-naming-descriptiveness)
+    5. [Files](#25-files)
+        1. [Include Statements](#251-include-statements)
+        2. [Using Statements and Namespace Aliases](#252-using-statements-and-namespace-aliases)
+    6. [Classes](#26-classes)
+        1. [Object Oriented Design](#261-object-oriented-design)
+        2. [Class Header Files](#262-class-header-files)
+        3. [Class Source Files](#263-class-source-files)
+        4. [Class Definitions](#264-class-definitions)
+        5. [Code Definitions in Header Files](#265-code-definitions-in-header-files)
+        6. [Inheritance and Virtual Functions](#266-inheritance-and-virtual-functions)
+        7. [Friends](#267-friends)
+        8. [Nested Classes](#268-nested-classes)
+    7. [Functions](#27-functions)
+        1. [Inline](#271-inline)
+        2. [Function Overloading](#272-function-overloading)
+        3. [Passing Arguments](#273-passing-arguments)
+        4. [Return Values](#274-return-values)
+        5. [Const-Correctness](#275-const-correctness)
+    8. [General](#28-general)
+        1. [Strings](#281-strings)
+        2. [Paths](#282-paths)
+        3. [Typedefs](#283-typedefs)
+        4. [Memory Management](#284-memory-management)
+        5. [Avoid Code Duplication](#285-avoid-code-duplication)
+        6. [Flow Control](#286-flow-control)
+        7. [Serialization](#287-serialization)
+        8. [SWIG Support](#288-swig-support)
+    9. [Code Portability](#29-code-portability)
+        1. [Compiler Warnings](#291-compiler-warnings)
+        2. [Exceptions](#292-exceptions)
+        3. [Logging](#293-logging)
+        4. [Unit Tests](#294-unit-tests)
+    10. [Formatting](#210-formatting)
+        1. [Indentation and Wrapping](#2101-indentation-and-wrapping)
+        2. [Comments](#2102-comments)
+        3. [Old Code and Commented-out Code](#2103-old-code-and-commented-out-code)
+        4. [Temporary Code](#2104-temporary-code)
+3. [Ruby Coding Standards](#3-ruby-coding-standards)
+    1. [Project Layout](#31-project-layout)
+    2. [Naming](#32-naming)
+    3. [Unit Tests](#33-unit-tests)
+    4. [Indentation and Wrapping](#34-ndentation-and-wrapping)
+    5. [Comments](#35-comments)
 
 ## 1. Introduction
 The purpose of NREL's coding standard is to manage the complexity of the programming languages used in OpenStudio development while maintaining access to powerful features. The coding standard will help existing developers, new team members, and subcontractors work together in a cohesive team to create high quality software. Requiring the use of certain language features while prohibiting or restricting the use of others is one aspect of a coding standard. The other aspect is enforcing common idioms, styles, and conventions to help developers understand each other's code.
@@ -232,10 +232,10 @@ We encourage the use of Object Oriented (OO) design because it helps encapsulate
 #### 2.6.2. Class Header Files
 The following is required in class header files.
 
-1. Surround code with an include guard ([Section 2.5.2.1](Coding-Standards#2521-include-guards)).
+1. Surround code with an include guard ([Section 2.5.2.1](#2521-include-guards)).
 2. Forward declarations of other classes are preferred over #including the header files of those classes. #includes are only required if the class is actually used in the declaration, not if it is merely referenced. For instance, an #include is required if an instance of the other class is a member variable of the class being declared, but not if a pointer (including `boost::shared_ptr`) to that class is a member variable. A forward declaration is also sufficient for classes referenced in member function declarations.
-3. Classes in the public API must include Doxygen documentation. Otherwise, practice good commenting habits, and use our code review comment format when appropriate ([Section 2.10.2](Coding-Standards#2102-comments)).
-4. Use `const` appropriately ([Section 2.1](Coding-Standards#21-general-guidelines), [Section 2.7.5](Coding-Standards#275-const-correctness)).
+3. Classes in the public API must include Doxygen documentation. Otherwise, practice good commenting habits, and use our code review comment format when appropriate ([Section 2.10.2](#2102-comments)).
+4. Use `const` appropriately ([Section 2.1](#21-general-guidelines), [Section 2.7.5](#275-const-correctness)).
 5. Place typedef statements and non-member helper functions related to the class immediately below the class declaration.
 6. Mark functions defined in header as inline.
 7. Refrain from using convenience typedef names in public header files. For instance, `boost::optional<std::string>` is preferred to `OptionalString` (in public hpp only). While the latter is more readable (and shorter to type), the longhand version helps SWIG and Doxygen.
@@ -245,8 +245,8 @@ The following is required in class header files.
 The following is required in class source files.
 
 1. Source files should #include header files instead of using extern declarations.
-2. Practice good commenting habits, and use our code review comment format when appropriate. Doxygen comments do not need to be written or maintained for cpp files ([Section 2.10.2](Coding-Standards#2102-comments)).
-3. Follow the #include order outlined in [Section 2.5.1](Coding-Standards#251-include-statements).
+2. Practice good commenting habits, and use our code review comment format when appropriate. Doxygen comments do not need to be written or maintained for cpp files ([Section 2.10.2](#2102-comments)).
+3. Follow the #include order outlined in [Section 2.5.1](#251-include-statements).
 4. Try to keep definitions (member and non-member functions, data initializations) in the same order as the declarations in the hpp file.
 
 #### 2.6.4 Class Definitions
@@ -527,7 +527,7 @@ __Details__
 All compilers support esoteric warnings that generate more noise then useful information. However, all warnings that the compiler authors think are important should be enabled. They will often help you find portability and logic problems. For example, in Visual C++ at least warning level 3 (/W3) should be enabled, as it is recommended for production code (http://msdn.microsoft.com/en-us/library/thxezb7y.aspx). Similarly, -Wall warnings should be enabled in G++ (http://gcc.gnu.org/onlinedocs/gcc-4.4.2/gcc/Warning-Options.html). An interesting option for G++ that is not enabled with -Wall is -Weffc++, which generates warnings for programming standards specified in Meyers (2005).
 
 #### 2.9.2. Exceptions
-We allow our code to throw exceptions. However, the number of exceptions thrown should be limited to the absolute minimum required. Exceptions should not be used to pass expected information between components and should not be used as "convienient" methods for changing program execution paths. An exception means something very bad has happened and the code cannot continue on in the manner it was called. All thrown exceptions must be logged, see [2.9.3](Coding-Standards#293-logging); use of the `LOG_AND_THROW` or `LOG_FREE_AND_THROW` macros is encouraged. Valid situations to throw exceptions include object constructors called with parameters that would invalidate an object's state (e.g. conversion from string to number fails) or failed attempts to access resources (e.g. missing files or out of memory errors). All exceptions thrown in our code must be derived from `std::exception`, and should not be identically equal to `std::exception` (because gcc does not recognize `std::exception(const char*)`). Additionally, all methods that throw exceptions must be documented as such; it is assumed that unmarked methods do not throw. Because the C++ language does not provide a method to enforce the types of exceptions thrown at compile time we mark exception throwing methods with comments like `/** throws ExceptionType1, ExceptionType2, ... */`.
+We allow our code to throw exceptions. However, the number of exceptions thrown should be limited to the absolute minimum required. Exceptions should not be used to pass expected information between components and should not be used as "convienient" methods for changing program execution paths. An exception means something very bad has happened and the code cannot continue on in the manner it was called. All thrown exceptions must be logged, see [2.9.3](#293-logging); use of the `LOG_AND_THROW` or `LOG_FREE_AND_THROW` macros is encouraged. Valid situations to throw exceptions include object constructors called with parameters that would invalidate an object's state (e.g. conversion from string to number fails) or failed attempts to access resources (e.g. missing files or out of memory errors). All exceptions thrown in our code must be derived from `std::exception`, and should not be identically equal to `std::exception` (because gcc does not recognize `std::exception(const char*)`). Additionally, all methods that throw exceptions must be documented as such; it is assumed that unmarked methods do not throw. Because the C++ language does not provide a method to enforce the types of exceptions thrown at compile time we mark exception throwing methods with comments like `/** throws ExceptionType1, ExceptionType2, ... */`.
 
 Function calls to other libraries that may throw exceptions under relatively normal circumstances (`boost::filesystem` comes to mind) must be wrapped in a try/catch block. If an exception is caught it may be rethrown following the above guidelines.
 
@@ -595,7 +595,7 @@ namespace foo {
 #### 2.9.4. Unit Tests
 We aim to sufficiently test all OpenStudio code to ensure that it functions as expected, both in regular use and for corner cases. Writing unit tests before the code is fully functional is highly recommended. When fixing bugs or tracing down input specific errors we ask that those problem cases be added to the unit test suit to trap future error conditions or similar bugs. We compute code coverage analysis as one indicator of whether or not code is tested sufficiently.
 
-An important convention is that no output be written to standard out or standard error in unit tests. Diagnostic information may be logged using the logging macros described in [2.9.3](Coding-Standards#293-logging). Each test fixture disables logging output to standard out and sends it to a file named `test_fixture_name.log`.
+An important convention is that no output be written to standard out or standard error in unit tests. Diagnostic information may be logged using the logging macros described in [2.9.3](#293-logging). Each test fixture disables logging output to standard out and sends it to a file named `test_fixture_name.log`.
 
 ### 2.10. Formatting
 
