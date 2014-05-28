@@ -17,6 +17,19 @@ In `TOOLS -> Options -> Text Editor -> File Extension`, add the `i` extension wi
 ### Close File Shortcut
 In `TOOLS -> Options -> Environment -> Keyboard`, search for the `File.Close` command and add the `Ctrl+W` global shortcut.
 
+### Kill Build Shortcut
+> The purpose behind this tweak is to instantly stop the build when you want it stopped, without hitting Cancel and waiting for long-running processes to finish
+
+In `TOOLS -> External Tools`, add the following tool:
+| FIELD              | VALUE                            |
+|--------------------|----------------------------------|
+| Title:             | &amp;Kill Build                  |
+| Command:           | C:\Windows\System32\taskkill.exe |
+| Arguments:         | /F /IM MSBuild.exe /T            |
+| Initial directory: |                                  |
+
+Then move it up in the list to the first position.  Next, open `TOOLS -> Options -> Environment -> Keyboard`, search for the `Tools.ExternalCommand1` command and add the `Ctrl+Shift+X` global shortcut.
+
 ### Extensions
 
 ##### [CMake Tools for Visual Studio](http://visualstudiogallery.msdn.microsoft.com/6d1586a9-1c98-4ac7-b54f-7615d5f9fbc7)
