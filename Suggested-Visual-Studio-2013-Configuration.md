@@ -21,6 +21,7 @@ In `TOOLS -> Options -> Environment -> Keyboard`, search for the `File.Close` co
 > The purpose behind this tweak is to instantly stop the build when you want it stopped, without hitting Cancel and waiting for long-running processes to finish
 
 In `TOOLS -> External Tools`, add the following tool:
+
 | FIELD              | VALUE                            |
 |--------------------|----------------------------------|
 | Title:             | &amp;Kill Build                  |
