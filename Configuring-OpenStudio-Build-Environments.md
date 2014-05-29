@@ -61,9 +61,9 @@ Clone the repository, create a build directory, and launch CMake:
 ### Prerequisites
 Install [msysGit](http://msysgit.github.io/)
 
-Extract [SWIG](http://developer.nrel.gov/downloads/buildings/openstudio/src/swigwin-3.0.0.zip) to `C:\swig\swigwin-3.0.0`
-Append `C:\swig\swigwin-3.0.0;` to the System `Path` variable
-> _Latest v3.0.0 tested and working_
+Extract [SWIG](http://developer.nrel.gov/downloads/buildings/openstudio/src/swigwin-3.0.1.zip) to `C:\swig\swigwin-3.0.1`
+Append `C:\swig\swigwin-3.0.1;` to the System `Path` variable
+> _Latest v3.0.1 tested and working_
 
 Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe) with the option of adding CMake to the system PATH for all users
 > _Latest v2.8.12.2 tested and working_
@@ -251,18 +251,18 @@ rm -rf rubygems-2.0.4
 gem install rake
 
 ###############
-# SWIG 3.0.0 #
+# SWIG 3.0.1 #
 ###############
-wget http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.0.tar.gz
-tar -xzf swig-3.0.0.tar.gz
-rm swig-3.0.0.tar.gz
-cd swig-3.0.0
+wget http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.1.tar.gz
+tar -xzf swig-3.0.1.tar.gz
+rm swig-3.0.1.tar.gz
+cd swig-3.0.1
 sudo yum install pcre-devel
 ./configure 
 make
 sudo make install
 cd ..
-rm -rf swig-3.0.0
+rm -rf swig-3.0.1
 
 ################
 # Boost 1.47.0 #
@@ -327,7 +327,7 @@ Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Darwin64-universa
 Install Xcode from the App Store:
 > Download the Auxiliary Tools for Xcode - Late July 2012 from https://developer.apple.com/downloads/ then drag PackageMaker.app to `/Applications/`
 
-Install [SWIG](http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.0.tar.gz)
+Install [SWIG](http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.1.tar.gz)
 ```bash
 curl -LO ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.35.tar.gz
 tar -xzf pcre-8.35.tar.gz
@@ -338,15 +338,15 @@ make
 sudo make install
 cd ..
 rm -rf pcre-8.35
-curl -LO http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.0.tar.gz
-tar -xzf swig-3.0.0.tar.gz
-rm swig-3.0.0.tar.gz
-cd swig-3.0.0
+curl -LO http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.1.tar.gz
+tar -xzf swig-3.0.1.tar.gz
+rm swig-3.0.1.tar.gz
+cd swig-3.0.1
 ./configure
 make
 sudo make install
 cd ..
-rm -rf swig-3.0.0
+rm -rf swig-3.0.1
 ```
 
 Modify `~/.bash_profile` to help give CMake defaults for the build options
