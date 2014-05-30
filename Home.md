@@ -4,7 +4,13 @@
 
 ## Developer Resources
 
+### Building OpenStudio
 * [[Information for Third Party Collaborators]]
 * [[Using OpenStudio with Git and GitHub]]
 * [[Configuring OpenStudio Build Environments]]
+* [[Suggested Visual Studio 2013 Configuration]]
+* [[Coding Standards]] 
+
+### Additional Documentation
+* [[Measure Writing Guide]]
 * [[EnergyPlus Version Change]]
