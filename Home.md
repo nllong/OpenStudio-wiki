@@ -9,7 +9,7 @@
 * [[Using OpenStudio with Git and GitHub]]
 * [[Configuring OpenStudio Build Environments]]
 * [[Suggested Visual Studio 2013 Configuration]]
-* [[Coding Standards]] 
+* [[Coding Standards]] (Outdated)
 
 ### Additional Documentation
 * [[Measure Writing Guide]]
