@@ -42,9 +42,6 @@ This adds syntax highlighting to Doxygen commands
 ##### [GoogleTest Runner](http://visualstudiogallery.msdn.microsoft.com/9dd47c21-97a6-4369-b326-c562678066f0)
 This allows you to view, run, and track test results from all OpenStudio tests directly in Visual Studio.
 
-##### [Highlight all occurrences of selected word](http://visualstudiogallery.msdn.microsoft.com/24f8c2a3-7175-42ed-8b37-fd618279c312)
-This extension allows you to select a variable or string and highlight all instances of that string.
-
 ##### [Productivity Power Tools 2013](http://visualstudiogallery.msdn.microsoft.com/dbcb8670-889e-4a54-a226-a48a15e4cace)
 This extension adds a large number of useful features, including highlighting project errors in the solution explorer, filtering the solution explorer, scrollbar markers to help find related code, middle-click scrolling, fixing mixed tabs and spaces, aligning assignments, and much more.
 
