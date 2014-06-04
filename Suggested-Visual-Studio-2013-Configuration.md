@@ -47,7 +47,7 @@ This extension adds a large number of useful features, including highlighting pr
 
 ##### [Visual Studio Spell Checker](http://visualstudiogallery.msdn.microsoft.com/a23de100-31a1-405c-b4b7-d6be40c3dfff)
 This will highlight potential spelling mistakes in code strings and comments.
-Import this user dictionary to avoid false positives in OpenStudio code: [[/files/Suggested-Visual-Studio-2013-Configuration/OSDictionary.dic]]
+Import this user dictionary to avoid false positives in OpenStudio code: [OSDictionary.dic](/files/Suggested-Visual-Studio-2013-Configuration/OSDictionary.dic)
 
 `TOOLS -> Spell Checker -> Edit Configuration -> User Dictionary -> Import`
 
