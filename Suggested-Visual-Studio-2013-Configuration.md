@@ -47,6 +47,9 @@ This extension adds a large number of useful features, including highlighting pr
 
 ##### [Visual Studio Spell Checker](http://visualstudiogallery.msdn.microsoft.com/a23de100-31a1-405c-b4b7-d6be40c3dfff)
 This will highlight potential spelling mistakes in code strings and comments.
+Import this user dictionary to avoid false positives in OpenStudio code: [[/files/Suggested-Visual-Studio-2013-Configuration/OSDictionary.dic]]
+
+`TOOLS -> Spell Checker -> Edit Configuration -> User Dictionary -> Import`
 
 ##### [VSCommands for Visual Studio 2013](http://visualstudiogallery.msdn.microsoft.com/c6d1c265-7007-405c-a68b-5606af238ece)
 This extension also adds a large number of useful features, including coloring output window text color, showing a build summary, changing the window title to reflect the current Git branch, keeping documents open when reloading projects, canceling the build when the first project fails, and more.
