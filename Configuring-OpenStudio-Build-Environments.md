@@ -61,7 +61,7 @@ Clone the repository, create a build directory, and launch CMake:
 ### Prerequisites
 Install [msysGit](http://msysgit.github.io/)
 
-Extract [SWIG](http://developer.nrel.gov/downloads/buildings/openstudio/src/swigwin-3.0.2.zip) to `C:\swig\swigwin-3.0.2`
+Extract [SWIG](http://developer.nrel.gov/downloads/buildings/openstudio/src/swigwin-3.0.2.zip) to `C:\swig`
 Append `C:\swig\swigwin-3.0.2;` to the System `Path` variable
 > _Latest v3.0.2 tested and working_
 
