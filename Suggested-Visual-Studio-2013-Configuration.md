@@ -15,7 +15,7 @@ In `TOOLS -> Options -> Text Editor -> C/C++ -> Tabs`, set `Tab size` and `Inden
 In `TOOLS -> Options -> Text Editor -> File Extension`, add the `i` extension with the `Microsoft Visual C++` editor.
 
 ### Close File Shortcut
-In `TOOLS -> Options -> Environment -> Keyboard`, search for the `File.Close` command and add the `Ctrl+W` global shortcut.
+In `TOOLS -> Options -> Environment -> Keyboard`, search for the `File.Close` command and add the `Ctrl+W` shortcut in the `Text Editor` context.
 
 ### Kill Build Shortcut
 > The purpose behind this tweak is to instantly stop the build when you want it stopped, without hitting Cancel and waiting for long-running processes to finish
