@@ -9,7 +9,7 @@ Copy the contents of the [Visualizers](https://github.com/NREL/OpenStudio/tree/D
 Enable `TOOLS -> Options -> Text Editor -> All Languages -> Line numbers`
 
 ### Configure Spacing
-In `TOOLS -> Options -> Text Editor -> All Languages -> C/C++ -> Tabs`, set `Tab size` and `Indent size` to 2 with the `Insert spaces` option selected.
+In `TOOLS -> Options -> Text Editor -> C/C++ -> Tabs`, set `Tab size` and `Indent size` to 2 with the `Insert spaces` option selected.
 
 ### Add Syntax Highlighting to .i Files
 In `TOOLS -> Options -> Text Editor -> File Extension`, add the `i` extension with the `Microsoft Visual C++` editor.
