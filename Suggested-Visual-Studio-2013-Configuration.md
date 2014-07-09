@@ -34,13 +34,13 @@ Then move it up in the list to the first position.  Next, open `TOOLS -> Options
 ### Extensions
 
 ##### [CMake Tools for Visual Studio](http://visualstudiogallery.msdn.microsoft.com/6d1586a9-1c98-4ac7-b54f-7615d5f9fbc7)
-This adds syntax highlighting and IntelliSense support for CMake files
+This adds syntax highlighting and IntelliSense support for CMake files.  Be sure to set `Tools -> Options -> CMake Tools -> Commands In Lowercase`.
 
 ##### [Doxygen Comments](http://visualstudiogallery.msdn.microsoft.com/11a30c1c-593b-4399-a702-f23a56dd8548)
 This adds syntax highlighting to Doxygen commands
 
 ##### [GoogleTest Runner](http://visualstudiogallery.msdn.microsoft.com/9dd47c21-97a6-4369-b326-c562678066f0)
-This allows you to view, run, and track test results from all OpenStudio tests directly in Visual Studio.  Be sure to open `TEST -> Windows -> Test Explorer`
+This allows you to view, run, and track test results from all OpenStudio tests directly in Visual Studio.  Be sure to open `TEST -> Windows -> Test Explorer`.
 
 ##### [Productivity Power Tools 2013](http://visualstudiogallery.msdn.microsoft.com/dbcb8670-889e-4a54-a226-a48a15e4cace)
 This extension adds a large number of useful features, including highlighting project errors in the solution explorer, filtering the solution explorer, scrollbar markers to help find related code, middle-click scrolling, fixing mixed tabs and spaces, aligning assignments, and much more.
