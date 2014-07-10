@@ -9,28 +9,19 @@
 **Advanced**: [Manual Build Instructions](#manual-build-instructions)
 - [Windows Configuration](#windows-configuration)
     * [Prerequisites](#prerequisites)
-    * [Windows 7/8.1, Visual Studio 2010](#windows-781-visual-studio-2010)
-        - [Professional](#professional)
-        - [Professional x64](#professional-x64)
-        - [Express](#express)
-        - [Express x64](#express-x64)
     * [Windows 7/8.1, Visual Studio 2013](#windows-781-visual-studio-2013)
         - [Professional](#professional-1)
 - [Linux Configuration](#linux-configuration)
-    * [Ubuntu 12.04 (x86 and x64)](#ubuntu-1204-x86-and-x64)
     * [Ubuntu 14.04 (x86 and x64)](#ubuntu-1404-x86-and-x64)
-    * [Fedora 19 (x86 and x64)](#fedora-19-x86-and-x64)
-    * [RHEL 5 (x86 and x64)](#rhel-5-x86-and-x64)
 - [Mac Configuration](#mac-configuration)
     * [Prerequisites](#prerequisites-1)
-    * [OS X 10.8](#os-x-108)
     * [OS X 10.9](#os-x-109)
 
 # Using the Superbuild
-This is the fastest, most reliable method of getting a working OpenStudio build.  These instructions assume that you have successfully [cloned the OpenStudio repository](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer) already.
+This is the fastest, most reliable method of getting a working OpenStudio build.  These instructions assume that you have successfully [cloned the OpenStudio repository](Using-OpenStudio-with-Git-and-GitHub#cloning-the-repository-to-your-local-computer) already, and installed [Qt](http://qt-project.org/downloads) (Note that creating a universal mac build will require that you build Qt yourself - follow the instructions below).
 
 ### Windows
-Install Visual Studio 2010, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe), and [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
+Install Visual Studio 2013, [CMake](http://www.cmake.org/files/v3.0/cmake-3.0.0-win32-x86.exe), and [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
 Clone the repository, create a build directory, and launch CMake:
 
@@ -46,7 +37,7 @@ Clone the repository, create a build directory, and launch CMake:
 [[/images/Configuring-OpenStudio-Build-Environments/cmake.linux.png]]
 
 ### Mac
-Install Xcode, Xcode's command line tools, [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Darwin64-universal.dmg), and [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
+Install Xcode, [CMake](http://www.cmake.org/files/v3.0/cmake-3.0.0-Darwin64-universal.dmg), and [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus).
 
 Clone the repository, create a build directory, and launch CMake:
 
@@ -65,13 +56,10 @@ Extract [SWIG](http://developer.nrel.gov/downloads/buildings/openstudio/src/swig
 Append `C:\swig\swigwin-3.0.2;` to the System `Path` variable
 > _Latest v3.0.2 tested and working_
 
-Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.exe) with the option of adding CMake to the system PATH for all users
-> _Latest v2.8.12.2 tested and working_
+Install [CMake](http://www.cmake.org/files/v3.0/cmake-3.0.0-win32-x86.exe)
+> _Latest v3.0.0 tested and working_
 
 Install [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus)
-
-Optionally extract [Ruby](http://developer.nrel.gov/downloads/buildings/openstudio/src/ruby-1.8.6-msvc-ssl.zip) to `C:\Ruby` if you want a convenient location to access the OpenStudio Ruby bindings
-> _v1.8.6 MSVC tested and working_
 
 #### For Building Documentation
 Install [Doxygen](http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.7-setup.exe)
@@ -92,17 +80,15 @@ Install [Radiance](https://openstudio.nrel.gov/accept/file/1043) using the insta
 Install [NSIS](http://prdownloads.sourceforge.net/nsis/nsis-2.46-setup.exe?download)
 > _v2.46 tested and working_
 
-### Windows 7/8.1, Visual Studio 2010
-Extract [Boost](http://developer.nrel.gov/downloads/buildings/openstudio/src/boost_1_47.zip) to `C:\Program Files (x86)` and append `C:\Program Files (x86)\boost\boost_1_47;` to the System `Path` variable, or use the CMake option `BUILD_BOOST`
-> _v1.47.0 MSVC tested and working_
+### Windows 7/8.1, Visual Studio 2013
+Install [Boost](http://sourceforge.net/projects/boost/files/boost-binaries/1.55.0-build2/boost_1_55_0-msvc-12.0-32.exe/download) to the default directory of `C:\local`
+> _v1.55.0 tested and working_
 
-Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-opensource-windows-x86-vs2010-4.8.6.exe)
-> _v4.8.6 VS2010 tested and working_
+Install [Qt](http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-opensource-windows-x86-msvc2013_opengl-5.3.0.exe)
+> _v5.3.0 VS2013 OpenGL tested and working_
 
 #### Professional
-Install [Visual Studio 2010 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=23691)
-
-Add `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin` to the System `Path` variable
+Install [Visual Studio 2013 Update 2](http://www.microsoft.com/en-us/download/details.aspx?id=42666)
 
 #### Professional x64
 Follow the previous instructions above to configure the environment for VS2010 Professional.  Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64-bit builds.
@@ -131,59 +117,22 @@ The `BUILD_QT`, `BUILD_BOOST`, and `BUILD_SWIG` CMake options are _required_ for
 
 The `MSVC_IS_EXPRESS` CMake option is required and should be enabled.
 
-### Windows 7/8.1, Visual Studio 2013
-Install [Boost](http://sourceforge.net/projects/boost/files/boost-binaries/1.55.0-build2/boost_1_55_0-msvc-12.0-32.exe/download) to the default directory of `C:\local`
-> _v1.55.0 tested and working_
-
-Install [Qt](http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-opensource-windows-x86-msvc2013_opengl-5.3.0.exe)
-> _v5.3.0 VS2013 OpenGL tested and working_
-
-#### Professional
-Install [Visual Studio 2013 Update 2](http://www.microsoft.com/en-us/download/details.aspx?id=42666)
-
 ## Linux Configuration
-
-### Ubuntu 12.04 (x86 and x64)
-Build Dependencies:
-```bash
-sudo apt-get install dpkg-dev git cmake-curses-gui libqt4-dev libboost-all-dev ruby-dev ruby swig libxt-dev doxygen graphviz
-```
-
-Install EnergyPlus 8.1
-```bash
-# Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
-sudo sh SetEPlusV810009-lin-64.sh
-rm SetEPlusV810009-lin-64.sh
-```
-
-Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz)
-```bash
-sudo apt-get install libncurses-dev
-wget http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz
-tar -xzf cmake-2.8.12.2.tar.gz
-rm cmake-2.8.12.2.tar.gz
-cd cmake-2.8.12.2
-./configure
-make
-sudo make install
-cd ..
-rm -rf cmake-2.8.12.2
-```
 
 ### Ubuntu 14.04 (x86 and x64)
 Build Dependencies:
 ```bash
 sudo apt-get install dpkg-dev git cmake-curses-gui qt5-default libqt5webkit5-dev libboost1.55-all-dev swig libssl-dev libxt-dev doxygen graphviz
 
-wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz
-tar -xzf ruby-2.0.0-p353.tar.gz
-rm ruby-2.0.0-p353.tar.gz
-cd ruby-2.0.0-p353
+wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p451.tar.gz
+tar -xzf ruby-2.0.0-p451.tar.gz
+rm ruby-2.0.0-p451.tar.gz
+cd ruby-2.0.0-p451
 ./configure --enable-shared --prefix=/usr/local
 make -j2
 sudo make install
 cd ..
-rm -rf ruby-2.0.0-p353
+rm -rf ruby-2.0.0-p451
 
 sudo ln -fs /usr/local/bin/ruby /usr/bin/ruby
 ```
@@ -195,137 +144,14 @@ sudo sh SetEPlusV810009-lin-64.sh
 rm SetEPlusV810009-lin-64.sh
 ```
 
-### Fedora 19 (x86 and x64)
-Prerequisites:
-```bash
-sudo yum groupinstall development-libs development-tools
-sudo yum install gcc-c++ cmake swig patch qt-devel qtwebkit-devel ruby ruby-devel graphviz
-sudo yum remove boost-devel
-curl -LO http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
-tar -xzf boost_1_47_0.tar.gz
-rm boost_1_47_0.tar.gz
-cd boost_1_47_0
-# Apply patch https://svn.boost.org/trac/boost/ticket/6165
-# Replace all instances of "TIME_UTC" with "TIME_UTC_" in boost/thread/xtime.hpp and libs/thread/src/pthread/timeconv.inl
-sh ./bootstrap.sh
-./b2
-sudo ./b2 install --prefix=/usr/local
-cd ..
-rm -rf boost_1_47_0
-```
-
-EnergyPlus 8.1
-```bash
-# Download from http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus with the correct architecture
-sudo sh SetEPlusV810009-lin-64.sh
-rm SetEPlusV810009-lin-64.sh
-```
-
-### RHEL 5 (x86 and x64)
-```bash
-sudo yum groupinstall development-libs development-tools  
-sudo yum remove boost-devel
-
-##############
-# Ruby 1.8.7 #
-##############
-sudo yum remove ruby ruby-devel
-wget http://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p374.tar.gz
-tar -xzf ruby-1.8.7-p374.tar.gz
-rm ruby-1.8.7-p374.tar.gz
-cd ruby-1.8.7-p374
-./configure
-make
-sudo make install
-cd ..
-rm -rf ruby-1.8.7-p374
-
-wget http://production.cf.rubygems.org/rubygems/rubygems-2.0.4.tgz 
-tar -xzf rubygems-2.0.4.tgz
-rm rubygems-2.0.4.tgz
-cd rubygems-2.0.4
-sudo ruby setup.rb
-cd ..
-rm -rf rubygems-2.0.4
-
-gem install rake
-
-###############
-# SWIG 3.0.2 #
-###############
-wget http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.2.tar.gz
-tar -xzf swig-3.0.2.tar.gz
-rm swig-3.0.2.tar.gz
-cd swig-3.0.2
-sudo yum install pcre-devel
-./configure 
-make
-sudo make install
-cd ..
-rm -rf swig-3.0.2
-
-################
-# Boost 1.47.0 #
-################
-wget http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
-tar -xzf boost_1_47_0.tar.gz
-rm boost_1_47_0.tar.gz
-cd boost_1_47_0
-./bootstrap.sh
-./b2
-sudo ./b2 install --prefix=/usr/local
-cd ..
-rm -rf boost_1_47_0
-			
-############
-# Qt 4.8.6 #
-############
-wget http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
-tar -xzf qt-everywhere-opensource-src-4.8.6.tar.gz
-rm qt-everywhere-opensource-src-4.8.6.tar.gz
-cd qt-everywhere-opensource-src-4.8.6
-./configure -debug-and-release -opensource -qt-sql-sqlite -plugin-sql-sqlite -no-qt3support -nomake examples -nomake demos -nomake docs -confirm-license
-gmake
-#Go through the Makefiles in the 3rd party directory and remove the -Werror compiler flags if build failed (This step may need to be repeated)
-#find src/3rdparty/webkit/ -type f -name Makefile -exec sed -i 's/-Werror //g' {} \;
-#find src/3rdparty/webkit/ -type f -name Makefile.* -exec sed -i 's/-Werror //g' {} \;
-#gmake
-sudo gmake install
-cd ..
-rm -rf qt-everywhere-opensource-src-4.8.6
-
-##################
-# CMake 2.8.12.2 #
-##################
-wget http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz
-tar -xzf cmake-2.8.12.2.tar.gz
-rm cmake-2.8.12.2.tar.gz
-cd cmake-2.8.12.2
-./configure
-gmake
-sudo gmake install
-cd ..
-rm -rf cmake-2.8.12.2
-
-EnergyPlus 8.1
-
-_RHEL will require a special EnergyPlus build for 8.1 due to glibc incompatibility_
-
-```bash
-curl -LO http://apps1.eere.energy.gov/buildings/energyplus/download/SetEPlusV810009-lin-64-RHEL5.sh
-sudo sh ./SetEPlusV810009-lin-64-RHEL5.sh
-rm SetEPlusV810009-lin-64-RHEL5.sh
-```
-
 ## Mac Configuration
 
 ### Prerequisites
 Install [EnergyPlus 8.1](http://apps1.eere.energy.gov/buildings/energyplus/register.cfm?goto=eplus)
 
-Install [CMake](http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Darwin64-universal.dmg) with the option of creating symbolic links in /usr/bin
+Install [CMake](http://www.cmake.org/files/v3.0/cmake-3.0.0-Darwin64-universal.dmg) with the option of creating symbolic links in /usr/bin
 
-Install Xcode from the App Store:
-> Download the Auxiliary Tools for Xcode - Late July 2012 from https://developer.apple.com/downloads/ then drag PackageMaker.app to `/Applications/`
+Install Xcode from the App Store
 
 Install [SWIG](http://developer.nrel.gov/downloads/buildings/openstudio/src/swig-3.0.2.tar.gz)
 ```bash
@@ -353,37 +179,11 @@ Modify `~/.bash_profile` to help give CMake defaults for the build options
 
 ```bash
 export CMAKE_OSX_ARCHITECTURES='i386;x86_64'
-export MACOSX_DEPLOYMENT_TARGET=10.8
+export MACOSX_DEPLOYMENT_TARGET=10.9
 ```
 
-### OS X 10.8
-Install [Boost](http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz)
-```bash
-curl -LO http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
-tar -xzf boost_1_47_0.tar.gz
-rm boost_1_47_0.tar.gz
-cd boost_1_47_0
-curl -LO https://svn.boost.org/trac/boost/raw-attachment/ticket/6686/xcode_43.diff
-patch tools/build/v2/tools/darwin.jam xcode_43.diff
-sh ./bootstrap.sh
-sudo ./b2 variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version=10.8 --without-python --without-math install --prefix=/usr/local -j2
-cd ..
-rm -rf boost_1_47_0
-```
-
-Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz)
-```bash
-curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
-tar -xzf qt-everywhere-opensource-src-4.8.6.tar.gz
-rm qt-everywhere-opensource-src-4.8.6.tar.gz
-cd qt-everywhere-opensource-src-4.8.6
-./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -debug-and-release -opensource -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-qt3support -confirm-license
-make -j2
-sudo make install
-cd ..
-rm -rf qt-everywhere-opensource-src-4.8.6
-echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.6/bin' >> ~/.bash_profile
-```
+#### For Building Installer Packages
+> Download the Auxiliary Tools for Xcode - Late July 2012 from https://developer.apple.com/downloads/ then drag PackageMaker.app to `/Applications/`
 
 #### For Building Documentation
 Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.6.dmg) and drag it to Applications
@@ -391,52 +191,31 @@ Download [Doxygen](http://ftp.stack.nl/pub/users/dimitri/Doxygen-1.8.6.dmg) and 
 Install [Graphviz](http://www.graphviz.org/pub/graphviz/stable/macos/mountainlion/graphviz-2.36.0.pkg)
 
 ### OS X 10.9
-Install [Boost](http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz)
+Install [Boost](http://downloads.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.tar.gz)
 ```bash
-curl -LO http://downloads.sourceforge.net/project/boost/boost/1.47.0/boost_1_47_0.tar.gz
-tar -xzf boost_1_47_0.tar.gz
-rm boost_1_47_0.tar.gz
-cd boost_1_47_0
-curl -LO https://svn.boost.org/trac/boost/raw-attachment/ticket/6686/xcode_43.diff
-patch tools/build/v2/tools/darwin.jam xcode_43.diff
+curl -LO http://downloads.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.tar.gz
+tar -xzf boost_1_55_0.tar.gz
+rm boost_1_55_0.tar.gz
+cd boost_1_55_0
 sh ./bootstrap.sh
-sudo ./b2 cxxflags="-stdlib=libstdc++" linkflags="-stdlib=libstdc++" variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version-min=10.8 macosx-version=10.8 --without-python --without-math install --prefix=/usr/local -j2
+# *Deprecated*
+sudo ./b2 cxxflags="-stdlib=libstdc++" linkflags="-stdlib=libstdc++" variant=release variant=debug address-model=32_64 architecture=x86 --layout=tagged macosx-version-min=10.9 macosx-version=10.9 --without-python --without-math install --prefix=/usr/local -j2
 cd ..
-rm -rf boost_1_47_0
+rm -rf boost_1_55_0
 ```
 
-Install [Qt](http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz)
+Install [Qt](http://qt.mirror.constant.com/archive/qt/5.3/5.3.1/single/qt-everywhere-opensource-src-5.3.1.tar.gz)
 ```bash
-curl -LO http://download.qt-project.org/official_releases/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
-tar -xzf qt-everywhere-opensource-src-4.8.6.tar.gz
-rm qt-everywhere-opensource-src-4.8.6.tar.gz
-cd qt-everywhere-opensource-src-4.8.6
+curl -LO http://qt.mirror.constant.com/archive/qt/5.3/5.3.1/single/qt-everywhere-opensource-src-5.3.1.tar.gz
+tar -xzf qt-everywhere-opensource-src-5.3.1.tar.gz
+rm qt-everywhere-opensource-src-5.3.1.tar.gz
+cd qt-everywhere-opensource-src-5.3.1
+# *Deprecated*
 ./configure -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -debug-and-release -opensource -openssl -arch x86 -arch x86_64 -qt-sql-sqlite -plugin-sql-sqlite -nomake examples -nomake demos -nomake docs -no-phonon -no-phonon-backend -no-qt3support -confirm-license
 make -j2
 sudo make install
 cd ..
-rm -rf qt-everywhere-opensource-src-4.8.6
-echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-4.8.6/bin' >> ~/.bash_profile
-```
-
-For convenience, consider making Ruby 1.8 the system default:
-```bash
-cd /usr/bin
-sudo mv erb erb2.0
-sudo mv gem gem2.0
-sudo mv irb irb2.0
-sudo mv rake rake2.0
-sudo mv rdoc rdoc2.0
-sudo mv ri ri2.0
-sudo mv ruby ruby2.0
-sudo mv testrb testrb2.0
-
-sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/erb erb
-sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/gem gem
-sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/irb irb
-sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/rake rake
-sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/rdoc rdoc
-sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ri ri
-sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby ruby
-sudo ln -s ../../System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/testrb testrb
+rm -rf qt-everywhere-opensource-src-5.3.1
+# *Deprecated*
+echo 'export PATH=$PATH:/usr/local/Trolltech/Qt-5.3.1/bin' >> ~/.bash_profile
 ```
