@@ -91,29 +91,27 @@ Install [Qt](http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-op
 Install [Visual Studio 2013 Update 2](http://www.microsoft.com/en-us/download/details.aspx?id=42666)
 
 #### Professional x64
-Follow the previous instructions above to configure the environment for VS2010 Professional.  Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64-bit builds.
+Follow the previous instructions above to configure the environment for VS2013 Professional.  Within CMake, choose _Visual Studio 12 2013 Win64_ as the generator for the project.
 
-The `BUILD_QT`, `BUILD_BOOST`, and `BUILD_SWIG` CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
+Ensure that you have installed 64-bit Qt.
+
+`BUILD_BOOST`, and `BUILD_SWIG` CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
 
 #### Express
-Install [Visual C++ 2010 Express](http://go.microsoft.com/?linkid=9709949) (the Silverlight Runtime and SQL 
-Server 2008 Express options are unnecessary and may be unchecked)
-
-Install [Visual Studio 2010 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=23691)
+Install [Visual C++ 2013 Express](http://www.microsoft.com/en-us/download/details.aspx?id=40787) (all of the optional installs are unnecessary and may be unchecked)
 
 The `MSVC_IS_EXPRESS` CMake option is required and should be enabled.
 
-##### For Building C# Bindings
-Install [Visual C# 2010 Express](http://go.microsoft.com/?linkid=9709949) (the Silverlight Runtime and SQL Server 2008 Express options are unnecessary and may be unchecked)
-
 #### Express x64
-Follow the previous instructions to configure the environment for VS2010 Express with optional C# support.  
+Follow the previous instructions to configure the environment for VS2013 Express.  
 
-Install [Windows SDK 7.1](http://www.microsoft.com/download/en/confirmation.aspx?id=8279), and then add `C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64` to the System `Path` variable.
+Install Windows SDK 8, and then add `C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64` to the System `Path` variable.
 
-Within CMake, choose _Visual Studio 10 Win64_ as the generator for the project.  CMake will give you some general warnings about 64-bit builds.
+Within CMake, choose _Visual Studio 12 2013 Win64_ as the generator for the project.
 
-The `BUILD_QT`, `BUILD_BOOST`, and `BUILD_SWIG` CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
+Ensure that you have installed 64-bit Qt.
+
+The `BUILD_BOOST`, and `BUILD_SWIG` CMake options are _required_ for 64-bit builds, so they should be enabled.  Other options can be chosen like usual.
 
 The `MSVC_IS_EXPRESS` CMake option is required and should be enabled.
 
