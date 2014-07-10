@@ -1,6 +1,6 @@
 > [Wiki](Home) ▸ **Suggested Visual Studio 2013 Configuration**
 
-This document recommends resources and modifications that may improve your experience or increase the utility of using Visual Studio 2013 with OpenStudio.
+This document recommends resources and modifications that may improve your experience or increase the utility of using Visual Studio 2013 with OpenStudio.  Note that extensions are only supported by Visual Studio Professional or higher (they won't work with the Express Edition).
 
 ### Debugger Visualizers
 Copy the contents of the [Visualizers](https://github.com/NREL/OpenStudio/tree/DependencyUpdate/developer/msvc/Visualizers) directory to `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Packages\Debugger\Visualizers`.  This will allow you to easily inspect and debug Boost and Qt objects within Visual Studio.
