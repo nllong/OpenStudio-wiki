@@ -9,8 +9,9 @@
 * [[Using OpenStudio with Git and GitHub]]
 * [[Configuring OpenStudio Build Environments]]
 * [[Suggested Visual Studio 2013 Configuration]]
-* [[Coding Standards]] (Outdated)
+* [C++ Coding Standards](Cpp-Coding-Standards) (Under development)
 
 ### Additional Documentation
 * [[Measure Writing Guide]]
+* [[Ruby Coding Standards]] (Under development)
 * [[EnergyPlus Version Change]]
