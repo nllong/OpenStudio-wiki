@@ -2,22 +2,29 @@
 
 This document recommends resources and modifications that may improve your experience or increase the utility of using Visual Studio 2013 with OpenStudio.  Note that extensions are only supported by Visual Studio Professional or higher (they won't work with the Express Edition).
 
-### Debugger Visualizers
+## Strongly Recommended:
+
+#### Debugger Visualizers
 Copy the contents of the [Visualizers](https://github.com/NREL/OpenStudio/tree/DependencyUpdate/developer/msvc/Visualizers) directory to `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Packages\Debugger\Visualizers`.  This will allow you to easily inspect and debug Boost and Qt objects within Visual Studio.
 
-### Line Numbers
-Enable `TOOLS -> Options -> Text Editor -> All Languages -> Line numbers`
-
-### Configure Spacing
+#### Configure Spacing
 In `TOOLS -> Options -> Text Editor -> C/C++ -> Tabs`, set `Tab size` and `Indent size` to 2 with the `Insert spaces` option selected.
 
-### Add Syntax Highlighting to .i Files
+#### Add Syntax Highlighting to .i Files
 In `TOOLS -> Options -> Text Editor -> File Extension`, add the `i` extension with the `Microsoft Visual C++` editor.
 
-### Close File Shortcut
+#### Configure C++ Formatting
+
+
+## Optional:
+
+#### Line Numbers
+Enable `TOOLS -> Options -> Text Editor -> All Languages -> Line numbers`
+
+#### Close File Shortcut
 In `TOOLS -> Options -> Environment -> Keyboard`, search for the `File.Close` command and add the `Ctrl+W` shortcut in the `Text Editor` context.
 
-### Kill Build Shortcut
+#### Kill Build Shortcut
 > The purpose behind this tweak is to instantly stop the build when you want it stopped, without hitting Cancel and waiting for long-running processes to finish
 
 In `TOOLS -> External Tools`, add the following tool:
@@ -31,16 +38,16 @@ In `TOOLS -> External Tools`, add the following tool:
 
 Then move it up in the list to the first position.  Next, open `TOOLS -> Options -> Environment -> Keyboard`, search for the `Tools.ExternalCommand1` command and add the `Ctrl+Shift+X` global shortcut.
 
-### Extensions
+#### Extensions *(minimum: Professional)*
 
 ##### [CMake Tools for Visual Studio](http://visualstudiogallery.msdn.microsoft.com/6d1586a9-1c98-4ac7-b54f-7615d5f9fbc7)
-This adds syntax highlighting and IntelliSense support for CMake files.  Be sure to set `Tools -> Options -> CMake Tools -> Commands In Lowercase`.
+This adds syntax highlighting and IntelliSense support for CMake files.  Enable `Tools -> Options -> CMake Tools -> Commands In Lowercase`.
 
 ##### [Doxygen Comments](http://visualstudiogallery.msdn.microsoft.com/11a30c1c-593b-4399-a702-f23a56dd8548)
-This adds syntax highlighting to Doxygen commands
+This adds syntax highlighting to Doxygen documentation.
 
 ##### [GoogleTest Runner](http://visualstudiogallery.msdn.microsoft.com/9dd47c21-97a6-4369-b326-c562678066f0)
-This allows you to view, run, and track test results from all OpenStudio tests directly in Visual Studio.  Be sure to open `TEST -> Windows -> Test Explorer`.
+This allows you to view, run, and track test results from all OpenStudio tests directly in Visual Studio.  Be sure to open `Test -> Windows -> Test Explorer`.
 
 ##### [Productivity Power Tools 2013](http://visualstudiogallery.msdn.microsoft.com/dbcb8670-889e-4a54-a226-a48a15e4cace)
 This extension adds a large number of useful features, including highlighting project errors in the solution explorer, filtering the solution explorer, scrollbar markers to help find related code, middle-click scrolling, fixing mixed tabs and spaces, aligning assignments, and much more.
