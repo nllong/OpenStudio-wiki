@@ -23,7 +23,7 @@ Enable `TOOLS -> Options -> Text Editor -> All Languages -> Line numbers`
 In `TOOLS -> Options -> Environment -> Keyboard`, search for the `File.Close` command and add the `Ctrl+W` shortcut in the `Text Editor` context.
 
 #### Kill Build Shortcut
-> The purpose behind this tweak is to instantly stop the build when you want it stopped, without hitting Cancel and waiting for long-running processes to finish
+The purpose behind this tweak is to instantly stop the build when you want it stopped, without hitting Cancel and waiting for long-running processes to finish.
 
 In `TOOLS -> External Tools`, add the following tool:
 
