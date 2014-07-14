@@ -11,7 +11,7 @@ Copy the contents of the [Visualizers](https://github.com/NREL/OpenStudio/tree/D
 In `TOOLS -> Options -> Text Editor -> File Extension`, add the `i` extension with the `Microsoft Visual C++` editor.
 
 #### Configure C++ Formatting and Style
-The following settings file will automatically configure Visual Studio's C++ formatting to match OpenStudio's Coding Standards.  Go to `Tools -> Import and Export Settings -> Import selected environment settings` and select the following settings file: 
+The following settings file will automatically configure Visual Studio's C++ formatting to match OpenStudio's Coding Standards.  Go to `TOOLS -> Import and Export Settings -> Import selected environment settings` and select the following settings file: 
 [cpp-settings.vssettings](/NREL/OpenStudio/wiki/files/Suggested-Visual-Studio-2013-Configuration/cpp-settings.vssettings)
 
 ## Optional:
@@ -39,7 +39,7 @@ Then move it up in the list to the first position.  Next, open `TOOLS -> Options
 #### Extensions *(minimum: Professional)*
 
 ##### [CMake Tools for Visual Studio](http://visualstudiogallery.msdn.microsoft.com/6d1586a9-1c98-4ac7-b54f-7615d5f9fbc7)
-This adds syntax highlighting and IntelliSense support for CMake files.  Enable `Tools -> Options -> CMake Tools -> Commands In Lowercase`.
+This adds syntax highlighting and IntelliSense support for CMake files.  Enable `TOOLS -> Options -> CMake Tools -> Commands In Lowercase`.
 
 ##### [Doxygen Comments](http://visualstudiogallery.msdn.microsoft.com/11a30c1c-593b-4399-a702-f23a56dd8548)
 This adds syntax highlighting to Doxygen documentation.
