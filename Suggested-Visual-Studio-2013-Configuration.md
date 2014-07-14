@@ -48,7 +48,7 @@ This adds syntax highlighting to Doxygen documentation.
 This allows you to view, run, and track test results from all OpenStudio tests directly in Visual Studio.  Be sure to open `Test -> Windows -> Test Explorer`.
 
 ##### [Productivity Power Tools 2013](http://visualstudiogallery.msdn.microsoft.com/dbcb8670-889e-4a54-a226-a48a15e4cace)
-This extension adds a large number of useful features, including highlighting project errors in the solution explorer, filtering the solution explorer, scrollbar markers to help find related code, middle-click scrolling, fixing mixed tabs and spaces, aligning assignments, and much more.
+This extension adds a large number of useful features, including highlighting project errors in the solution explorer, highlighting all occurrences of the selected text, filtering the solution explorer, scrollbar markers to help find related code, middle-click scrolling, fixing mixed tabs and spaces, aligning assignments, and much more.
 
 ##### [Visual Studio Spell Checker](http://visualstudiogallery.msdn.microsoft.com/a23de100-31a1-405c-b4b7-d6be40c3dfff)
 This will highlight potential spelling mistakes in code strings and comments.
