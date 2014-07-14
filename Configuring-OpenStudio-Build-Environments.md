@@ -84,8 +84,8 @@ Install [NSIS](http://prdownloads.sourceforge.net/nsis/nsis-2.46-setup.exe?downl
 Install [Boost](http://sourceforge.net/projects/boost/files/boost-binaries/1.55.0-build2/boost_1_55_0-msvc-12.0-32.exe/download) to the default directory of `C:\local`
 > _v1.55.0 tested and working_
 
-Install [Qt](http://download.qt-project.org/official_releases/qt/5.3/5.3.0/qt-opensource-windows-x86-msvc2013_opengl-5.3.0.exe)
-> _v5.3.0 VS2013 OpenGL tested and working_
+Install [Qt](http://download.qt-project.org/official_releases/qt/5.3/5.3.1/qt-opensource-windows-x86-msvc2013_opengl-5.3.1.exe)
+> _v5.3.1 VS2013 OpenGL tested and working_
 
 #### Professional
 Install [Visual Studio 2013 Update 2](http://www.microsoft.com/en-us/download/details.aspx?id=42666)
