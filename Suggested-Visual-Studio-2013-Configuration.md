@@ -7,14 +7,12 @@ This document recommends resources and modifications that may improve your exper
 #### Debugger Visualizers
 Copy the contents of the [Visualizers](https://github.com/NREL/OpenStudio/tree/DependencyUpdate/developer/msvc/Visualizers) directory to `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Packages\Debugger\Visualizers`.  This will allow you to easily inspect and debug Boost and Qt objects within Visual Studio.
 
-#### Configure Spacing
-In `TOOLS -> Options -> Text Editor -> C/C++ -> Tabs`, set `Tab size` and `Indent size` to 2 with the `Insert spaces` option selected.
-
 #### Add Syntax Highlighting to .i Files
 In `TOOLS -> Options -> Text Editor -> File Extension`, add the `i` extension with the `Microsoft Visual C++` editor.
 
-#### Configure C++ Formatting
-
+#### Configure C++ Formatting and Style
+The following settings file will automatically configure Visual Studio's C++ formatting to match OpenStudio's Coding Standards.  Go to `Tools -> Import and Export Settings -> Import selected environment settings` and select the following settings file: 
+[cpp-settings.vssettings](/NREL/OpenStudio/wiki/files/Suggested-Visual-Studio-2013-Configuration/cpp-settings.vssettings)
 
 ## Optional:
 
@@ -54,7 +52,7 @@ This extension adds a large number of useful features, including highlighting pr
 
 ##### [Visual Studio Spell Checker](http://visualstudiogallery.msdn.microsoft.com/a23de100-31a1-405c-b4b7-d6be40c3dfff)
 This will highlight potential spelling mistakes in code strings and comments.
-Import this user dictionary to avoid false positives in OpenStudio code: [OSDictionary.dic](https://github.com/NREL/OpenStudio/wiki/files/Suggested-Visual-Studio-2013-Configuration/OSDictionary.dic)
+Import this user dictionary to avoid false positives in OpenStudio code: [OSDictionary.dic](/NREL/OpenStudio/wiki/files/Suggested-Visual-Studio-2013-Configuration/OSDictionary.dic)
 
 `TOOLS -> Spell Checker -> Edit Configuration -> User Dictionary -> Import`
 
