@@ -2,62 +2,16 @@
 
 ### Contents
 1. [Introduction](#1-introduction)
-2. [Coding Standards](#2-coding-standards)
+2. [Ruby Coding Standards](#2-coding-standards)
     1. [General Guidelines](#21-general-guidelines)
-    2. [External References](#22-external-references)
-        1. [References](#221-references)
-        2. [Links](#222-links)
+    2. [References](#22-external-references)
     3. [Project Layout](#23-project-layout)
-        1. [Project Files](#231-project-files)
-        2. [Source Files](#232-source-files)
-        3. [External Dependencies](#233-external-dependencies)
     4. [Naming](#24-naming)
-        1. [Namespaces](#241-namespaces)
-        2. [Other Naming Conventions](#242-other-naming-conventions)
-        3. [Naming Descriptiveness](#243-naming-descriptiveness)
     5. [Files](#25-files)
-        1. [Include Statements](#251-include-statements)
-        2. [Using Statements and Namespace Aliases](#252-using-statements-and-namespace-aliases)
     6. [Classes](#26-classes)
-        1. [Object Oriented Design](#261-object-oriented-design)
-        2. [Class Header Files](#262-class-header-files)
-        3. [Class Source Files](#263-class-source-files)
-        4. [Class Definitions](#264-class-definitions)
-        5. [Code Definitions in Header Files](#265-code-definitions-in-header-files)
-        6. [Inheritance and Virtual Functions](#266-inheritance-and-virtual-functions)
-        7. [Friends](#267-friends)
-        8. [Nested Classes](#268-nested-classes)
     7. [Functions](#27-functions)
-        1. [Inline](#271-inline)
-        2. [Function Overloading](#272-function-overloading)
-        3. [Passing Arguments](#273-passing-arguments)
-        4. [Return Values](#274-return-values)
-        5. [Const-Correctness](#275-const-correctness)
     8. [General](#28-general)
-        1. [Strings](#281-strings)
-        2. [Paths](#282-paths)
-        3. [Typedefs](#283-typedefs)
-        4. [Memory Management](#284-memory-management)
-        5. [Avoid Code Duplication](#285-avoid-code-duplication)
-        6. [Flow Control](#286-flow-control)
-        7. [Serialization](#287-serialization)
-        8. [SWIG Support](#288-swig-support)
-    9. [Code Portability](#29-code-portability)
-        1. [Compiler Warnings](#291-compiler-warnings)
-        2. [Exceptions](#292-exceptions)
-        3. [Logging](#293-logging)
-        4. [Unit Tests](#294-unit-tests)
     10. [Formatting](#210-formatting)
-        1. [Indentation and Wrapping](#2101-indentation-and-wrapping)
-        2. [Comments](#2102-comments)
-        3. [Old Code and Commented-out Code](#2103-old-code-and-commented-out-code)
-        4. [Temporary Code](#2104-temporary-code)
-3. [Ruby Coding Standards](#3-ruby-coding-standards)
-    1. [Project Layout](#31-project-layout)
-    2. [Naming](#32-naming)
-    3. [Unit Tests](#33-unit-tests)
-    4. [Indentation and Wrapping](#34-ndentation-and-wrapping)
-    5. [Comments](#35-comments)
 
 ## 1. Introduction
 The Ruby bindings to OpenStudio include a mix of compiled Swig generated extensions, pure Ruby libraries, unit tests of both the extensions and Ruby libraries, and example scripts to help users get started. These elements are packaged together and included in the OpenStudio installer. Centralizing all OpenStudio functionality to a single install location allows user scripts to reference the OpenStudio API in a standard way across computers and projects. Users reference the OpenStudio API from project specific scripts that are out of the scope of the OpenStudio project. However, as user scripts become more developed and mature we encourage them to be added back into the official OpenStudio distribution either as example scripts (low complexity) or pure Ruby libraries (higher complexity). Ruby-only functionality that is widely used will be ported to C++ so it can be available in bindings to other languages as well as the core C++ tools. The Ruby coding standards generally follow the C++ standards. In this chapter we only describe points of departure or clarify places where the C++ coding standards conflict with normal Ruby conventions.
@@ -114,19 +68,19 @@ The top level module for OpenStudio code is `OpenStudio`. Sub modules are also u
 - Unit test cases are upper camel case and post-fixed with `_test`, individual tests are upper camel cased and prefixed by `test_`. The idea is that test cases be easily recognizable in standard output when running a large number of tests, use `_` to indicate spaces for greater readability.
 
 
-#### 2.5. Mix-ins
-Use Mix-ins with caution in order to maintain code readability.
+### 2.5. Mixins
+Use Mixins with caution in order to maintain code readability.
 
-#### 2.6. Unit Tests
+### 2.6. Unit Tests
 We assume that C++ portions of OpenStudio are sufficiently tested using the C++ unit tests. Therefore, we do not require that all tests be duplicated for Ruby. However, we do encourage some testing of the Ruby extensions, particularly in areas where Swig does something novel to the exported classes (e.g. changes a name, maps types, etc). Pure Ruby libraries should be tested completely in Ruby. These tests are then ported to C++ unit tests when the functionality is added to the C++ code base.
 
-#### 2.7. Indentation and Wrapping
+### 2.7. Indentation and Wrapping
 We standardize on the following formatting conventions to improve code readability:
 
 1. Wrap lines at 100 columns. If a line needs to be split, then the split should occur at some functional location (e.g., before/after the operator) and not just after the 100<sup>th</sup> character.
 2. Tab character is two spaces
 
-### 3. Comments
+### 2.8. Comments
 Documentation is an important part of any source code. Even the most well written code is hard to understand or maintain if it is not properly commented. Comments should be made in RDoc format for documentation generation. The developer is encouraged to insert as many comments as needed to explain the code, not just the minimum required.
 
-#### 3.1. Documentation
+#### 2.8.1. Documentation
